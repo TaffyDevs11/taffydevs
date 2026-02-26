@@ -1,3 +1,14 @@
+:root {
+  --navy:    #0c2c68;
+  --cyan:    #b8fdff;
+  --sky:     #5fbdff;
+  --white:   #ffffff;
+  --glow-cyan:  0 0 18px rgba(184,253,255,.55);
+  --glow-sky:   0 0 22px rgba(95,189,255,.50);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --ease-out:    cubic-bezier(.22,1,.36,1);
+}
+
 .btn {
   border-width: 2px;
 }
@@ -1458,9 +1469,40 @@ a {
 .cid-vceQ17DlQL .image-wrapper {
   margin-bottom: 2rem;
 }
+.cid-vceQ17DlQL .image-wrapper:hover{
+  animation: heroReveal .9s .15s var(--ease-out) both;
+}
+@keyframes heroReveal {
+  from { opacity:0; transform:translateY(28px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+/* Hero primary CTA — continuous shimmer */
+.cid-vceNiVmmSd .btn-primary,
+.cid-vceNiVmmSd .btn-success {
+  background-image: linear-gradient(
+    110deg,
+    transparent 20%, rgba(255,255,255,.25) 40%,
+    transparent 60%
+  ) !important;
+  background-size: 200% 100% !important;
+  animation: btnShimmer 2.8s 1.2s infinite;
+  transition: transform .25s var(--ease-spring), box-shadow .25s;
+}
+.cid-vceNiVmmSd .btn-primary:hover,
+.cid-vceNiVmmSd .btn-success:hover {
+  transform: scale(1.07);
+  box-shadow: var(--glow-cyan);
+  animation-play-state: paused;
+}
+@keyframes btnShimmer {
+  0%   { background-position: 150% 0; }
+  50%  { background-position: -50% 0; }
+  100% { background-position: 150% 0; }
+}
 @media (max-width: 767px) {
   .cid-vceQ17DlQL .image-wrapper {
     margin-bottom: 1rem;
+    animation: heroReveal .9s .15s var(--ease-out);
   }
 }
 .cid-vceSWVbyhl {
@@ -1494,6 +1536,17 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: transform .35s var(--ease-spring),
+              box-shadow .35s,
+              border-color .35s;
+  border: 1px solid transparent;
+  will-change: transform;
+}
+
+.cid-vceSWVbyhl .item-wrapper:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 20px 50px rgba(0,0,0,.22), var(--glow-cyan);
+  border-color: rgba(184,253,255,.3);
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .cid-vceSWVbyhl .item-wrapper {
@@ -1518,7 +1571,16 @@ a {
   background: #3279ff;
   height: 80px;
   border-radius: 50%;
+   transition: transform .4s var(--ease-spring),
+              box-shadow .3s, background .3s;
 }
+
+.cid-vceSWVbyhl .item-wrapper:hover .mbr-iconfont {
+  transform: rotate(-8deg) scale(1.18);
+  box-shadow: var(--glow-sky);
+  background: var(--sky) !important;
+}
+
 .cid-vceSWVbyhl .mbr-section-title {
   color: #0c2c68;
 }
@@ -1557,6 +1619,7 @@ a {
   height: 100%;
   height: 300px;
   object-fit: cover;
+  transition: transform .6s var(--ease-out);
 }
 .cid-vceYg8FDCj .item:focus,
 .cid-vceYg8FDCj span:focus {
@@ -1576,6 +1639,15 @@ a {
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
+  transition: transform .35s var(--ease-spring), box-shadow .35s;
+  overflow: hidden;
+}
+.cid-vceYg8FDCj .item-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0,0,0,.18);
+}
+.cid-vceYg8FDCj .item-wrapper:hover .item-img {
+  transform: scale(1.07);
 }
 .cid-vceYg8FDCj .item-wrapper .item-content {
   display: flex;
@@ -1604,6 +1676,11 @@ a {
 .cid-vceYg8FDCj .mbr-text,
 .cid-vceYg8FDCj .mbr-section-btn {
   text-align: center;
+  transition: transform .25s var(--ease-spring), box-shadow .25s;
+}
+.cid-vceYg8FDCj .mbr-section-btn .btn:hover {
+  transform: translateX(5px) scale(1.04);
+  box-shadow: var(--glow-sky);
 }
 .cid-vceYg8FDCj .item-title {
   text-align: left;
@@ -8666,3 +8743,259 @@ a {
     box-shadow: 0 0 0 0 rgba(0,0,0,0);
   }
 }
+
+
+
+/* ============================================================
+   TAFFYDEVS — INTERACTIVE ENHANCEMENTS
+   Drop this <link> into every page's <head> after the main CSS
+   ============================================================ */
+
+/* ── Design tokens (extend the existing palette) ──────────── */
+:root {
+  --navy:    #0c2c68;
+  --cyan:    #b8fdff;
+  --sky:     #5fbdff;
+  --white:   #ffffff;
+  --glow-cyan:  0 0 18px rgba(184,253,255,.55);
+  --glow-sky:   0 0 22px rgba(95,189,255,.50);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --ease-out:    cubic-bezier(.22,1,.36,1);
+}
+/* ================================================================
+   2. HERO — staggered word reveal + floating badge
+   ================================================================ */
+.cid-vceNiVmmSd .mbr-section-title {
+  animation: heroReveal .9s .15s var(--ease-out) both;
+}
+.cid-vceNiVmmSd .mbr-text {
+  animation: heroReveal .9s .35s var(--ease-out) both;
+}
+.cid-vceNiVmmSd .mbr-section-btn {
+  animation: heroReveal .9s .55s var(--ease-out) both;
+}
+@keyframes heroReveal {
+  from { opacity:0; transform:translateY(28px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Hero primary CTA — continuous shimmer */
+.cid-vceNiVmmSd .btn-primary,
+.cid-vceNiVmmSd .btn-success {
+  background-image: linear-gradient(
+    110deg,
+    transparent 20%, rgba(255,255,255,.25) 40%,
+    transparent 60%
+  ) !important;
+  background-size: 200% 100% !important;
+  animation: btnShimmer 2.8s 1.2s infinite;
+  transition: transform .25s var(--ease-spring), box-shadow .25s;
+}
+.cid-vceNiVmmSd .btn-primary:hover,
+.cid-vceNiVmmSd .btn-success:hover {
+  transform: scale(1.07);
+  box-shadow: var(--glow-cyan);
+  animation-play-state: paused;
+}
+@keyframes btnShimmer {
+  0%   { background-position: 150% 0; }
+  50%  { background-position: -50% 0; }
+  100% { background-position: 150% 0; }
+}
+
+/* ================================================================
+   3. "WHY US" FEATURE CARDS — lift + glow on hover
+   ================================================================ */
+.cid-vceSWVbyhl .item-wrapper {
+  transition: transform .35s var(--ease-spring),
+              box-shadow .35s,
+              border-color .35s;
+  border: 1px solid transparent;
+  will-change: transform;
+}
+.cid-vceSWVbyhl .item-wrapper:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 20px 50px rgba(0,0,0,.22), var(--glow-cyan);
+  border-color: rgba(184,253,255,.3);
+}
+
+/* Icon circle bounce */
+.cid-vceSWVbyhl .mbr-iconfont {
+  transition: transform .4s var(--ease-spring),
+              box-shadow .3s, background .3s;
+}
+.cid-vceSWVbyhl .item-wrapper:hover .mbr-iconfont {
+  transform: rotate(-8deg) scale(1.18);
+  box-shadow: var(--glow-sky);
+  background: var(--sky) !important;
+}
+
+/* ================================================================
+   4. "OUR SERVICES" BLOG-STYLE CARDS
+   ================================================================ */
+.cid-vceYg8FDCj .item-wrapper {
+  transition: transform .35s var(--ease-spring), box-shadow .35s;
+  overflow: hidden;
+}
+.cid-vceYg8FDCj .item-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0,0,0,.18);
+}
+.cid-vceYg8FDCj .item-img {
+  transition: transform .6s var(--ease-out);
+}
+.cid-vceYg8FDCj .item-wrapper:hover .item-img {
+  transform: scale(1.07);
+}
+
+/* CTA buttons inside cards */
+.cid-vceYg8FDCj .mbr-section-btn .btn {
+  transition: transform .25s var(--ease-spring), box-shadow .25s;
+}
+.cid-vceYg8FDCj .mbr-section-btn .btn:hover {
+  transform: translateX(5px) scale(1.04);
+  box-shadow: var(--glow-sky);
+}
+
+/* ================================================================
+   7. GLOBAL CTA / ALL BUTTONS — elevated hover
+   ================================================================ */
+.btn-primary,
+.btn-secondary,
+.btn-success {
+  position: relative;
+  transition: transform .25s var(--ease-spring),
+              box-shadow .25s, filter .25s !important;
+}
+.btn-primary:hover  { box-shadow: var(--glow-sky) !important; transform: translateY(-2px) scale(1.04) !important; }
+.btn-secondary:hover{ box-shadow: var(--glow-sky) !important; transform: translateY(-2px) scale(1.04) !important; }
+.btn-success:hover  { box-shadow: var(--glow-cyan)!important; transform: translateY(-2px) scale(1.04) !important; }
+
+/* ================================================================
+   8. CONTACT FORM — field focus glow
+   ================================================================ */
+.form-control:focus {
+  box-shadow: 0 0 0 3px rgba(95,189,255,.35) !important;
+  border-color: var(--sky) !important;
+  transition: box-shadow .25s, border-color .25s;
+}
+
+/* Submit button pulse while idle */
+form .btn-primary {
+  animation: ctaPulse 3s 2s infinite;
+}
+form .btn-primary:hover { animation: none; }
+@keyframes ctaPulse {
+  0%,100%{ box-shadow: 0 0 0 0 rgba(95,189,255,0); }
+  50%    { box-shadow: 0 0 0 8px rgba(95,189,255,.3); }
+}
+
+/* ================================================================
+   9. SOCIAL / FOOTER ICONS — spin-bounce
+   ================================================================ */
+.cid-vcfbqnCTNo .iconfont-wrapper,
+.cid-vcffdV6YuM .mbr-iconfont {
+  transition: transform .4s var(--ease-spring),
+              box-shadow .3s, background .3s;
+}
+.cid-vcfbqnCTNo .iconfont-wrapper:hover,
+.cid-vcffdV6YuM .soc-item:hover .mbr-iconfont {
+  transform: rotate(8deg) scale(1.18) translateY(-4px);
+  box-shadow: var(--glow-cyan);
+  background: var(--navy) !important;
+  color: var(--cyan) !important;
+}
+
+/* ================================================================
+   10. TICKER (scrolling text) — brighter, animated dots
+   ================================================================ */
+.cid-vcfNUpwu4z .ticker__item {
+  transition: color .2s, letter-spacing .2s;
+}
+.cid-vcfNUpwu4z .ticker__item:hover {
+  color: var(--white) !important;
+  letter-spacing: .06em;
+}
+
+/* ================================================================
+   11. SCROLL-REVEAL — sections fade up as they enter viewport
+       (pure CSS: animates once via .is-visible class toggled by JS)
+   ================================================================ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .7s var(--ease-out),
+              transform .7s var(--ease-out);
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================================
+   12. FLOATING "Order Now" sticky CTA (bottom-right)
+   ================================================================ */
+#sticky-cta {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  background: var(--cyan);
+  color: var(--navy) !important;
+  font-family: 'Orbitron', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 50px;
+  box-shadow: 0 6px 30px rgba(0,0,0,.25);
+  animation: floatBob 3s ease-in-out infinite;
+  transition: transform .25s var(--ease-spring),
+              box-shadow .25s, background .25s;
+  display: none; /* shown after scroll via JS */
+}
+#sticky-cta:hover {
+  background: var(--white);
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.3), var(--glow-cyan);
+}
+@keyframes floatBob {
+  0%,100%{ transform: translateY(0); }
+  50%    { transform: translateY(-6px); }
+}
+#sticky-cta:hover { animation: none; transform: scale(1.08) translateY(-3px); }
+
+/* ================================================================
+   14. ABOUT IMAGE — parallax-feel tilt on hover
+   ================================================================ */
+.cid-vceONQFQxh img,
+.cid-vcfypHaEZK img {
+  transition: transform .5s var(--ease-spring), box-shadow .4s;
+}
+.cid-vceONQFQxh img:hover,
+.cid-vcfypHaEZK img:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+}
+
+/* ================================================================
+   15. "WHY US" SECTION HEADING — gradient text shimmer
+   ================================================================ */
+.cid-vceSWVbyhl .mbr-section-title {
+  background: linear-gradient(90deg, var(--navy) 0%, var(--sky) 50%, var(--navy) 100%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleShimmer 5s ease-in-out infinite;
+}
+@keyframes titleShimmer {
+  0%,100%{ background-position: 0% 50%; }
+  50%    { background-position: 100% 50%; }
+}
+
+/* ================================================================
+   JAVASCRIPT COMPANION  (inlined at bottom of every page)
+   ================================================================ */
