@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TaffyDevs | Website Under Construction</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+body{
+background:#030b14;
+color:white;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* BACKGROUND PARTICLES */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* LOADER */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#020a13;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.loader-logo{
+width:130px;
+margin-bottom:30px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
+}
+
+.loading-text{
+font-size:18px;
+opacity:0.7;
+margin-bottom:15px;
+}
+
+.progress{
+width:220px;
+height:6px;
+background:#0f2438;
+border-radius:20px;
+overflow:hidden;
+}
+
+.bar{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#0c74ff,#00b7ff);
+animation:load 3s forwards;
+}
+
+@keyframes load{
+0%{width:0}
+100%{width:100%}
+}
+
+/* MAIN */
+
+.container{
+text-align:center;
+max-width:700px;
+display:none;
+padding:30px;
+}
+
+.logo{
+width:160px;
+margin-bottom:15px;
+}
+
+h1{
+font-size:32px;
+color:#1ea3ff;
+margin-bottom:10px;
+}
+
+.tagline{
+font-size:16px;
+opacity:0.8;
+margin-bottom:25px;
+}
+
+.typing{
+font-size:22px;
+font-weight:600;
+color:#00c8ff;
+min-height:35px;
+margin-bottom:20px;
+}
+
+/* CONSTRUCTION ICON */
+
+.icon{
+font-size:70px;
+margin-bottom:15px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
+/* PROGRESS BAR */
+
+.build-progress{
+margin:25px auto;
+width:280px;
+height:8px;
+background:#0f2438;
+border-radius:20px;
+overflow:hidden;
+}
+
+.build-bar{
+height:100%;
+width:70%;
+background:linear-gradient(90deg,#0c74ff,#00b7ff);
+animation:progressMove 3s infinite alternate;
+}
+
+@keyframes progressMove{
+from{width:45%}
+to{width:85%}
+}
+
+/* CONTACT */
+
+.contact{
+margin-top:30px;
+}
+
+.buttons{
+margin-top:15px;
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:12px 22px;
+border-radius:25px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.email{
+background:#0c74ff;
+color:white;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+/* SOCIALS */
+
+.socials{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:25px;
+}
+
+.socials a{
+color:#1ea3ff;
+font-size:22px;
+transition:.3s;
+}
+
+.socials a:hover{
+color:#00c8ff;
+transform:scale(1.2);
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:25px;
+font-size:13px;
+opacity:.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- LOADER -->
+
+<div id="loader">
+
+<img src="logo.png" class="loader-logo">
+
+<div class="loading-text">Launching Something Amazing...</div>
+
+<div class="progress">
+<div class="bar"></div>
+</div>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="container" id="main">
+
+<img src="logo.png" class="logo">
+
+<div class="tagline">Website and WordPress Designer / Developer</div>
+
+<div class="icon">🚧</div>
+
+<div class="typing" id="typing"></div>
+
+<div class="build-progress">
+<div class="build-bar"></div>
+</div>
+
+<div class="contact">
+
+<p>Our website is currently under construction.</p>
+<p>Need a website or digital solution?</p>
+
+<div class="buttons">
+
+<a class="btn whatsapp"
+href="https://wa.me/263780464625"
+target="_blank">
+WhatsApp Us
+</a>
+
+<a class="btn email"
+href="mailto:info@taffydevs.com">
+Email Us
+</a>
+
+</div>
+
+</div>
+
+<div class="socials">
+
+<a href="https://youtube.com" target="_blank">YouTube</a>
+
+<a href="https://github.com" target="_blank">GitHub</a>
+
+<a href="https://linkedin.com" target="_blank">LinkedIn</a>
+
+</div>
+
+<div class="footer">
+© 2026 TaffyDevs — Building Powerful Websites
+</div>
+
+</div>
+
+<script>
+
+/* LOADER */
+
+setTimeout(()=>{
+document.getElementById("loader").style.display="none"
+document.getElementById("main").style.display="block"
+},3000)
+
+/* TYPING EFFECT */
+
+const text="We're building something powerful for you..."
+let i=0
+
+function type(){
+
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i)
+i++
+setTimeout(type,60)
+}
+
+}
+
+type()
+
+/* PARTICLES */
+
+const canvas=document.getElementById("particles")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+for(let i=0;i<60;i++){
+
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+d:Math.random()*1
+})
+
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle="#1ea3ff"
+
+particles.forEach(p=>{
+ctx.beginPath()
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true)
+ctx.fill()
+})
+
+update()
+
+}
+
+function update(){
+
+particles.forEach(p=>{
+p.y+=p.d
+if(p.y>canvas.height){
+p.y=0
+p.x=Math.random()*canvas.width
+}
+})
+
+}
+
+setInterval(draw,30)
+
+</script>
+
+</body>
+</html>
