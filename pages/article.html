@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="article-page-title">Article – TaffyDevs Blog</title>
+<meta name="description" id="article-meta-desc" content="TaffyDevs blog article on web design, branding and digital growth for SMEs.">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .article-page-wrap { max-width: 780px; margin: 0 auto; padding: 56px 24px 96px; }
+  .article-back { display:inline-flex; align-items:center; gap:7px; font-family:var(--font-ui); font-size:0.74rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--primary); margin-bottom:32px; transition:gap var(--transition); }
+  .article-back:hover { gap:12px; }
+  .article-hero { width:100%; height:360px; object-fit:cover; border-radius:var(--radius); margin-bottom:32px; }
+  .article-hero-placeholder { width:100%; height:280px; background:var(--bg-soft); border-radius:var(--radius); margin-bottom:32px; display:flex; align-items:center; justify-content:center; color:var(--text-light); }
+  .article-page-title { font-family:var(--font-heading); font-size:clamp(1.45rem,3.5vw,2.2rem); font-weight:800; color:var(--text); line-height:1.2; margin-bottom:16px; }
+  .article-page-meta { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:32px; padding-bottom:24px; border-bottom:1px solid var(--card-border); }
+  .article-content { font-size:1rem; color:var(--text-muted); line-height:1.88; }
+  .article-content h2 { font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--text); margin:36px 0 14px; }
+  .article-content h3 { font-family:var(--font-ui); font-size:1.02rem; font-weight:700; color:var(--text); margin:24px 0 10px; }
+  .article-content p { margin-bottom:18px; }
+  .article-content ul, .article-content ol { margin:0 0 18px 22px; }
+  .article-content li { margin-bottom:8px; }
+  .article-content strong { color:var(--text); font-weight:600; }
+  .article-content blockquote { border-left:3px solid var(--primary); padding:14px 20px; margin:26px 0; background:var(--badge-bg); border-radius:0 var(--radius-sm) var(--radius-sm) 0; font-style:italic; font-size:1.02rem; }
+  .article-content .callout { background:var(--badge-bg); border:1px solid var(--card-border); border-radius:var(--radius-sm); padding:20px 24px; margin:26px 0; }
+  .article-content .callout strong { color:var(--primary); }
+  .related-section { margin-top:60px; padding-top:40px; border-top:1px solid var(--card-border); }
+  .related-title { font-family:var(--font-heading); font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:20px; }
+  .share-section { display:flex; align-items:center; gap:12px; margin-top:40px; padding-top:28px; border-top:1px solid var(--card-border); flex-wrap:wrap; }
+  .share-label { font-family:var(--font-ui); font-size:0.74rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); }
+  .share-btn { display:inline-flex; align-items:center; gap:6px; font-family:var(--font-ui); font-size:0.74rem; font-weight:700; padding:8px 14px; border-radius:var(--radius-sm); border:2px solid var(--card-border); color:var(--text-muted); transition:all var(--transition); }
+  .share-btn:hover { background:var(--primary); border-color:var(--primary); color:#FFF; }
+  .author-box { display:flex; align-items:center; gap:16px; background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:24px; margin:36px 0; }
+  .author-avatar { width:64px; height:64px; border-radius:50%; overflow:hidden; flex-shrink:0; background:var(--badge-bg); display:flex; align-items:center; justify-content:center; border:2px solid var(--primary); }
+  .author-avatar img { width:100%; height:100%; object-fit:cover; }
+  .author-name { font-family:var(--font-ui); font-size:0.9rem; font-weight:700; color:var(--text); margin-bottom:2px; }
+  .author-role { font-size:0.75rem; color:var(--primary); margin-bottom:6px; }
+  .author-bio { font-size:0.82rem; color:var(--text-muted); line-height:1.6; }
+</style>
+</head>
+<body>
+
+<div id="loader" role="status">
+  <img src="../assets/img/logos/logo-dark.png" class="loader-logo-img loader-logo" alt="TaffyDevs" onerror="this.style.display='none'">
+  <div class="loader-text" data-lang-en="Loading..." data-lang-pl="Ładowanie...">Loading...</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<header id="navbar" role="banner">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/img/logos/logo-dark.png" alt="TaffyDevs" class="nav-logo-img" height="44" onerror="this.outerHTML='<span class=\'nav-logo-placeholder\'>TaffyDevs</span>'">
+    </a>
+    <nav role="navigation" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
+        <li><a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
+        <li><a href="services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li>
+        <li><a href="portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a></li>
+        <li><a href="blog.html" class="active" data-lang-en="Blog" data-lang-pl="Blog">Blog</a></li>
+        <li><a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language switcher">
+      <span class="lang-lbl lang-lbl-pl">PL</span>
+      <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div>
+      <span class="lang-lbl lang-lbl-en active">EN</span>
+    </div>
+    <a href="booking.html" class="nav-cta" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a>
+    <a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a>
+    <a href="services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a>
+    <a href="portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a>
+    <a href="blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a>
+    <a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a>
+    <a href="booking.html" class="nav-cta" style="text-align:center;margin-top:8px;" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
+  </nav>
+</header>
+
+<main>
+  <div class="article-page-wrap">
+
+    <a href="blog.html" class="article-back" id="article-back-btn">
+      <svg class="icon" style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span data-lang-en="Back to Blog" data-lang-pl="Wróć do Bloga">Back to Blog</span>
+    </a>
+
+    <div id="article-content-area">
+      <!-- Dynamically populated by JS below -->
+    </div>
+
+    <!-- Author box -->
+    <div class="author-box">
+      <div class="author-avatar">
+        <img src="../assets/img/founder/daniel.jpg" alt="Daniel Kamanga" onerror="this.outerHTML='<svg class=\'icon\' style=\'width:28px;height:28px;\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\'><path d=\'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\'/><circle cx=\'12\' cy=\'7\' r=\'4\'/></svg>'">
+      </div>
+      <div>
+        <div class="author-name">Daniel Kamanga</div>
+        <div class="author-role" data-lang-en="Founder · Web Designer · Developer at TaffyDevs" data-lang-pl="Założyciel · Web Designer · Developer w TaffyDevs">Founder · Web Designer · Developer at TaffyDevs</div>
+        <div class="author-bio" data-lang-en="Helping SMEs grow through professional web design and branding. Operating across Poland, Zimbabwe, UK and Europe." data-lang-pl="Pomagam MŚP rosnąć dzięki profesjonalnemu web designowi i brandingowi. Działam w Polsce, Zimbabwe, UK i Europie.">Helping SMEs grow through professional web design and branding. Operating across Poland, Zimbabwe, UK and Europe.</div>
+      </div>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <span class="share-label" data-lang-en="Share:" data-lang-pl="Udostępnij:">Share:</span>
+      <a href="#" class="share-btn" id="share-twitter" aria-label="Share on X/Twitter">
+        <svg class="icon" style="width:15px;height:15px;" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X / Twitter
+      </a>
+      <a href="#" class="share-btn" id="share-linkedin" aria-label="Share on LinkedIn">
+        <svg class="icon" style="width:15px;height:15px;" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn" id="share-copy" aria-label="Copy link">
+        <svg class="icon" style="width:15px;height:15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span data-lang-en="Copy link" data-lang-pl="Kopiuj link">Copy link</span>
+      </button>
+    </div>
+
+    <!-- Related articles -->
+    <div class="related-section">
+      <div class="related-title" data-lang-en="Related Articles" data-lang-pl="Powiązane artykuły">Related Articles</div>
+      <div class="articles-grid" id="related-grid" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr));">
+        <!-- populated by JS -->
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer id="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <img src="../assets/img/logos/logo-dark.png" alt="TaffyDevs" class="footer-logo footer-logo-img" loading="lazy" onerror="this.outerHTML='<div style=\'font-family:var(--font-heading);font-size:1rem;font-weight:800;color:#FFF;margin-bottom:13px;\'>TaffyDevs</div>'">
+        <p class="footer-tagline" data-lang-en="Solving Everyday Problems with IT Solutions." data-lang-pl="Rozwiązujemy codzienne problemy poprzez IT.">Solving Everyday Problems with IT Solutions.</p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+          <a href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+          <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href= target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="X"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-lang-en="Navigation" data-lang-pl="Nawigacja">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
+          <li><a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-lang-en="Services" data-lang-pl="Usługi">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html" data-lang-en="Web Development" data-lang-pl="Strony www">Web Development</a></li>
+          <li><a href="services.html" data-lang-en="Graphic Design" data-lang-pl="Grafika">Graphic Design</a></li>
+          <li><a href="booking.html" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:+48600762551">+48 600 762 551</a></li>
+          <li><a href="mailto:taffydevs@gmail.com">taffydevs@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-lang-en="© 2025 TaffyDevs. All rights reserved." data-lang-pl="© 2025 TaffyDevs. Wszelkie prawa zastrzeżone.">© 2025 TaffyDevs. All rights reserved.</p>
+      <div class="lang-toggle" role="group">
+        <span class="lang-lbl lang-lbl-pl">PL</span>
+        <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div>
+        <span class="lang-lbl lang-lbl-en active">EN</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+/* ── ARTICLE DATABASE ─────────────────────────────────────── */
+const ARTICLES = {
+  'website-2025': {
+    en: {
+      title: 'Why Your Business Needs a Website in 2025',
+      cat: 'Web Design', date: '15 Mar 2025',
+      img: '../assets/img/blog/website-2025.jpg',
+      imgAlt: 'Why your business needs a website in 2025',
+      content: `
+        <p>Over <strong>80% of consumers</strong> search for products and services online before making a purchasing decision. If your business doesn't have a website, you're invisible to that audience — and your competitors are happily taking that business instead.</p>
+        <h2>A website is your most powerful salesperson</h2>
+        <p>Unlike a human salesperson, your website works 24 hours a day, 7 days a week, 365 days a year. It never takes a holiday. It never has a bad day. It presents your business professionally every single time someone visits — whether that's 2pm on a Tuesday or 3am on a Sunday.</p>
+        <blockquote>"Your website is the foundation of your entire digital presence. Everything else — social media, Google, word of mouth — leads back to it."</blockquote>
+        <h2>Credibility you can't buy any other way</h2>
+        <p>When a potential client hears about your business, the first thing they do is Google you. If they can't find a website, they move on. A professional website signals that you are serious, established and trustworthy — before you've even spoken to them.</p>
+        <h3>What a professional website communicates:</h3>
+        <ul>
+          <li>You've invested in your business (and therefore take it seriously)</li>
+          <li>You are findable and contactable easily</li>
+          <li>You have a track record (portfolio, testimonials, case studies)</li>
+          <li>You understand your clients' needs and communicate clearly</li>
+        </ul>
+        <h2>The real cost of NOT having a website</h2>
+        <p>Many business owners avoid building a website because of the upfront cost. But the real question is: how much money are you losing every month by being invisible online? Every lead that finds your competitor instead of you has a price tag — it's just one you don't see directly.</p>
+        <div class="callout"><strong>TaffyDevs Lite package starts at 250 zł / €60</strong> — a one-page professional website that can be live within 3–5 days. That's less than most businesses spend on one client lunch.</div>
+        <h2>It doesn't have to be complicated</h2>
+        <p>You don't need a 50-page website with all the bells and whistles. A clean, fast, well-structured one-page site that clearly explains what you do, who you serve, and how to contact you can dramatically change your business trajectory.</p>
+        <p>The key is that it's built around your <em>business goals</em> — not just designed to look pretty. That's the TaffyDevs approach: every element has a purpose.</p>
+        <h2>Ready to get started?</h2>
+        <p>Whether you're starting from scratch or looking to upgrade an outdated site, TaffyDevs can have you live and professional within days. <a href="booking.html" style="color:var(--primary);font-weight:600;">Book your package here →</a></p>
+      `
+    },
+    pl: {
+      title: 'Dlaczego Twoja firma potrzebuje strony w 2025 roku?',
+      cat: 'Web Design', date: '15 Mar 2025',
+      img: '../assets/img/blog/website-2025.jpg',
+      imgAlt: 'Dlaczego Twoja firma potrzebuje strony w 2025',
+      content: `
+        <p>Ponad <strong>80% konsumentów</strong> szuka produktów i usług online przed podjęciem decyzji zakupowej. Jeśli Twoja firma nie ma strony internetowej, jesteś niewidoczny dla tej grupy — a Twoi konkurenci chętnie przejmują tych klientów.</p>
+        <h2>Strona internetowa to Twój najlepszy sprzedawca</h2>
+        <p>W odróżnieniu od człowieka, Twoja strona internetowa pracuje 24 godziny na dobę, 7 dni w tygodniu, 365 dni w roku. Nigdy nie bierze urlopu. Nigdy nie ma złego dnia. Za każdym razem, gdy ktoś ją odwiedza, prezentuje Twoją firmę profesjonalnie.</p>
+        <blockquote>"Twoja strona internetowa to fundament całej Twojej obecności cyfrowej. Wszystko inne — social media, Google, polecenia — prowadzi z powrotem do niej."</blockquote>
+        <h2>Wiarygodność, której nie kupisz nigdzie indziej</h2>
+        <p>Gdy potencjalny klient usłyszy o Twojej firmie, pierwszą rzeczą, którą zrobi, jest wyszukanie Cię w Google. Jeśli nie znajdzie strony internetowej, idzie dalej. Profesjonalna strona sygnalizuje, że jesteś poważny, ugruntowany i godny zaufania — zanim jeszcze z nim porozmawiałeś.</p>
+        <h3>Co komunikuje profesjonalna strona:</h3>
+        <ul>
+          <li>Inwestujesz w swój biznes (i traktujesz go poważnie)</li>
+          <li>Jesteś łatwy do znalezienia i kontaktu</li>
+          <li>Masz udokumentowane osiągnięcia (portfolio, opinie, case studies)</li>
+          <li>Rozumiesz potrzeby swoich klientów i komunikujesz się jasno</li>
+        </ul>
+        <h2>Prawdziwy koszt braku strony internetowej</h2>
+        <p>Wielu właścicieli firm unika budowania strony ze względu na koszt początkowy. Ale prawdziwe pytanie brzmi: ile pieniędzy tracisz każdego miesiąca, będąc niewidocznym online? Każdy potencjalny klient, który trafia do Twojego konkurenta zamiast do Ciebie, ma swoją cenę.</p>
+        <div class="callout"><strong>Pakiet TaffyDevs Lite zaczyna się od 250 zł / €60</strong> — jednostronicowa profesjonalna strona, która może być online w ciągu 3–5 dni.</div>
+        <h2>To nie musi być skomplikowane</h2>
+        <p>Nie potrzebujesz strony z 50 podstronami. Czysta, szybka, dobrze ustrukturyzowana jednostronicowa strona, która jasno wyjaśnia, co robisz, komu służysz i jak się z Tobą skontaktować, może drastycznie zmienić trajektorię Twojego biznesu.</p>
+        <p>Kluczem jest to, że jest zbudowana wokół Twoich <em>celów biznesowych</em> — nie tylko zaprojektowana, żeby wyglądała ładnie. To podejście TaffyDevs: każdy element ma swój cel.</p>
+      `
+    }
+  },
+  'conversion-mistakes': {
+    en: {
+      title: '5 Mistakes Killing Your Website\'s Conversion',
+      cat: 'Business', date: '28 Feb 2025',
+      img: '../assets/img/blog/conversion-mistakes.jpg',
+      imgAlt: '5 mistakes killing your website conversion rate',
+      content: `
+        <p>You invested in a website. You got it designed. It went live. And now… nothing. No enquiries, no calls, no leads. What went wrong?</p>
+        <p>The truth is, most websites don't convert visitors into clients — not because the business is bad, but because the website makes one or more of these five critical mistakes.</p>
+        <h2>Mistake 1: No Clear Call to Action</h2>
+        <p>Your visitors should never have to guess what to do next. Whether it's "Book a free consultation", "Get a quote", or "Call us now" — there must be one primary action that's impossible to miss. If every button on your site says something different, or worse, there are no buttons at all, your visitors will leave confused.</p>
+        <blockquote>Rule: one page, one primary goal. Everything else is secondary.</blockquote>
+        <h2>Mistake 2: Slow Loading Speed</h2>
+        <p>Studies consistently show that <strong>every 1 second of extra loading time increases bounce rate by approximately 7%</strong>. If your site takes 5 seconds to load, you've lost over 30% of your potential visitors before they've even seen your content.</p>
+        <ul>
+          <li>Compress all images before uploading</li>
+          <li>Use a quality hosting provider</li>
+          <li>Minimise unnecessary plugins and scripts</li>
+          <li>Test your speed at PageSpeed Insights</li>
+        </ul>
+        <h2>Mistake 3: Not Mobile-Friendly</h2>
+        <p>Over <strong>60% of web traffic now comes from mobile devices</strong>. If your website looks broken or is hard to use on a phone, you are losing more than half your potential audience. Every TaffyDevs website is built mobile-first — this is non-negotiable.</p>
+        <h2>Mistake 4: Weak or Confusing Homepage</h2>
+        <p>Within 3 seconds of arriving on your homepage, a visitor should understand: <em>who you are, what you do, and why they should care</em>. If your homepage is cluttered, vague, or just looks outdated, visitors will leave before they even scroll.</p>
+        <h2>Mistake 5: No Social Proof</h2>
+        <p>People trust other people. Testimonials, client logos, case studies, and reviews are not optional extras — they are essential conversion tools. A visitor who sees that 10 other businesses like theirs have worked with you and been happy is far more likely to contact you.</p>
+        <div class="callout"><strong>Quick audit:</strong> Open your website right now. Read your homepage headline. Does it instantly communicate your value? Is there one obvious button to take action? Does it look great on your phone? If the answer to any of these is "no" — let's talk.</div>
+      `
+    },
+    pl: {
+      title: '5 błędów niszczących konwersję Twojej strony',
+      cat: 'Biznes', date: '28 Feb 2025',
+      img: '../assets/img/blog/conversion-mistakes.jpg',
+      imgAlt: '5 błędów niszczących konwersję strony internetowej',
+      content: `
+        <p>Zainwestowałeś w stronę internetową. Została zaprojektowana i uruchomiona. I teraz… nic. Żadnych zapytań, żadnych telefonów, żadnych leadów. Co poszło nie tak?</p>
+        <p>Prawda jest taka, że większość stron internetowych nie konwertuje odwiedzających w klientów — nie dlatego, że firma jest zła, ale dlatego, że strona popełnia jeden lub więcej z tych pięciu krytycznych błędów.</p>
+        <h2>Błąd 1: Brak wyraźnego wezwania do działania</h2>
+        <p>Twoi odwiedzający nigdy nie powinni zgadywać, co zrobić dalej. Musi istnieć jedno główne działanie, którego nie można przeoczyć — "Zamów bezpłatną konsultację", "Uzyskaj wycenę" lub "Zadzwoń teraz".</p>
+        <blockquote>Zasada: jedna strona, jeden główny cel. Wszystko inne jest drugorzędne.</blockquote>
+        <h2>Błąd 2: Wolne ładowanie strony</h2>
+        <p>Badania konsekwentnie pokazują, że <strong>każda dodatkowa sekunda ładowania zwiększa współczynnik odrzuceń o około 7%</strong>. Jeśli Twoja strona ładuje się 5 sekund, straciłeś ponad 30% potencjalnych odwiedzających zanim zobaczyli Twoje treści.</p>
+        <h2>Błąd 3: Brak responsywności na mobile</h2>
+        <p>Ponad <strong>60% ruchu internetowego pochodzi teraz z urządzeń mobilnych</strong>. Jeśli Twoja strona wygląda źle na telefonie, tracisz ponad połowę potencjalnych odbiorców. Każda strona TaffyDevs jest budowana w podejściu mobile-first.</p>
+        <h2>Błąd 4: Słaba lub myląca strona główna</h2>
+        <p>W ciągu 3 sekund od wejścia na Twoją stronę główną odwiedzający powinien zrozumieć: <em>kim jesteś, co robisz i dlaczego powinien mu na tym zależeć</em>.</p>
+        <h2>Błąd 5: Brak social proof</h2>
+        <p>Ludzie ufają innym ludziom. Opinie, logotypy klientów, case studies i recenzje nie są opcjonalnymi dodatkami — są niezbędnymi narzędziami konwersji.</p>
+        <div class="callout"><strong>Szybki audyt:</strong> Otwórz teraz swoją stronę. Przeczytaj nagłówek na stronie głównej. Czy natychmiast komunikuje Twoją wartość? Czy jest jeden wyraźny przycisk do działania? Czy wygląda świetnie na telefonie? Jeśli odpowiedź na którekolwiek z tych pytań brzmi "nie" — porozmawiajmy.</div>
+      `
+    }
+  },
+  'africa-europe-digital': {
+    en: {
+      title: 'Digital Transformation for African Business in Europe',
+      cat: 'Marketing', date: '10 Jan 2025',
+      img: '../assets/img/blog/africa-europe-digital.jpg',
+      imgAlt: 'Digital transformation African business Europe',
+      content: `
+        <p>As an entrepreneur from Zimbabwe living and working in Poland, I've experienced both sides of this challenge first-hand. Building trust in a new market when you're an outsider is genuinely hard — but digital presence is one of the most powerful tools to bridge that gap.</p>
+        <h2>Why digital presence matters more as an African entrepreneur in Europe</h2>
+        <p>When you're in a new market, people don't have word-of-mouth networks to vouch for you. They can't ask a friend "have you worked with this person?". So they do the next best thing: they Google you. What they find in those first 10 seconds will either build or destroy their trust.</p>
+        <blockquote>"A professional website is your handshake before the handshake. It's your opportunity to introduce yourself, your work, and your values — before a word is spoken."</blockquote>
+        <h2>The three pillars of digital trust-building</h2>
+        <h3>1. A professional website</h3>
+        <p>Not just any website — one that communicates clearly in the local language, shows real work, includes testimonials, and makes it easy to take the next step. This alone can transform how you're perceived in a new market.</p>
+        <h3>2. Consistent visual identity</h3>
+        <p>Your logo, colours, and typography should be consistent across your website, social media, business cards and any printed materials. Consistency signals professionalism and helps people remember you.</p>
+        <h3>3. Active social media presence</h3>
+        <p>You don't need to be on every platform — but you need to be visible on at least one where your target clients spend time. Regular, value-driven content positions you as an expert and keeps you top of mind.</p>
+        <h2>Understanding both markets</h2>
+        <p>One unique advantage I bring to TaffyDevs is deep understanding of both African and European business cultures. In Zimbabwe, business relationships are built on personal trust and community reputation. In Poland, professionalism and reliability are paramount. Knowing both cultures allows me to build websites that communicate effectively regardless of where the client is.</p>
+        <div class="callout"><strong>If you're an African entrepreneur building a business in Europe</strong>, TaffyDevs can help you establish a professional digital presence that earns the trust of local clients — while staying true to who you are.</div>
+      `
+    },
+    pl: {
+      title: 'Cyfrowa transformacja afrykańskiego biznesu w Europie',
+      cat: 'Marketing', date: '10 Jan 2025',
+      img: '../assets/img/blog/africa-europe-digital.jpg',
+      imgAlt: 'Cyfrowa transformacja afrykańskiego biznesu w Europie',
+      content: `
+        <p>Jako przedsiębiorca z Zimbabwe żyjący i pracujący w Polsce, doświadczyłem obu stron tego wyzwania z pierwszej ręki. Budowanie zaufania na nowym rynku, gdy jesteś outsiderem, jest naprawdę trudne — ale cyfrowa obecność jest jednym z najskuteczniejszych narzędzi, które mogą pomóc przezwyciężyć tę barierę.</p>
+        <h2>Trzy filary budowania zaufania cyfrowego</h2>
+        <h3>1. Profesjonalna strona internetowa</h3>
+        <p>Nie tylko jakakolwiek strona — taka, która jasno komunikuje w lokalnym języku, pokazuje prawdziwe prace, zawiera opinie i ułatwia podjęcie kolejnego kroku.</p>
+        <h3>2. Spójna identyfikacja wizualna</h3>
+        <p>Twoje logo, kolory i typografia powinny być spójne na stronie internetowej, w mediach społecznościowych, wizytówkach i wszelkich materiałach drukowanych. Spójność sygnalizuje profesjonalizm i pomaga ludziom Cię zapamiętać.</p>
+        <h3>3. Aktywna obecność w mediach społecznościowych</h3>
+        <p>Nie musisz być na każdej platformie — ale musisz być widoczny przynajmniej na jednej, gdzie Twoi docelowi klienci spędzają czas.</p>
+        <h2>Rozumienie obu rynków</h2>
+        <p>W Zimbabwe relacje biznesowe buduje się na osobistym zaufaniu i reputacji w społeczności. W Polsce pierwszorzędne znaczenie mają profesjonalizm i niezawodność. Znajomość obu kultur pozwala mi budować strony, które skutecznie komunikują się niezależnie od tego, gdzie jest klient.</p>
+      `
+    }
+  },
+  'seo-small-business': {
+    en: {
+      title: 'SEO for Small Businesses: How to Rank on Page One',
+      cat: 'SEO', date: '05 Dec 2024',
+      img: '../assets/img/blog/seo-small-business.jpg',
+      imgAlt: 'SEO for small businesses guide',
+      content: `
+        <p>SEO — Search Engine Optimisation — sounds intimidating. But for small businesses, the fundamentals are actually quite simple. You don't need a team of specialists or a huge budget. You need to understand what Google is looking for and consistently give it to them.</p>
+        <h2>What Google actually wants</h2>
+        <p>Google's job is to show users the most relevant, trustworthy, and useful result for their search query. So your job is to be relevant, trustworthy, and useful. That's it at its core.</p>
+        <h2>The 5 SEO foundations for small businesses</h2>
+        <h3>1. Google Business Profile</h3>
+        <p>If you serve local clients, your Google Business Profile (formerly Google My Business) is non-negotiable. It's free, it's powerful, and it puts you on Google Maps. Fill it in completely, add photos, and collect reviews.</p>
+        <h3>2. Title tags and meta descriptions</h3>
+        <p>Every page of your website has a title and description that appears in search results. These should include the keywords your clients actually search for, and should make people want to click on your result over the others.</p>
+        <h3>3. Page speed</h3>
+        <p>Google actively penalises slow websites. A fast website isn't just good for user experience — it's a ranking factor. This is why TaffyDevs builds lean, fast-loading websites as standard.</p>
+        <h3>4. Mobile optimisation</h3>
+        <p>Google uses mobile-first indexing — meaning it primarily evaluates your mobile site when deciding your ranking. If your site isn't mobile-friendly, you will rank lower. Full stop.</p>
+        <h3>5. Content that answers questions</h3>
+        <p>The best SEO strategy for a small business is to create content that answers the questions your potential clients are already typing into Google. Blog articles, FAQs, service pages — all of this contributes to your authority and visibility.</p>
+        <blockquote>"SEO is a long game. But the businesses that start today will dominate in 12 months. The best time to start was a year ago. The second best time is now."</blockquote>
+        <div class="callout"><strong>Every TaffyDevs website</strong> is built with on-page SEO as standard — proper heading structure, optimised meta tags, fast loading, and mobile-first design. It's the foundation, not an add-on.</div>
+      `
+    },
+    pl: {
+      title: 'SEO dla małych firm: jak znaleźć się na pierwszej stronie Google',
+      cat: 'SEO', date: '05 Dec 2024',
+      img: '../assets/img/blog/seo-small-business.jpg',
+      imgAlt: 'SEO dla małych firm przewodnik',
+      content: `
+        <p>SEO brzmi jak coś skomplikowanego. Ale dla małych firm podstawy są naprawdę proste. Nie potrzebujesz zespołu specjalistów ani dużego budżetu. Musisz zrozumieć, czego szuka Google i konsekwentnie mu to dostarczać.</p>
+        <h2>5 fundamentów SEO dla małych firm</h2>
+        <h3>1. Google Business Profile</h3>
+        <p>Jeśli obsługujesz lokalnych klientów, Twój profil w Google Business (dawniej Google My Business) jest absolutnie konieczny. Jest bezpłatny, potężny i umieszcza Cię na Mapach Google.</p>
+        <h3>2. Tagi tytułowe i meta opisy</h3>
+        <p>Każda strona Twojej witryny ma tytuł i opis, który pojawia się w wynikach wyszukiwania. Powinny zawierać słowa kluczowe, których faktycznie szukają Twoi klienci.</p>
+        <h3>3. Szybkość strony</h3>
+        <p>Google aktywnie penalizuje wolne strony. Szybka strona to nie tylko dobra obsługa użytkownika — to czynnik rankingowy.</p>
+        <h3>4. Optymalizacja mobilna</h3>
+        <p>Google używa mobile-first indexing — co oznacza, że głównie ocenia Twoją mobilną stronę przy ustalaniu rankingu.</p>
+        <h3>5. Treści odpowiadające na pytania</h3>
+        <p>Najlepsza strategia SEO dla małej firmy to tworzenie treści odpowiadających na pytania, które Twoi potencjalni klienci wpisują w Google.</p>
+        <blockquote>"SEO to gra długoterminowa. Ale firmy, które zaczną dziś, zdominują rynek za 12 miesięcy."</blockquote>
+      `
+    }
+  },
+  'brand-colours-fonts': {
+    en: {
+      title: 'How to Choose Colours and Fonts for Your Brand',
+      cat: 'Design', date: '20 Nov 2024',
+      img: '../assets/img/blog/brand-colours-fonts.jpg',
+      imgAlt: 'How to choose brand colours and typography',
+      content: `
+        <p>Colour and typography are not just aesthetic choices. They are <strong>strategic business decisions</strong> that shape how your audience perceives you — before they've read a single word.</p>
+        <h2>The psychology of colour in branding</h2>
+        <p>Different colours trigger different emotional responses. Understanding these associations can help you choose colours that reinforce the message you want your brand to communicate.</p>
+        <ul>
+          <li><strong>Blue:</strong> Trust, reliability, professionalism — used by banks, tech companies, healthcare</li>
+          <li><strong>Red:</strong> Energy, urgency, passion — used by food brands, sales, entertainment</li>
+          <li><strong>Green:</strong> Health, growth, sustainability — used by organic brands, finance, wellness</li>
+          <li><strong>Black/Dark:</strong> Luxury, authority, sophistication — used by premium brands</li>
+          <li><strong>Orange:</strong> Friendliness, creativity, enthusiasm — used by consumer-facing brands</li>
+        </ul>
+        <blockquote>"Colour increases brand recognition by up to 80%. Consistency in colour use is one of the simplest ways to make your business more memorable."</blockquote>
+        <h2>Choosing the right typography</h2>
+        <p>Fonts communicate personality. The two main categories to understand are:</p>
+        <h3>Sans-serif fonts (no small lines at the ends of letters)</h3>
+        <p>Examples: Montserrat, Poppins, Inter, Open Sans. These feel modern, clean and accessible. Perfect for technology companies, startups, and businesses that want to feel approachable and contemporary.</p>
+        <h3>Serif fonts (small lines at the ends of letters)</h3>
+        <p>Examples: Georgia, Playfair Display, Merriweather. These feel traditional, authoritative and trustworthy. Perfect for law firms, financial services, luxury brands.</p>
+        <h2>The golden rule: consistency</h2>
+        <p>Once you've chosen your brand colours and fonts, use them <em>everywhere</em> — your website, business cards, social media, email signature, invoices. Every touchpoint should feel like it comes from the same family. This consistency is what builds recognition over time.</p>
+        <div class="callout"><strong>TaffyDevs Standard and Premium packages</strong> include a brand colour palette and typography guide — ensuring your website, logo, and all materials work together cohesively.</div>
+      `
+    },
+    pl: {
+      title: 'Jak wybrać kolory i czcionki dla Twojej marki?',
+      cat: 'Design', date: '20 Nov 2024',
+      img: '../assets/img/blog/brand-colours-fonts.jpg',
+      imgAlt: 'Jak wybrać kolory i typografię dla marki',
+      content: `
+        <p>Kolor i typografia to nie tylko kwestie estetyczne. To <strong>strategiczne decyzje biznesowe</strong>, które kształtują to, jak Twoi odbiorcy postrzegają Cię — zanim przeczytają choć jedno słowo.</p>
+        <h2>Psychologia kolorów w brandingu</h2>
+        <ul>
+          <li><strong>Niebieski:</strong> Zaufanie, niezawodność, profesjonalizm — banki, tech, opieka zdrowotna</li>
+          <li><strong>Czerwony:</strong> Energia, pilność, pasja — marki spożywcze, sprzedaż, rozrywka</li>
+          <li><strong>Zielony:</strong> Zdrowie, wzrost, zrównoważony rozwój — marki organiczne, finanse, wellness</li>
+          <li><strong>Czarny/Ciemny:</strong> Luksus, autorytet, wyrafinowanie — marki premium</li>
+          <li><strong>Pomarańczowy:</strong> Przyjazność, kreatywność, entuzjazm — marki skierowane do konsumentów</li>
+        </ul>
+        <h2>Wybór odpowiedniej typografii</h2>
+        <h3>Czcionki bezszeryfowe (sans-serif)</h3>
+        <p>Przykłady: Montserrat, Poppins, Inter. Sprawiają wrażenie nowoczesnych, czystych i przystępnych. Idealne dla firm technologicznych i startupów.</p>
+        <h3>Czcionki szeryfowe (serif)</h3>
+        <p>Przykłady: Georgia, Playfair Display. Sprawiają wrażenie tradycyjnych i godnych zaufania. Idealne dla kancelarii prawnych i marek premium.</p>
+        <h2>Złota zasada: spójność</h2>
+        <p>Po wybraniu kolorów i czcionek marki używaj ich <em>wszędzie</em> — na stronie, wizytówkach, w mediach społecznościowych. Ta spójność buduje rozpoznawalność w czasie.</p>
+      `
+    }
+  },
+  'ecommerce-guide': {
+    en: {
+      title: 'How to Build an Online Shop That Actually Sells',
+      cat: 'E-commerce', date: '01 Oct 2024',
+      img: '../assets/img/blog/ecommerce-guide.jpg',
+      imgAlt: 'E-commerce guide for SMEs',
+      content: `
+        <p>Opening an online store is just the beginning. Thousands of e-commerce stores launch every day — and most of them fail to generate meaningful revenue not because the products are bad, but because the store is badly built.</p>
+        <h2>The 6 elements of a high-converting online store</h2>
+        <h3>1. Clear navigation and product categorisation</h3>
+        <p>Visitors should be able to find what they're looking for within 3 clicks or fewer. If your store is confusing to navigate, people leave and buy from a competitor who makes it easy.</p>
+        <h3>2. High-quality product photography</h3>
+        <p>Online shoppers can't touch, smell, or try on your products. Photography has to do all that work. Multiple angles, lifestyle shots, and detail images dramatically increase purchase confidence.</p>
+        <h3>3. Fast, secure checkout</h3>
+        <p>Every extra step in your checkout process costs you conversions. Guest checkout, multiple payment methods (card, PayPal, BLIK in Poland), and clear security indicators are essential.</p>
+        <h3>4. Product reviews</h3>
+        <p>Adding product reviews can increase conversion rates by <strong>up to 20%</strong>. Social proof is everything in e-commerce.</p>
+        <h3>5. Transparent shipping</h3>
+        <p>Hidden shipping costs are the number one reason for cart abandonment. Show shipping costs early, offer free shipping thresholds where possible.</p>
+        <h3>6. Mobile-first design</h3>
+        <p>The majority of online shopping now happens on mobile phones. Your store must be as easy to use on a 6-inch screen as it is on a desktop.</p>
+        <div class="callout"><strong>TaffyDevs Premium package</strong> includes full e-commerce functionality — product pages, shopping cart, secure payment integration, and mobile-first design. <a href="booking.html" style="color:var(--primary);font-weight:600;">Get a quote →</a></div>
+      `
+    },
+    pl: {
+      title: 'Jak zbudować sklep online, który naprawdę sprzedaje?',
+      cat: 'E-commerce', date: '01 Oct 2024',
+      img: '../assets/img/blog/ecommerce-guide.jpg',
+      imgAlt: 'Przewodnik e-commerce dla MŚP',
+      content: `<p>Otwarcie sklepu internetowego to dopiero początek. Tysiące sklepów e-commerce uruchamiają się każdego dnia — i większość z nich nie generuje znaczących przychodów nie dlatego, że produkty są złe, ale dlatego, że sklep jest źle zbudowany.</p>
+        <h2>6 elementów skutecznego sklepu online</h2>
+        <h3>1. Przejrzysta nawigacja</h3><p>Odwiedzający powinni znaleźć to, czego szukają w 3 kliknięciach lub mniej.</p>
+        <h3>2. Wysokiej jakości zdjęcia produktów</h3><p>Kupujący online nie mogą dotknąć ani przymierzyć Twoich produktów. Fotografia musi to nadrobić.</p>
+        <h3>3. Szybki, bezpieczny checkout</h3><p>Każdy dodatkowy krok w procesie zakupu kosztuje Cię konwersje. Checkout gościa, wiele metod płatności (karta, PayPal, BLIK) i wyraźne wskaźniki bezpieczeństwa są niezbędne.</p>
+        <h3>4. Opinie o produktach</h3><p>Dodanie opinii o produktach może zwiększyć wskaźnik konwersji nawet o <strong>20%</strong>.</p>
+        <h3>5. Transparentna wysyłka</h3><p>Ukryte koszty wysyłki są główną przyczyną porzucania koszyków.</p>
+        <h3>6. Design mobile-first</h3><p>Większość zakupów online odbywa się teraz na telefonach komórkowych.</p>
+      `
+    }
+  },
+  'zimbabwe-poland-markets': {
+    en: {
+      title: 'Zimbabwe and Poland: Two Markets, One Digital Strategy?',
+      cat: 'Strategy', date: '12 Sep 2024',
+      img: '../assets/img/blog/zimbabwe-poland-markets.jpg',
+      imgAlt: 'Zimbabwe and Poland digital markets comparison',
+      content: `
+        <p>I operate businesses and serve clients in both Zimbabwe and Poland. They are, on the surface, completely different markets. Different languages, different currencies, different cultures, different levels of digital infrastructure. Yet I've found that the fundamental principles of effective digital presence are strikingly similar.</p>
+        <h2>What's different</h2>
+        <h3>Trust-building mechanisms</h3>
+        <p>In Poland, trust is primarily built through professional appearance, certifications, and documented track records. A clean, modern website with clear pricing and case studies goes a long way.</p>
+        <p>In Zimbabwe, personal relationships and community reputation are more influential. However, a professional digital presence increasingly acts as a verification tool — when someone recommends you, the next step is to look you up online.</p>
+        <h3>Digital payment infrastructure</h3>
+        <p>Poland has a sophisticated digital payment ecosystem (BLIK, card payments are universal). Zimbabwe has EcoCash and growing mobile payment adoption. E-commerce strategies need to account for these realities.</p>
+        <h3>Internet access and mobile usage</h3>
+        <p>In Zimbabwe, most internet access is via mobile. This makes mobile-first design not just best practice but essential — data costs mean fast-loading pages matter even more.</p>
+        <h2>What's the same</h2>
+        <blockquote>"In both markets, clients want to trust you before they buy from you. A professional digital presence — website, social media, visual identity — is how you earn that trust at scale."</blockquote>
+        <p>The desire for reliability, professionalism, and clear communication is universal. People everywhere want to work with businesses they can trust, that communicate clearly, and that deliver on their promises.</p>
+        <div class="callout"><strong>TaffyDevs understands both markets</strong> because I live and work in both. This cross-cultural perspective is a genuine advantage when building digital strategies for clients operating across borders.</div>
+      `
+    },
+    pl: {
+      title: 'Zimbabwe i Polska: dwa rynki, jedna strategia cyfrowa?',
+      cat: 'Strategia', date: '12 Sep 2024',
+      img: '../assets/img/blog/zimbabwe-poland-markets.jpg',
+      imgAlt: 'Porównanie rynków cyfrowych Zimbabwe i Polski',
+      content: `
+        <p>Prowadzę firmy i obsługuję klientów zarówno w Zimbabwe, jak i w Polsce. Na pierwszy rzut oka są to zupełnie różne rynki. Różne języki, waluty, kultury i poziomy infrastruktury cyfrowej. A jednak odkryłem, że podstawowe zasady skutecznej obecności cyfrowej są zaskakująco podobne.</p>
+        <h2>Co jest inne</h2>
+        <p>W Polsce zaufanie buduje się przede wszystkim przez profesjonalny wygląd i udokumentowane osiągnięcia. W Zimbabwe ważniejsze są relacje osobiste i reputacja w społeczności.</p>
+        <h2>Co jest takie samo</h2>
+        <blockquote>"Na obu rynkach klienci chcą Ci zaufać, zanim od Ciebie kupią. Profesjonalna obecność cyfrowa — strona, social media, identyfikacja wizualna — to sposób na zdobycie tego zaufania na dużą skalę."</blockquote>
+        <p>Pragnienie niezawodności, profesjonalizmu i jasnej komunikacji jest powszechne. Wszędzie na świecie ludzie chcą współpracować z firmami, którym mogą ufać.</p>
+      `
+    }
+  }
+};
+
+/* ── RENDER ARTICLE ────────────────────────────────────────── */
+function renderArticle() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id') || 'website-2025';
+  const lang = localStorage.getItem('td-lang') || 'en';
+  const data = ARTICLES[id];
+
+  if (!data) {
+    document.getElementById('article-content-area').innerHTML =
+      '<p style="text-align:center;padding:40px;color:var(--text-muted)">Article not found. <a href="blog.html" style="color:var(--primary)">Back to blog →</a></p>';
+    return;
+  }
+
+  const article = data[lang] || data.en;
+
+  // Update page title and meta
+  document.title = article.title + ' – TaffyDevs Blog';
+  document.getElementById('article-page-title').textContent = article.title + ' – TaffyDevs Blog';
+
+  // Render hero image or placeholder
+  const heroHTML = article.img
+    ? `<img src="${article.img}" alt="${article.imgAlt}" class="article-hero" loading="eager"
+        onerror="this.outerHTML='<div class=\'article-hero-placeholder\'><svg class=\'icon\' style=\'width:48px;height:48px\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg></div>'">`
+    : `<div class="article-hero-placeholder"><svg class="icon" style="width:48px;height:48px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>`;
+
+  document.getElementById('article-content-area').innerHTML = `
+    ${heroHTML}
+    <h1 class="article-page-title">${article.title}</h1>
+    <div class="article-page-meta">
+      <span class="article-cat">${article.cat}</span>
+      <span class="article-date" style="display:flex;align-items:center;gap:5px;font-size:0.78rem;color:var(--text-light);">
+        <svg class="icon" style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        ${article.date}
+      </span>
+      <span style="font-size:0.78rem;color:var(--text-light);display:flex;align-items:center;gap:5px;">
+        <svg class="icon" style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Daniel Kamanga
+      </span>
+    </div>
+    <div class="article-content">${article.content}</div>
+  `;
+
+  // Share buttons
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(article.title);
+  document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
+  document.getElementById('share-linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`;
+  document.getElementById('share-copy').addEventListener('click', () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      document.getElementById('share-copy').querySelector('span').textContent = '✓ Copied!';
+      setTimeout(() => {
+        document.getElementById('share-copy').querySelector('span').textContent =
+          lang === 'pl' ? 'Kopiuj link' : 'Copy link';
+      }, 2000);
+    });
+  });
+
+  // Render related articles (3 random others)
+  const others = Object.entries(ARTICLES)
+    .filter(([k]) => k !== id)
+    .slice(0, 3);
+  const relGrid = document.getElementById('related-grid');
+  relGrid.innerHTML = others.map(([k, a]) => {
+    const art = a[lang] || a.en;
+    return `
+      <a href="article.html?id=${k}" class="article-card" style="text-decoration:none;">
+        <div class="article-thumb">
+          <img src="${art.img}" alt="${art.imgAlt}" loading="lazy"
+               onerror="this.parentElement.className='article-thumb-placeholder';this.remove()">
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">${art.cat}</span>
+            <span class="article-date" style="font-size:0.7rem;color:var(--text-light);">${art.date}</span>
+          </div>
+          <h3 class="article-title">${art.title}</h3>
+          <span class="article-read-more" style="display:inline-flex;align-items:center;gap:5px;font-family:var(--font-ui);font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--primary);">
+            ${lang === 'pl' ? 'Czytaj' : 'Read'}
+            <svg class="icon" style="width:13px;height:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </a>`;
+  }).join('');
+}
+
+document.addEventListener('DOMContentLoaded', renderArticle);
+</script>
+</body>
+</html>

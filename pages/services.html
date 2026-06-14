@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services & Pricing – TaffyDevs</title>
+<meta name="description" content="TaffyDevs web development and graphic design packages. Transparent pricing for SMEs in Poland, Zimbabwe and UK. Lite, Starter, Standard, Premium.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="loader" role="status">
+  <img src="../assets/img/logos/logo-dark.png" class="loader-logo-img loader-logo" alt="TaffyDevs" onerror="this.style.display='none'">
+  <div class="loader-text" data-lang-en="Loading..." data-lang-pl="Ładowanie...">Loading...</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<header id="navbar" role="banner">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/img/logos/logo-dark.png" alt="TaffyDevs" class="nav-logo-img" height="44" onerror="this.outerHTML='<span class=\'nav-logo-placeholder\'>TaffyDevs</span>'">
+    </a>
+    <nav role="navigation" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
+        <li><a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
+        <li><a href="services.html" class="active" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li>
+        <li><a href="portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a></li>
+        <li><a href="blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a></li>
+        <li><a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language switcher">
+      <span class="lang-lbl lang-lbl-pl">PL</span>
+      <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div>
+      <span class="lang-lbl lang-lbl-en active">EN</span>
+    </div>
+    <a href="booking.html" class="nav-cta" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a>
+    <a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a>
+    <a href="services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a>
+    <a href="portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a>
+    <a href="blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a>
+    <a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a>
+    <a href="booking.html" class="nav-cta" style="text-align:center;margin-top:8px;" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- PAGE HEADER -->
+<section style="background:var(--hero-gradient);padding:80px 24px 60px;text-align:center;">
+  <div style="max-width:680px;margin:0 auto;">
+    <span class="section-eyebrow" style="color:var(--primary-light);" data-lang-en="Services & Packages" data-lang-pl="Usługi i pakiety">Services & Packages</span>
+    <h1 class="section-title" style="color:#FFF;margin-top:10px;" data-lang-en="Transparent pricing. <em>Zero surprises.</em>" data-lang-pl="Przejrzyste ceny. <em>Zero niespodzianek.</em>">Transparent pricing. <em>Zero surprises.</em></h1>
+    <p style="color:rgba(255,255,255,0.75);margin-top:14px;line-height:1.8;" data-lang-en="Every price includes the full scope of services — no hidden fees, no surprise invoices." data-lang-pl="Każda cena zawiera pełen zakres usług — bez ukrytych opłat, bez niespodziewanych faktur.">Every price includes the full scope of services — no hidden fees, no surprise invoices.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" aria-labelledby="pricing-title">
+  <div class="section-inner">
+    <div class="pricing-tabs" role="tablist">
+      <button class="pricing-tab active" role="tab" data-tab="web-pricing">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span data-lang-en="Web Development" data-lang-pl="Strony www">Web Development</span>
+      </button>
+      <button class="pricing-tab" role="tab" data-tab="design-pricing">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span data-lang-en="Graphic Design" data-lang-pl="Grafika & Logo">Graphic Design</span>
+      </button>
+    </div>
+
+    <div class="currency-toggle" role="group" aria-label="Currency selector">
+      <button class="currency-btn" data-currency="pln">PLN (zł)</button>
+      <button class="currency-btn active" data-currency="eur">EUR (€)</button>
+      <button class="currency-btn" data-currency="usd">USD ($)</button>
+    </div>
+
+    <!-- WEB PRICING -->
+    <div class="pricing-panel active" id="web-pricing">
+      <div class="pricing-grid">
+
+        <article class="pricing-card reveal">
+          <div class="pricing-tier">Lite</div>
+          <div class="pricing-price" data-pln="250" data-eur="60" data-usd="63"><sup>€</sup>60</div>
+          <div class="pricing-delivery">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-lang-en="3–5 working days" data-lang-pl="3–5 dni roboczych">3–5 working days</span>
+          </div>
+          <div class="pricing-payment">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span data-lang-en="100% upfront" data-lang-pl="100% z góry">100% upfront</span>
+          </div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Single-page website" data-lang-pl="Strona jednostronicowa">Single-page website</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Mobile-first responsive design" data-lang-pl="Responsywny design mobile-first">Mobile-first responsive design</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Up to 5 content sections" data-lang-pl="Do 5 sekcji treści">Up to 5 content sections</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Contact form" data-lang-pl="Formularz kontaktowy">Contact form</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Social media links" data-lang-pl="Linki social media">Social media links</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Basic SEO" data-lang-pl="Podstawowe SEO">Basic SEO</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="1 round of revisions" data-lang-pl="1 runda poprawek">1 round of revisions</span></li>
+          </ul>
+          <a href="booking.html" class="pricing-cta outline">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-lang-en="Book Lite" data-lang-pl="Zamów Lite">Book Lite</span>
+          </a>
+        </article>
+
+        <article class="pricing-card reveal reveal-delay-1">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price" data-pln="320" data-eur="76" data-usd="80"><sup>€</sup>76</div>
+          <div class="pricing-delivery">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-lang-en="5–7 working days" data-lang-pl="5–7 dni roboczych">5–7 working days</span>
+          </div>
+          <div class="pricing-payment">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span data-lang-en="50% deposit / 50% on delivery" data-lang-pl="50% zaliczka / 50% przy dostawie">50% / 50%</span>
+          </div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Up to 5 pages" data-lang-pl="Do 5 podstron">Up to 5 pages</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Premium responsive design" data-lang-pl="Premium responsive design">Premium responsive design</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Photo gallery / portfolio" data-lang-pl="Galeria zdjęć / portfolio">Photo gallery / portfolio</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Google Maps integration" data-lang-pl="Integracja Google Maps">Google Maps integration</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Contact form + validation" data-lang-pl="Formularz + walidacja">Contact form + validation</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="On-page SEO" data-lang-pl="SEO on-page">On-page SEO</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="2 rounds of revisions" data-lang-pl="2 rundy poprawek">2 rounds of revisions</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="30-day post-launch support" data-lang-pl="30 dni wsparcia po uruchomieniu">30-day post-launch support</span></li>
+          </ul>
+          <a href="booking.html" class="pricing-cta outline">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-lang-en="Book Starter" data-lang-pl="Zamów Starter">Book Starter</span>
+          </a>
+        </article>
+
+        <article class="pricing-card popular reveal reveal-delay-2">
+          <span class="popular-badge" data-lang-en="Most Popular" data-lang-pl="Najpopularniejszy">Most Popular</span>
+          <div class="pricing-tier">Standard</div>
+          <div class="pricing-price" data-pln="800" data-eur="190" data-usd="200"><sup>€</sup>190</div>
+          <div class="pricing-delivery">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-lang-en="7–10 working days" data-lang-pl="7–10 dni roboczych">7–10 working days</span>
+          </div>
+          <div class="pricing-payment">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            40% / 30% / 30%
+          </div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Up to 10 pages" data-lang-pl="Do 10 podstron">Up to 10 pages</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Custom design per your brief" data-lang-pl="Niestandardowy design wg Twoich wytycznych">Custom design per your brief</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="CMS — easy content editing" data-lang-pl="CMS — łatwa edycja treści">CMS — easy content editing</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Blog / news section" data-lang-pl="Blog / aktualności">Blog / news section</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Booking / reservation form" data-lang-pl="Formularz rezerwacji">Booking / reservation form</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Advanced SEO + Analytics" data-lang-pl="Zaawansowane SEO + Analytics">Advanced SEO + Analytics</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="3 rounds of revisions" data-lang-pl="3 rundy poprawek">3 rounds of revisions</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="60-day support" data-lang-pl="60 dni wsparcia">60-day support</span></li>
+          </ul>
+          <a href="booking.html" class="pricing-cta">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-lang-en="Book Standard" data-lang-pl="Zamów Standard">Book Standard</span>
+          </a>
+        </article>
+
+        <article class="pricing-card reveal reveal-delay-3">
+          <div class="pricing-tier">Premium</div>
+          <div class="pricing-price" data-pln="2400" data-eur="571" data-usd="600"><sup>€</sup>571+</div>
+          <div class="pricing-delivery">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-lang-en="10–14+ working days" data-lang-pl="10–14+ dni roboczych">10–14+ working days</span>
+          </div>
+          <div class="pricing-payment">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            40% / 30% / 30%
+          </div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Unlimited pages" data-lang-pl="Nielimitowane podstrony">Unlimited pages</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="E-commerce / online store" data-lang-pl="E-commerce / sklep online">E-commerce / online store</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Booking & payment system" data-lang-pl="System rezerwacji i płatności">Booking & payment system</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Multi-language support" data-lang-pl="Wielojęzyczność">Multi-language support</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Advanced animations" data-lang-pl="Zaawansowane animacje">Advanced animations</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Custom API integrations" data-lang-pl="Integracje API na zamówienie">Custom API integrations</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Unlimited revisions" data-lang-pl="Nielimitowane poprawki">Unlimited revisions</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="90-day premium support" data-lang-pl="90 dni wsparcia premium">90-day premium support</span></li>
+          </ul>
+          <a href="booking.html" class="pricing-cta outline">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-lang-en="Book Premium" data-lang-pl="Zamów Premium">Book Premium</span>
+          </a>
+        </article>
+
+      </div>
+    </div><!-- /web-pricing -->
+
+    <!-- GRAPHIC DESIGN PRICING -->
+    <div class="pricing-panel" id="design-pricing" style="display:none;">
+      <div class="pricing-grid">
+
+        <article class="pricing-card reveal">
+          <div class="pricing-tier">Lite</div>
+          <div class="pricing-price" data-pln="150" data-eur="36" data-usd="38"><sup>€</sup>36</div>
+          <div class="pricing-delivery"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-lang-en="2–3 working days" data-lang-pl="2–3 dni robocze">2–3 working days</span></div>
+          <div class="pricing-payment"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span data-lang-en="100% upfront" data-lang-pl="100% z góry">100% upfront</span></div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="1 logo design (2 concepts)" data-lang-pl="1 projekt logo (2 koncepcje)">1 logo design (2 concepts)</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="PNG + PDF files" data-lang-pl="Pliki PNG + PDF">PNG + PDF files</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="1 round of revisions" data-lang-pl="1 runda poprawek">1 round of revisions</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Full copyright transfer" data-lang-pl="Pełne prawa autorskie">Full copyright transfer</span></li>
+          </ul>
+          <a href="booking.html" class="pricing-cta outline"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-lang-en="Book Lite" data-lang-pl="Zamów Lite">Book Lite</span></a>
+        </article>
+
+        <article class="pricing-card reveal reveal-delay-1">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price" data-pln="350" data-eur="83" data-usd="88"><sup>€</sup>83</div>
+          <div class="pricing-delivery"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-lang-en="4–6 working days" data-lang-pl="4–6 dni roboczych">4–6 working days</span></div>
+          <div class="pricing-payment"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>50% / 50%</div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Logo (3 concepts)" data-lang-pl="Logo (3 koncepcje)">Logo (3 concepts)</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Business card design" data-lang-pl="Projekt wizytówki">Business card design</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Social media header" data-lang-pl="Nagłówek social media">Social media header</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="PNG, SVG, PDF files" data-lang-pl="Pliki PNG, SVG, PDF">PNG, SVG, PDF files</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="2 rounds of revisions" data-lang-pl="2 rundy poprawek">2 rounds of revisions</span></li>
+          </ul>
+          <a href="booking.html" class="pricing-cta outline"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-lang-en="Book Starter" data-lang-pl="Zamów Starter">Book Starter</span></a>
+        </article>
+
+        <article class="pricing-card popular reveal reveal-delay-2">
+          <span class="popular-badge" data-lang-en="Most Popular" data-lang-pl="Najpopularniejszy">Most Popular</span>
+          <div class="pricing-tier">Standard</div>
+          <div class="pricing-price" data-pln="900" data-eur="214" data-usd="225"><sup>€</sup>214</div>
+          <div class="pricing-delivery"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-lang-en="7–10 working days" data-lang-pl="7–10 dni roboczych">7–10 working days</span></div>
+          <div class="pricing-payment"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>40% / 30% / 30%</div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Full brand identity package" data-lang-pl="Pełna identyfikacja wizualna">Full brand identity package</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Logo (4 variants + backgrounds)" data-lang-pl="Logo (4 warianty + tła)">Logo (4 variants + backgrounds)</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Colour palette + typography" data-lang-pl="Paleta kolorów + typografia">Colour palette + typography</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Social media templates (5 formats)" data-lang-pl="Szablony social media (5 formatów)">Social templates (5 formats)</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Business stationery" data-lang-pl="Papeteria firmowa">Business stationery</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Brand guidelines PDF</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="3 rounds of revisions" data-lang-pl="3 rundy poprawek">3 rounds of revisions</span></li>
+          </ul>
+          <a href="booking.html" class="pricing-cta"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-lang-en="Book Standard" data-lang-pl="Zamów Standard">Book Standard</span></a>
+        </article>
+
+        <article class="pricing-card reveal reveal-delay-3">
+          <div class="pricing-tier">Premium</div>
+          <div class="pricing-price" data-pln="2200" data-eur="524" data-usd="550"><sup>€</sup>524+</div>
+          <div class="pricing-delivery"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-lang-en="12–18+ working days" data-lang-pl="12–18+ dni roboczych">12–18+ working days</span></div>
+          <div class="pricing-payment"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>40% / 30% / 30%</div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Full rebrand or new brand" data-lang-pl="Kompletne rebrandowanie lub nowa marka">Full rebrand or new brand</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Logo + all-media variants" data-lang-pl="Logo + warianty dla wszystkich mediów">Logo + all-media variants</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Complete brand book (20+ pages)" data-lang-pl="Kompletny brand book (20+ stron)">Complete brand book (20+ pages)</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Print materials (flyers, posters, banners)" data-lang-pl="Materiały drukowane (ulotki, plakaty, banery)">Print materials</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Social media kit (10+ templates)" data-lang-pl="Social media kit (10+ szablonów)">Social media kit (10+ templates)</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Pitch deck / presentation" data-lang-pl="Pitch deck / prezentacja">Pitch deck / presentation</span></li>
+            <li><span class="feat-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang-en="Unlimited revisions" data-lang-pl="Nielimitowane poprawki">Unlimited revisions</span></li>
+          </ul>
+          <a href="booking.html" class="pricing-cta outline"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-lang-en="Book Premium" data-lang-pl="Zamów Premium">Book Premium</span></a>
+        </article>
+
+      </div>
+    </div><!-- /design-pricing -->
+
+    <!-- FAQ -->
+    <div style="max-width:680px;margin:64px auto 0;">
+      <h2 class="section-title" style="text-align:center;margin-bottom:36px;" data-lang-en="Frequently Asked Questions" data-lang-pl="Najczęściej zadawane pytania">Frequently Asked Questions</h2>
+      <div id="faq-list"></div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer id="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <img src="../assets/img/logos/logo-dark.png" alt="TaffyDevs" class="footer-logo footer-logo-img" loading="lazy" onerror="this.outerHTML='<div style=\'font-family:var(--font-heading);font-size:1rem;font-weight:800;color:#FFF;margin-bottom:13px;\'>TaffyDevs</div>'">
+        <p class="footer-tagline" data-lang-en="Solving Everyday Problems with IT Solutions." data-lang-pl="Rozwiązujemy codzienne problemy poprzez IT.">Solving Everyday Problems with IT Solutions.</p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+          <a href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+          <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href= target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="X"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="footer-col-title" data-lang-en="Navigation" data-lang-pl="Nawigacja">Navigation</div><ul class="footer-links"><li><a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li><li><a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a></li></ul></div>
+      <div><div class="footer-col-title" data-lang-en="Services" data-lang-pl="Usługi">Services</div><ul class="footer-links"><li><a href="services.html" data-lang-en="Web Development" data-lang-pl="Strony www">Web Development</a></li><li><a href="services.html" data-lang-en="Graphic Design" data-lang-pl="Grafika">Graphic Design</a></li><li><a href="booking.html" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a></li></ul></div>
+      <div><div class="footer-col-title">Contact</div><ul class="footer-links"><li><a href="tel:+48600762551">+48 600 762 551</a></li><li><a href="mailto:taffydevs@gmail.com">taffydevs@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-lang-en="© 2025 TaffyDevs. All rights reserved." data-lang-pl="© 2025 TaffyDevs. Wszelkie prawa zastrzeżone.">© 2025 TaffyDevs. All rights reserved.</p>
+      <div class="lang-toggle" role="group"><span class="lang-lbl lang-lbl-pl">PL</span><div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div><span class="lang-lbl lang-lbl-en active">EN</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+/* FAQ accordion */
+const FAQS = [
+  { q_en:'How long does a project take?', q_pl:'Jak długo trwa projekt?', a_en:'It depends on the package: Lite is 3–5 days, Starter 5–7 days, Standard 7–10 days, Premium 10–14+ days. These are working-day estimates based on receiving all your files and feedback promptly.', a_pl:'Zależy od pakietu: Lite to 3–5 dni, Starter 5–7 dni, Standard 7–10 dni, Premium 10–14+ dni. To szacunki w dniach roboczych, przy założeniu szybkiego dostarczenia plików i informacji zwrotnych.' },
+  { q_en:'What do I need to provide?', q_pl:'Co muszę dostarczyć?', a_en:'Your logo (if you have one), any photos or images, and the text content for your pages. If you need help with content, that can be discussed as an add-on. The booking form walks you through everything step by step.', a_pl:'Twoje logo (jeśli masz), zdjęcia i obrazy oraz teksty dla stron. Jeśli potrzebujesz pomocy z treścią, można to omówić jako dodatek. Formularz zamówienia przeprowadzi Cię przez wszystko krok po kroku.' },
+  { q_en:'Do you offer payment plans?', q_pl:'Czy oferujesz plany płatności?', a_en:'Yes — the Starter, Standard, and Premium packages use milestone-based payments so you're not paying everything upfront. Details are in each package description.', a_pl:'Tak — pakiety Starter, Standard i Premium używają płatności etapowych, więc nie płacisz wszystkiego z góry. Szczegóły są w opisie każdego pakietu.' },
+  { q_en:'What if I need changes after the site launches?', q_pl:'Co jeśli potrzebuję zmian po uruchomieniu strony?', a_en:'Every package includes a post-launch support period (30–90 days depending on package) during which small changes are covered. Beyond that, ongoing maintenance is available at an hourly rate.', a_pl:'Każdy pakiet zawiera okres wsparcia po uruchomieniu (30–90 dni w zależności od pakietu), w którym małe zmiany są objęte. Poza tym dostępna jest bieżąca obsługa w stawce godzinowej.' },
+  { q_en:'Do you work with clients outside Poland?', q_pl:'Czy pracujesz z klientami poza Polską?', a_en:'Absolutely. TaffyDevs serves clients in Poland, Zimbabwe, the UK, and across Europe. All communication can be done remotely via email, WhatsApp, or video call.', a_pl:'Oczywiście. TaffyDevs obsługuje klientów w Polsce, Zimbabwe, Wielkiej Brytanii i całej Europie. Cała komunikacja może odbywać się zdalnie przez email, WhatsApp lub wideorozmowę.' } ];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = localStorage.getItem('td-lang') || 'en';
+  const container = document.getElementById('faq-list');
+  FAQS.forEach((faq, i) => {
+    const q = lang === 'pl' ? faq.q_pl : faq.q_en;
+    const a = lang === 'pl' ? faq.a_pl : faq.a_en;
+    container.insertAdjacentHTML('beforeend', `
+      <div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden;">
+        <button onclick="toggleFaq(${i})" style="width:100%;text-align:left;padding:16px 20px;font-family:var(--font-ui);font-size:0.88rem;font-weight:700;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--card-bg);" aria-expanded="false" id="faq-btn-${i}">
+          <span>${q}</span>
+          <svg id="faq-icon-${i}" class="icon" style="width:18px;height:18px;flex-shrink:0;transition:transform 0.3s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-ans-${i}" style="display:none;padding:0 20px 16px;font-size:0.87rem;color:var(--text-muted);line-height:1.75;background:var(--card-bg);">${a}</div>
+      </div>
+    `);
+  });
+});
+
+function toggleFaq(i) {
+  const ans = document.getElementById('faq-ans-' + i);
+  const icon = document.getElementById('faq-icon-' + i);
+  const btn = document.getElementById('faq-btn-' + i);
+  const open = ans.style.display !== 'none';
+  ans.style.display = open ? 'none' : 'block';
+  icon.style.transform = open ? '' : 'rotate(180deg)';
+  btn.setAttribute('aria-expanded', !open);
+}
+</script>
+</body>
+</html>

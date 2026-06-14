@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog – TaffyDevs</title>
+<meta name="description" content="TaffyDevs blog — articles on web design, digital marketing, branding and IT for SMEs in Poland, Zimbabwe and UK.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="loader" role="status">
+  <img src="../assets/img/logos/logo-dark.png" class="loader-logo-img loader-logo" alt="TaffyDevs" onerror="this.style.display='none'">
+  <div class="loader-text" data-lang-en="Loading..." data-lang-pl="Ładowanie...">Loading...</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<header id="navbar" role="banner">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/img/logos/logo-dark.png" alt="TaffyDevs" class="nav-logo-img" height="44" onerror="this.outerHTML='<span class=\'nav-logo-placeholder\'>TaffyDevs</span>'">
+    </a>
+    <nav role="navigation" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
+        <li><a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
+        <li><a href="services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li>
+        <li><a href="portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a></li>
+        <li><a href="blog.html" class="active" data-lang-en="Blog" data-lang-pl="Blog">Blog</a></li>
+        <li><a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language switcher">
+      <span class="lang-lbl lang-lbl-pl">PL</span>
+      <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div>
+      <span class="lang-lbl lang-lbl-en active">EN</span>
+    </div>
+    <a href="booking.html" class="nav-cta" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a>
+    <a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a>
+    <a href="services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a>
+    <a href="portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a>
+    <a href="blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a>
+    <a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a>
+    <a href="booking.html" class="nav-cta" style="text-align:center;margin-top:8px;" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- PAGE HEADER -->
+<section style="background:var(--hero-gradient);padding:80px 24px 60px;text-align:center;">
+  <div style="max-width:680px;margin:0 auto;">
+    <span class="section-eyebrow" style="color:var(--primary-light);" data-lang-en="Knowledge & Insights" data-lang-pl="Wiedza i inspiracje">Knowledge & Insights</span>
+    <h1 class="section-title" style="color:#FFF;margin-top:10px;" data-lang-en="Blog & <em>Video</em>" data-lang-pl="Blog & <em>Wideo</em>">Blog & <em>Video</em></h1>
+    <p style="color:rgba(255,255,255,0.75);margin-top:14px;line-height:1.8;" data-lang-en="Practical insights on web design, branding and digital growth for SMEs." data-lang-pl="Praktyczna wiedza o web designie, brandingu i cyfrowym wzroście dla MŚP.">Practical insights on web design, branding and digital growth for SMEs.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+
+    <!-- Blog / Video tabs -->
+    <div class="blog-tabs" role="tablist">
+      <button class="blog-tab active" role="tab" data-btab="articles">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <span data-lang-en="Articles" data-lang-pl="Artykuły">Articles</span>
+      </button>
+      <button class="blog-tab" role="tab" data-btab="videos">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        <span data-lang-en="YouTube" data-lang-pl="YouTube">YouTube</span>
+      </button>
+    </div>
+
+    <!-- ARTICLES PANEL -->
+    <div class="blog-panel active" id="articles">
+      <div class="articles-grid" id="articles-grid">
+
+        <!-- Article 1 -->
+        <a href="article.html?id=website-2025" class="article-card reveal">
+          <div class="article-thumb">
+            <!-- Place image at ../assets/img/blog/website-2025.jpg -->
+            <img src="../assets/img/blog/website-2025.jpg" alt="Why your business needs a website in 2025" loading="lazy"
+                 onerror="this.parentElement.className='article-thumb-placeholder';this.remove()">
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-cat" data-lang-en="Web Design" data-lang-pl="Web Design">Web Design</span>
+              <span class="article-date">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                15 Mar 2025
+              </span>
+            </div>
+            <h2 class="article-title" data-lang-en="Why Your Business Needs a Website in 2025" data-lang-pl="Dlaczego Twoja firma potrzebuje strony w 2025 roku?">Why Your Business Needs a Website in 2025</h2>
+            <p class="article-excerpt" data-lang-en="In the digital era, lacking a website means potential clients simply won't find you. Learn why online presence is no longer optional for any business." data-lang-pl="W erze cyfrowej brak strony to jak brak wizytówki — potencjalni klienci po prostu Cię nie znajdą. Dowiedz się, dlaczego obecność online jest koniecznością.">In the digital era, lacking a website means potential clients simply won't find you. Learn why online presence is no longer optional.</p>
+            <span class="article-read-more">
+              <span data-lang-en="Read article" data-lang-pl="Czytaj artykuł">Read article</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="article.html?id=conversion-mistakes" class="article-card reveal reveal-delay-1">
+          <div class="article-thumb">
+            <img src="../assets/img/blog/conversion-mistakes.jpg" alt="5 mistakes killing your website conversion" loading="lazy"
+                 onerror="this.parentElement.className='article-thumb-placeholder';this.remove()">
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-cat" data-lang-en="Business" data-lang-pl="Biznes">Business</span>
+              <span class="article-date">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                28 Feb 2025
+              </span>
+            </div>
+            <h2 class="article-title" data-lang-en="5 Mistakes Killing Your Website's Conversion" data-lang-pl="5 błędów niszczących konwersję Twojej strony">5 Mistakes Killing Your Website's Conversion</h2>
+            <p class="article-excerpt" data-lang-en="You have a website but it's not bringing clients? You're probably making one of these five critical mistakes. Here's how to identify and fix them." data-lang-pl="Masz stronę, ale nie przynosi klientów? Prawdopodobnie popełniasz jeden z tych pięciu błędów. Oto jak je naprawić.">You have a website but it's not bringing clients? You're probably making one of these five critical mistakes.</p>
+            <span class="article-read-more">
+              <span data-lang-en="Read article" data-lang-pl="Czytaj artykuł">Read article</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 3 -->
+        <a href="article.html?id=africa-europe-digital" class="article-card reveal reveal-delay-2">
+          <div class="article-thumb">
+            <img src="../assets/img/blog/africa-europe-digital.jpg" alt="Digital transformation African business Europe" loading="lazy"
+                 onerror="this.parentElement.className='article-thumb-placeholder';this.remove()">
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-cat">Marketing</span>
+              <span class="article-date">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                10 Jan 2025
+              </span>
+            </div>
+            <h2 class="article-title" data-lang-en="Digital Transformation for African Business in Europe" data-lang-pl="Cyfrowa transformacja afrykańskiego biznesu w Europie">Digital Transformation for African Business in Europe</h2>
+            <p class="article-excerpt" data-lang-en="Running a business in Europe as an African entrepreneur? A strong digital presence is the key to building trust in a new market. Strategies that work." data-lang-pl="Prowadzisz firmę w Europie jako przedsiębiorca z Afryki? Cyfrowa obecność to klucz do budowania zaufania na nowym rynku. Strategie, które działają.">Running a business in Europe as an African entrepreneur? A strong digital presence is key to building trust in a new market.</p>
+            <span class="article-read-more">
+              <span data-lang-en="Read article" data-lang-pl="Czytaj artykuł">Read article</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 4 -->
+        <a href="article.html?id=seo-small-business" class="article-card reveal">
+          <div class="article-thumb">
+            <img src="../assets/img/blog/seo-small-business.jpg" alt="SEO for small businesses" loading="lazy"
+                 onerror="this.parentElement.className='article-thumb-placeholder';this.remove()">
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-cat">SEO</span>
+              <span class="article-date">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                05 Dec 2024
+              </span>
+            </div>
+            <h2 class="article-title" data-lang-en="SEO for Small Businesses: How to Rank on Page One" data-lang-pl="SEO dla małych firm: jak znaleźć się na pierwszej stronie Google">SEO for Small Businesses: How to Rank on Page One</h2>
+            <p class="article-excerpt" data-lang-en="SEO isn't reserved for big corporations. Small businesses can compete effectively in Google using simple, consistent strategies. Here's where to start." data-lang-pl="SEO nie jest zarezerwowane dla korporacji. Małe firmy mogą skutecznie konkurować w Google stosując proste, konsekwentne strategie. Oto od czego zacząć.">SEO isn't reserved for big corporations. Small businesses can compete effectively using simple, consistent strategies.</p>
+            <span class="article-read-more">
+              <span data-lang-en="Read article" data-lang-pl="Czytaj artykuł">Read article</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 5 -->
+        <a href="article.html?id=brand-colours-fonts" class="article-card reveal reveal-delay-1">
+          <div class="article-thumb">
+            <img src="../assets/img/blog/brand-colours-fonts.jpg" alt="How to choose brand colours and fonts" loading="lazy"
+                 onerror="this.parentElement.className='article-thumb-placeholder';this.remove()">
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-cat" data-lang-en="Design" data-lang-pl="Design">Design</span>
+              <span class="article-date">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                20 Nov 2024
+              </span>
+            </div>
+            <h2 class="article-title" data-lang-en="How to Choose Colours and Fonts for Your Brand" data-lang-pl="Jak wybrać kolory i czcionki dla Twojej marki?">How to Choose Colours and Fonts for Your Brand</h2>
+            <p class="article-excerpt" data-lang-en="Colours and typography are strategic business decisions, not just aesthetics. The right choices build trust, recognition and authority in your market." data-lang-pl="Kolory i typografia to strategiczne decyzje biznesowe, nie tylko kwestia estetyki. Właściwe wybory budują zaufanie, rozpoznawalność i autorytet marki.">Colours and typography are strategic business decisions. The right choices build trust, recognition and authority.</p>
+            <span class="article-read-more">
+              <span data-lang-en="Read article" data-lang-pl="Czytaj artykuł">Read article</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+      </div><!-- /articles-grid -->
+
+      <!-- Hidden extra articles -->
+      <div id="extra-articles" style="display:none;">
+        <div class="articles-grid" style="margin-top:20px;">
+
+          <a href="article.html?id=ecommerce-guide" class="article-card">
+            <div class="article-thumb">
+              <img src="../assets/img/blog/ecommerce-guide.jpg" alt="E-commerce guide for SMEs" loading="lazy"
+                   onerror="this.parentElement.className='article-thumb-placeholder';this.remove()">
+            </div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="article-cat">E-commerce</span>
+                <span class="article-date">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  01 Oct 2024
+                </span>
+              </div>
+              <h2 class="article-title" data-lang-en="How to Build an Online Shop That Actually Sells" data-lang-pl="Jak zbudować sklep online, który naprawdę sprzedaje?">How to Build an Online Shop That Actually Sells</h2>
+              <p class="article-excerpt" data-lang-en="Opening an online store is just the beginning. The key is in UX, page speed, and pricing strategy. A complete guide for SMEs entering e-commerce." data-lang-pl="Otwarcie sklepu to dopiero początek. Klucz leży w UX, szybkości i strategii cenowej. Kompletny przewodnik dla MŚP wchodzących w e-commerce.">Opening an online store is just the beginning. The key is in UX, page speed, and pricing strategy.</p>
+              <span class="article-read-more">
+                <span data-lang-en="Read article" data-lang-pl="Czytaj artykuł">Read article</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="article.html?id=zimbabwe-poland-markets" class="article-card">
+            <div class="article-thumb">
+              <img src="../assets/img/blog/zimbabwe-poland-markets.jpg" alt="Zimbabwe and Poland digital markets" loading="lazy"
+                   onerror="this.parentElement.className='article-thumb-placeholder';this.remove()">
+            </div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="article-cat" data-lang-en="Strategy" data-lang-pl="Strategia">Strategy</span>
+                <span class="article-date">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  12 Sep 2024
+                </span>
+              </div>
+              <h2 class="article-title" data-lang-en="Zimbabwe and Poland: Two Markets, One Digital Strategy?" data-lang-pl="Zimbabwe i Polska: dwa rynki, jedna strategia cyfrowa?">Zimbabwe and Poland: Two Markets, One Digital Strategy?</h2>
+              <p class="article-excerpt" data-lang-en="Comparing digital realities of two very different markets — from the perspective of someone who operates in both simultaneously." data-lang-pl="Porównanie cyfrowych realiów dwóch różnych rynków z perspektywy kogoś, kto działa na obu jednocześnie.">Comparing digital realities of two very different markets — from someone who operates in both simultaneously.</p>
+              <span class="article-read-more">
+                <span data-lang-en="Read article" data-lang-pl="Czytaj artykuł">Read article</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="load-more-wrap">
+        <button class="load-more-btn" id="load-more-btn">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <span class="load-more-label" data-lang-en="Load More Articles" data-lang-pl="Załaduj więcej artykułów">Load More Articles</span>
+        </button>
+      </div>
+    </div><!-- /articles panel -->
+
+    <!-- YOUTUBE PANEL -->
+    <div class="blog-panel" id="videos" style="display:none;">
+      <div class="youtube-grid">
+
+        <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="video-card reveal">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#012A73,#0A4DB3);">
+            <!-- Place YouTube thumbnail at ../assets/img/blog/video-thumb-1.jpg -->
+            <img src="../assets/img/blog/video-thumb-1.jpg" alt="How to build a website for a small business" loading="lazy"
+                 onerror="this.style.display='none'">
+            <div class="video-play-btn">
+              <svg class="icon" style="width:20px;height:20px;margin-left:3px;" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title" data-lang-en="How to Build a Website for a Small Business in 2025" data-lang-pl="Jak zbudować stronę dla małej firmy w 2025?">How to Build a Website for a Small Business in 2025</div>
+            <div class="video-channel">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              @TaffyDevs
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="video-card reveal reveal-delay-1">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#1A0003,#D71920);">
+            <img src="../assets/img/blog/video-thumb-2.jpg" alt="Web Design for businesses in Poland" loading="lazy" onerror="this.style.display='none'">
+            <div class="video-play-btn">
+              <svg class="icon" style="width:20px;height:20px;margin-left:3px;" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title" data-lang-en="Web Design for Businesses in Poland — What You Need to Know" data-lang-pl="Web Design dla firm w Polsce — co musisz wiedzieć?">Web Design for Businesses in Poland — What You Need to Know</div>
+            <div class="video-channel">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              @TaffyDevs
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="video-card reveal reveal-delay-2">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#001A08,#006B28);">
+            <img src="../assets/img/blog/video-thumb-3.jpg" alt="BuildHive case study Zimbabwe" loading="lazy" onerror="this.style.display='none'">
+            <div class="video-play-btn">
+              <svg class="icon" style="width:20px;height:20px;margin-left:3px;" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title" data-lang-en="BuildHive Case Study — Website for a Company in Zimbabwe" data-lang-pl="Case study BuildHive — strona dla firmy w Zimbabwe">BuildHive Case Study — Website for a Company in Zimbabwe</div>
+            <div class="video-channel">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              @TaffyDevs
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="video-card reveal">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#1A3A6B,#2E5FA3);">
+            <img src="../assets/img/blog/video-thumb-4.jpg" alt="5 things never to do on your website" loading="lazy" onerror="this.style.display='none'">
+            <div class="video-play-btn">
+              <svg class="icon" style="width:20px;height:20px;margin-left:3px;" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title" data-lang-en="5 Things You Should NEVER Do On Your Website" data-lang-pl="5 rzeczy, których NIGDY nie rób na stronie internetowej">5 Things You Should NEVER Do On Your Website</div>
+            <div class="video-channel">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              @TaffyDevs
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="video-card reveal reveal-delay-1">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#2D1400,#8B4000);">
+            <img src="../assets/img/blog/video-thumb-5.jpg" alt="TaffyDevs agency story" loading="lazy" onerror="this.style.display='none'">
+            <div class="video-play-btn">
+              <svg class="icon" style="width:20px;height:20px;margin-left:3px;" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title" data-lang-en="TaffyDevs: How I Built an IT Agency from Zimbabwe to Poland" data-lang-pl="TaffyDevs: Jak zbudowałem agencję IT z Zimbabwe do Polski">TaffyDevs: How I Built an IT Agency from Zimbabwe to Poland</div>
+            <div class="video-channel">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              @TaffyDevs
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="video-card reveal reveal-delay-2">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#1A0030,#800060);">
+            <img src="../assets/img/blog/video-thumb-6.jpg" alt="How to choose a web designer" loading="lazy" onerror="this.style.display='none'">
+            <div class="video-play-btn">
+              <svg class="icon" style="width:20px;height:20px;margin-left:3px;" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title" data-lang-en="How to Choose a Good Web Designer — Guide for SMEs" data-lang-pl="Jak wybrać dobrego web designera — poradnik dla MŚP">How to Choose a Good Web Designer — Guide for SMEs</div>
+            <div class="video-channel">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              @TaffyDevs
+            </div>
+          </div>
+        </a>
+
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          <span data-lang-en="Visit YouTube Channel" data-lang-pl="Odwiedź kanał YouTube">Visit YouTube Channel</span>
+        </a>
+      </div>
+    </div><!-- /videos panel -->
+
+  </div>
+</section>
+</main>
+
+<footer id="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <img src="../assets/img/logos/logo-dark.png" alt="TaffyDevs" class="footer-logo footer-logo-img" loading="lazy" onerror="this.outerHTML='<div style=\'font-family:var(--font-heading);font-size:1rem;font-weight:800;color:#FFF;margin-bottom:13px;\'>TaffyDevs</div>'">
+        <p class="footer-tagline" data-lang-en="Solving Everyday Problems with IT Solutions." data-lang-pl="Rozwiązujemy codzienne problemy poprzez IT.">Solving Everyday Problems with IT Solutions.</p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+          <a href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+          <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href= target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="X"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-lang-en="Navigation" data-lang-pl="Nawigacja">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
+          <li><a href="about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
+          <li><a href="services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-lang-en="Recent Posts" data-lang-pl="Ostatnie wpisy">Recent Posts</div>
+        <ul class="footer-links">
+          <li><a href="article.html?id=website-2025" data-lang-en="Website in 2025" data-lang-pl="Strona w 2025">Website in 2025</a></li>
+          <li><a href="article.html?id=conversion-mistakes" data-lang-en="Conversion Mistakes" data-lang-pl="Błędy konwersji">Conversion Mistakes</a></li>
+          <li><a href="article.html?id=seo-small-business" data-lang-en="SEO for SMEs" data-lang-pl="SEO dla MŚP">SEO for SMEs</a></li>
+          <li><a href="article.html?id=brand-colours-fonts" data-lang-en="Brand Colours & Fonts" data-lang-pl="Kolory i czcionki">Brand Colours & Fonts</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:+48600762551">+48 600 762 551</a></li>
+          <li><a href="mailto:taffydevs@gmail.com">taffydevs@gmail.com</a></li>
+          <li><a href="contact.html" data-lang-en="Contact page" data-lang-pl="Kontakt">Contact page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-lang-en="© 2025 TaffyDevs. All rights reserved." data-lang-pl="© 2025 TaffyDevs. Wszelkie prawa zastrzeżone.">© 2025 TaffyDevs. All rights reserved.</p>
+      <div class="lang-toggle" role="group">
+        <span class="lang-lbl lang-lbl-pl">PL</span>
+        <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div>
+        <span class="lang-lbl lang-lbl-en active">EN</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

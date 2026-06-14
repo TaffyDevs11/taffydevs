@@ -1,380 +1,461 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-  <link rel="icon" href="logo.png" type="image/gif" />
-
-<title>TaffyDevs | Website Under Construction</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI, sans-serif;
-}
-
-body{
-background:#030b14;
-color:white;
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-/* BACKGROUND PARTICLES */
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-/* LOADER */
-
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#020a13;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-
-.loader-logo{
-width:130px;
-margin-bottom:30px;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
-}
-
-.loading-text{
-font-size:18px;
-opacity:0.7;
-margin-bottom:15px;
-}
-
-.progress{
-width:220px;
-height:6px;
-background:#0f2438;
-border-radius:20px;
-overflow:hidden;
-}
-
-.bar{
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#0c74ff,#00b7ff);
-animation:load 3s forwards;
-}
-
-@keyframes load{
-0%{width:0}
-100%{width:100%}
-}
-
-/* MAIN */
-
-.container{
-text-align:center;
-max-width:700px;
-display:none;
-padding:30px;
-}
-
-.logo{
-width:160px;
-margin-bottom:15px;
-}
-
-h1{
-font-size:32px;
-color:#1ea3ff;
-margin-bottom:10px;
-}
-
-.tagline{
-font-size:16px;
-opacity:0.8;
-margin-bottom:25px;
-}
-
-.typing{
-font-size:22px;
-font-weight:600;
-color:#00c8ff;
-min-height:35px;
-margin-bottom:20px;
-}
-
-/* CONSTRUCTION ICON */
-
-.icon{
-font-size:70px;
-margin-bottom:15px;
-animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-}
-
-/* PROGRESS BAR */
-
-.build-progress{
-margin:25px auto;
-width:280px;
-height:8px;
-background:#0f2438;
-border-radius:20px;
-overflow:hidden;
-}
-
-.build-bar{
-height:100%;
-width:70%;
-background:linear-gradient(90deg,#0c74ff,#00b7ff);
-animation:progressMove 3s infinite alternate;
-}
-
-@keyframes progressMove{
-from{width:45%}
-to{width:85%}
-}
-
-/* CONTACT */
-
-.contact{
-margin-top:30px;
-}
-
-.buttons{
-margin-top:15px;
-display:flex;
-gap:15px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:12px 22px;
-border-radius:25px;
-font-weight:600;
-text-decoration:none;
-transition:.3s;
-}
-
-.whatsapp{
-background:#25D366;
-color:white;
-}
-
-.email{
-background:#0c74ff;
-color:white;
-}
-
-.btn:hover{
-transform:scale(1.08);
-}
-
-/* SOCIALS */
-
-.socials{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:25px;
-}
-
-.socials a{
-color:#1ea3ff;
-font-size:22px;
-transition:.3s;
-}
-
-.socials a:hover{
-color:#00c8ff;
-transform:scale(1.2);
-}
-
-/* FOOTER */
-
-.footer{
-margin-top:25px;
-font-size:13px;
-opacity:.6;
-}
-
-</style>
+<title data-page-title-en="TaffyDevs – Solving Everyday Problems with IT Solutions" data-page-title-pl="TaffyDevs – Rozwiązania IT dla Twojego Biznesu">TaffyDevs – Solving Everyday Problems with IT Solutions</title>
+<meta name="description" content="TaffyDevs – professional web design and graphic design for SMEs. Web development in Poland, Zimbabwe, UK. Affordable prices, premium quality.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://taffydevs.com/">
+<meta property="og:title" content="TaffyDevs – IT Solutions">
+<meta property="og:description" content="Professional web design & development for SMEs. Poland, Zimbabwe, UK.">
+<meta property="og:image" content="https://taffydevs.com/assets/img/logos/logo-dark.png">
+<meta property="og:url" content="https://taffydevs.com/">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"TaffyDevs","description":"Professional web design, development and graphic design for SMEs.","founder":{"@type":"Person","name":"Daniel Kamanga"},"telephone":"+48600762551","email":"taffydevs@gmail.com","url":"https://taffydevs.com","sameAs":["https://www.youtube.com/@Taffydevs","https://github.com/TaffyDevs11","https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" ]}
+</script>
 </head>
-
 <body>
 
-<canvas id="particles"></canvas>
-
-<!-- LOADER -->
-
-<div id="loader">
-
-<img src="logo.png" class="loader-logo">
-
-<div class="loading-text">Launching Something Amazing...</div>
-
-<div class="progress">
-<div class="bar"></div>
+<!-- ══════════════ LOADER ══════════════ -->
+<div id="loader" role="status" aria-label="Loading TaffyDevs">
+  <img src="assets/img/logos/logo-dark.png" class="loader-logo-img loader-logo" alt="TaffyDevs" onerror="this.style.display='none'">
+  <div class="loader-text" data-lang-en="Loading..." data-lang-pl="Ładowanie...">Loading...</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
 </div>
 
+<!-- ══════════════ NAVBAR ══════════════ -->
+<header id="navbar" role="banner">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="TaffyDevs home">
+      <!-- Place your logo at assets/img/logos/logo-dark.png (EN) and logo-red.png (PL) -->
+      <img src="assets/img/logos/logo-dark.png" alt="TaffyDevs" class="nav-logo-img" height="44"
+           onerror="this.outerHTML='<span class=\'nav-logo-placeholder\'>TaffyDevs</span>'">
+    </a>
+    <nav role="navigation" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
+        <li><a href="pages/about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
+        <li><a href="pages/services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li>
+        <li><a href="pages/portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a></li>
+        <li><a href="pages/blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a></li>
+        <li><a href="pages/contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language switcher">
+      <span class="lang-lbl lang-lbl-pl" id="lbl-pl">PL</span>
+      <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0" aria-label="Switch language"></div>
+      <span class="lang-lbl lang-lbl-en active" id="lbl-en">EN</span>
+    </div>
+    <a href="pages/booking.html" class="nav-cta" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a>
+    <a href="pages/about.html" data-lang-en="About" data-lang-pl="O nas">About</a>
+    <a href="pages/services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a>
+    <a href="pages/portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a>
+    <a href="pages/blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a>
+    <a href="pages/contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a>
+    <a href="pages/booking.html" class="nav-cta" style="text-align:center;margin-top:8px;" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-geo" aria-hidden="true">
+    <div class="geo"></div><div class="geo"></div><div class="geo"></div><div class="geo"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content reveal">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span data-lang-en="Poland · Zimbabwe · UK · Europe" data-lang-pl="Polska · Zimbabwe · UK · Europa">Poland · Zimbabwe · UK · Europe</span>
+    </div>
+    <p class="hero-eyebrow" data-lang-en="IT Agency · Web Design · Graphics" data-lang-pl="Agencja IT · Web Design · Grafika">IT Agency · Web Design · Graphics</p>
+    <h1 class="hero-title" data-lang-en="Solving Everyday<br>Problems with <em>IT</em>" data-lang-pl="Rozwiązujemy codzienne<br>problemy poprzez <em>IT</em>">Solving Everyday<br>Problems with <em>IT</em></h1>
+    <p class="hero-sub" data-lang-en="We build websites and visual identities that earn trust, attract clients, and grow your business. No bureaucracy — you work directly with the founder." data-lang-pl="Tworzymy strony i identyfikacje wizualne budujące zaufanie, przyciągające klientów i rozwijające Twój biznes. Bez biurokracji — pracujesz bezpośrednio z założycielem.">We build websites and visual identities that earn trust, attract clients, and grow your business. No bureaucracy — you work directly with the founder.</p>
+    <div class="hero-actions">
+      <a href="pages/portfolio.html" class="btn-primary">
+        <span data-lang-en="See Our Work" data-lang-pl="Zobacz nasze projekty">See Our Work</span>
+        <span id="icon-arrow-r"></span>
+      </a>
+      <a href="pages/booking.html" class="btn-outline">
+        <span data-lang-en="Book a Package" data-lang-pl="Zamów pakiet">Book a Package</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">5<span>+</span></div><div class="hero-stat-label" data-lang-en="Live projects" data-lang-pl="Projektów online">Live projects</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">3<span>+</span></div><div class="hero-stat-label" data-lang-en="Markets served" data-lang-pl="Rynki">Markets served</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">100<span>%</span></div><div class="hero-stat-label" data-lang-en="Satisfaction" data-lang-pl="Satysfakcja">Satisfaction</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">24<span>h</span></div><div class="hero-stat-label" data-lang-en="Response time" data-lang-pl="Czas odpowiedzi">Response time</div></div>
+    </div>
+  </div>
+  <br><br>
+  <div class="scroll-hint" aria-hidden="true">
+    <span data-lang-en="Scroll" data-lang-pl="Przewiń">Scroll</span>
+    <span id="icon-arrow-d"></span>
+  </div>
+</section>
+
+<!-- ══════════════ CLIENT LOGO STRIP ══════════════ -->
+<!-- Add client logos to assets/img/clients/ and update src attributes below -->
+<div class="client-strip" aria-label="Clients and brands">
+  <div class="client-track" id="client-track">
+    <!-- Original set -->
+    <div class="client-logo-item"><img src="assets/img/clients/juam.png" alt="JUAM Corporate Services" onerror="this.outerHTML='<span class=\'logo-text\'>JUAM Corporate</span>'"></div>
+    <div class="client-logo-item"><img src="assets/img/clients/bporbf.png" alt="Phenomenal Wear" onerror="this.outerHTML='<span class=\'logo-text\'>Phenomenal Wear</span>'"></div>
+    <div class="client-logo-item"><img src="assets/img/clients/randr.png" alt="R&R Catering" onerror="this.outerHTML='<span class=\'logo-text\'>R&amp;R Catering</span>'"></div>
+    <div class="client-logo-item"><img src="assets/img/clients/buildhive.png" alt="BuildHive" onerror="this.outerHTML='<span class=\'logo-text\'>BuildHive</span>'"></div>
+    <div class="client-logo-item"><img src="assets/img/clients/wnc.png" alt="Women's Network Conference" onerror="this.outerHTML='<span class=\'logo-text\'>WN Conference</span>'"></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="client-logo-item"><img src="assets/img/clients/juam.png" alt="JUAM Corporate Services" onerror="this.outerHTML='<span class=\'logo-text\'>JUAM Corporate</span>'"></div>
+    <div class="client-logo-item"><img src="assets/img/clients/bporbf.png" alt="Phenomenal Wear" onerror="this.outerHTML='<span class=\'logo-text\'>Phenomenal Wear</span>'"></div>
+    <div class="client-logo-item"><img src="assets/img/clients/randr.png" alt="R&R Catering" onerror="this.outerHTML='<span class=\'logo-text\'>R&amp;R Catering</span>'"></div>
+    <div class="client-logo-item"><img src="assets/img/clients/buildhive.png" alt="BuildHive" onerror="this.outerHTML='<span class=\'logo-text\'>BuildHive</span>'"></div>
+    <div class="client-logo-item"><img src="assets/img/clients/wnc.png" alt="Women's Network Conference" onerror="this.outerHTML='<span class=\'logo-text\'>WN Conference</span>'"></div>
+  </div>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- ══════════════ USP ══════════════ -->
+<section id="usp" class="section" aria-labelledby="usp-title">
+  <div class="section-inner">
+    <header class="section-header">
+      <span class="section-eyebrow" data-lang-en="Why TaffyDevs?" data-lang-pl="Dlaczego TaffyDevs?">Why TaffyDevs?</span>
+      <h2 class="section-title" id="usp-title" data-lang-en="We don't sell websites. <em>We solve problems.</em>" data-lang-pl="Nie sprzedajemy stron. <em>Rozwiązujemy problemy.</em>">We don't sell websites. <em>We solve problems.</em></h2>
+      <p class="section-sub" data-lang-en="Every design decision is grounded in your business goals, not the latest trends." data-lang-pl="Każda decyzja projektowa opiera się na Twoich celach biznesowych, nie modnych trendach.">Every design decision is grounded in your business goals, not the latest trends.</p>
+    </header>
+    <div class="usp-grid">
+      <article class="usp-card reveal">
+        <div class="usp-icon-wrap usp-icon-target"></div>
+        <h3 class="usp-title" data-lang-en="Problem-Solving Approach" data-lang-pl="Podejście problem-solving">Problem-Solving Approach</h3>
+        <p class="usp-desc" data-lang-en="We don't just build websites. We solve business problems through technology — every feature has a purpose and business justification." data-lang-pl="Nie budujemy po prostu stron. Rozwiązujemy problemy biznesowe przez technologię — każda funkcja ma swój cel.">We don't just build websites. We solve business problems through technology — every feature has a purpose and business justification.</p>
+      </article>
+      <article class="usp-card reveal reveal-delay-1">
+        <div class="usp-icon-wrap usp-icon-zap"></div>
+        <h3 class="usp-title" data-lang-en="Multi-Skilled Founder" data-lang-pl="Wielozadaniowy Founder">Multi-Skilled Founder</h3>
+        <p class="usp-desc" data-lang-en="Design + Development + Branding + Marketing + Content. One person. Full stack. A cohesive vision with no communication gaps." data-lang-pl="Design + Development + Branding + Marketing + Content. Jedna osoba. Pełen stos. Spójna wizja bez przepaści komunikacyjnych.">Design + Development + Branding + Marketing + Content. One person. Full stack. A cohesive vision with no communication gaps.</p>
+      </article>
+      <article class="usp-card reveal reveal-delay-2">
+        <div class="usp-icon-wrap usp-icon-gem"></div>
+        <h3 class="usp-title" data-lang-en="Affordable Premium Quality" data-lang-pl="Przystępna jakość premium">Affordable Premium Quality</h3>
+        <p class="usp-desc" data-lang-en="Professional output without agency pricing. Built for SMEs that want to look like market leaders without overpaying." data-lang-pl="Profesjonalne efekty bez agencyjnych cen. Stworzone dla MŚP chcących wyglądać jak liderzy rynku.">Professional output without agency pricing. Built for SMEs that want to look like market leaders without overpaying.</p>
+      </article>
+      <article class="usp-card reveal">
+        <div class="usp-icon-wrap usp-icon-globe"></div>
+        <h3 class="usp-title" data-lang-en="Cross-Cultural Understanding" data-lang-pl="Rozumienie rynków">Cross-Cultural Understanding</h3>
+        <p class="usp-desc" data-lang-en="African markets meet European standards. We build solutions that resonate with diverse audiences across continents." data-lang-pl="Rynki afrykańskie spotkały się z europejskimi standardami. Rozwiązania dla zróżnicowanych odbiorców.">African markets meet European standards. We build solutions that resonate with diverse audiences across continents.</p>
+      </article>
+      <article class="usp-card reveal reveal-delay-1">
+        <div class="usp-icon-wrap usp-icon-handshake"></div>
+        <h3 class="usp-title" data-lang-en="Personalized Service" data-lang-pl="Spersonalizowana obsługa">Personalized Service</h3>
+        <p class="usp-desc" data-lang-en="You work directly with the founder. No layers of management, no middlemen, no lost communication. Your project, our full priority." data-lang-pl="Pracujesz bezpośrednio z założycielem. Bez biurokracji. Twój projekt — nasz pełny priorytet.">You work directly with the founder. No layers of management, no middlemen, no lost communication.</p>
+      </article>
+      <article class="usp-card reveal reveal-delay-2">
+        <div class="usp-icon-wrap usp-icon-shield"></div>
+        <h3 class="usp-title" data-lang-en="Lion-Based Brand Trust" data-lang-pl="Marka oparta na zaufaniu">Lion-Based Brand Trust</h3>
+        <p class="usp-desc" data-lang-en="Strong symbolic identity. Memorable. Professional. The shield in our logo stands for protection of client business interests." data-lang-pl="Silna, symboliczna tożsamość. Niezapomniana. Profesjonalna. Tarcza w logo oznacza ochronę interesów biznesowych klientów.">Strong symbolic identity. Memorable. Professional. The shield in our logo stands for protection of client business interests.</p>
+      </article>
+      <article class="usp-card reveal">
+        <div class="usp-icon-wrap usp-icon-barchart"></div>
+        <h3 class="usp-title" data-lang-en="Business + Tech Perspective" data-lang-pl="Biznes + perspektywa IT">Business + Tech Perspective</h3>
+        <p class="usp-desc" data-lang-en="Management + IT background means we understand outcomes, not just code. Your website is a business tool, not a portfolio piece." data-lang-pl="Zarządzanie + IT: rozumiemy wyniki, nie tylko kod. Twoja strona to narzędzie do osiągania celów.">Management + IT background means we understand outcomes, not just code. Your website is a business tool, not a portfolio piece.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-<div class="container" id="main">
+<!-- ══════════════ ABOUT SNIPPET ══════════════ -->
+<section id="about-snippet" class="section section-alt" aria-labelledby="about-snippet-title">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <!-- Place founder photo at assets/img/founder/daniel.jpg -->
+        <img src="assets/img/founder/daniel.jpg" alt="Daniel Kamanga – TaffyDevs Founder" class="about-photo-wrap"
+             onerror="this.outerHTML='<div class=\'about-photo-placeholder\'><svg class=\'icon\' style=\'width:64px;height:64px\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\'><path d=\'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\'/><circle cx=\'12\' cy=\'7\' r=\'4\'/></svg></div>'">
+        <h3 class="about-name">Daniel Kamanga</h3>
+        <p class="about-role" data-lang-en="Founder · Web Designer · Developer" data-lang-pl="Założyciel · Web Designer · Developer">Founder · Web Designer · Developer</p>
+        <p class="about-bio" data-lang-en="I combine management knowledge with a passion for technology, building digital solutions that actually work for small and medium businesses. Every project is treated as my own." data-lang-pl="Łączę wiedzę z zarządzania z pasją do technologii, budując cyfrowe rozwiązania, które naprawdę działają dla MŚP. Każdy projekt traktuję jak własny.">I combine management knowledge with a passion for technology, building digital solutions that actually work for small and medium businesses. Every project is treated as my own.</p>
+        <div class="about-markets">
+          <span class="market-tag">🇵🇱 Poland</span>
+          <span class="market-tag">🇿🇼 Zimbabwe</span>
+          <span class="market-tag">🇬🇧 UK</span>
+          <span class="market-tag">🇪🇺 Europe</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="assets/cv.pdf" class="cv-btn" download>
+            <span id="icon-dl"></span>
+            <span data-lang-en="Download CV" data-lang-pl="Pobierz CV">Download CV</span>
+          </a>
+          <a href="pages/about.html" class="btn-outline" style="padding:11px 20px;font-family:var(--font-ui);font-size:0.78rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--primary);border-color:var(--primary);">
+            <span data-lang-en="Full Bio" data-lang-pl="Pełne bio">Full Bio</span>
+          </a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <header class="section-header" style="text-align:left;margin-bottom:28px;">
+          <span class="section-eyebrow" data-lang-en="Founder & Developer" data-lang-pl="Founder & Developer">Founder & Developer</span>
+          <h2 class="section-title" id="about-snippet-title" data-lang-en="Behind every project is <em>a person on a mission</em>" data-lang-pl="Za każdym projektem stoi <em>człowiek z misją</em>">Behind every project is <em>a person on a mission</em></h2>
+        </header>
+        <div class="skills-grid">
+          <div class="skill-item"><div class="skill-label">Web Development</div><div class="skill-impact" data-lang-en="Sites that load fast and convert visitors into clients." data-lang-pl="Strony ładujące się szybko, konwertujące odwiedzających w klientów.">Sites that load fast and convert visitors into clients.</div></div>
+          <div class="skill-item"><div class="skill-label">UI/UX Design</div><div class="skill-impact" data-lang-en="Interfaces that guide users to desired actions naturally." data-lang-pl="Interfejsy prowadzące użytkowników do pożądanych działań w naturalny sposób.">Interfaces that guide users to desired actions naturally.</div></div>
+          <div class="skill-item"><div class="skill-label">Branding</div><div class="skill-impact" data-lang-en="Brands that build trust and stick in memory across markets." data-lang-pl="Marki budujące zaufanie i pozostające w pamięci na wielu rynkach.">Brands that build trust and stick in memory across markets.</div></div>
+          <div class="skill-item"><div class="skill-label">Graphic Design</div><div class="skill-impact" data-lang-en="Visuals that make your business look like the leader." data-lang-pl="Materiały wizualne sprawiające, że Twoja firma wygląda jak lider.">Visuals that make your business look like the leader.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<img src="logo.png" class="logo">
+<!-- ══════════════ PROCESS SNIPPET ══════════════ -->
+<section id="process" class="section" aria-labelledby="process-title">
+  <div class="section-inner">
+    <header class="section-header">
+      <span class="section-eyebrow" data-lang-en="How we work" data-lang-pl="Jak pracujemy">How we work</span>
+      <h2 class="section-title" id="process-title" data-lang-en="Clear process. <em>Predictable results.</em>" data-lang-pl="Przejrzysty proces. <em>Przewidywalny wynik.</em>">Clear process. <em>Predictable results.</em></h2>
+    </header>
+    <div class="process-timeline reveal" role="list">
+      <div class="process-step" role="listitem">
+        <div class="process-num">01</div>
+        <div><div class="process-title" data-lang-en="Kickoff" data-lang-pl="Kickoff">Kickoff</div><p class="process-desc" data-lang-en="Book a package, confirm scope, sign agreement." data-lang-pl="Zamów pakiet, potwierdź zakres, podpisz umowę.">Book a package, confirm scope, sign agreement.</p><span class="process-payment-note" data-lang-en="Payment #1" data-lang-pl="Płatność #1">Payment #1</span></div>
+      </div>
+      <div class="process-step" role="listitem">
+        <div class="process-num">02</div>
+        <div><div class="process-title">Design</div><p class="process-desc" data-lang-en="Wireframes & visual concepts for your approval." data-lang-pl="Wireframy i koncepcje wizualne do Twojej akceptacji.">Wireframes & visual concepts for your approval.</p></div>
+      </div>
+      <div class="process-step" role="listitem">
+        <div class="process-num">03</div>
+        <div><div class="process-title">Development</div><p class="process-desc" data-lang-en="Clean code built to spec with regular updates." data-lang-pl="Czysty kod zgodnie ze specyfikacją z regularnymi aktualizacjami.">Clean code built to spec with regular updates.</p><span class="process-payment-note" data-lang-en="Payment #2" data-lang-pl="Płatność #2">Payment #2</span></div>
+      </div>
+      <div class="process-step" role="listitem">
+        <div class="process-num">04</div>
+        <div><div class="process-title">Review</div><p class="process-desc" data-lang-en="You test everything. Agreed revisions applied." data-lang-pl="Testujesz wszystko. Uzgodnione poprawki wprowadzane.">You test everything. Agreed revisions applied.</p></div>
+      </div>
+      <div class="process-step" role="listitem">
+        <div class="process-num">05</div>
+        <div><div class="process-title">Delivery</div><p class="process-desc" data-lang-en="Site goes live. Files, credentials, docs delivered." data-lang-pl="Strona wychodzi na żywo. Pliki i dokumentacja dostarczone.">Site goes live. Files, credentials, docs delivered.</p><span class="process-payment-note" data-lang-en="Payment #3" data-lang-pl="Płatność #3">Payment #3</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="tagline">Website and WordPress Designer / Developer</div>
+<!-- ══════════════ PORTFOLIO PREVIEW ══════════════ -->
+<section id="portfolio-preview" class="section section-alt">
+  <div class="section-inner">
+    <header class="section-header">
+      <span class="section-eyebrow" data-lang-en="Recent Work" data-lang-pl="Ostatnie projekty">Recent Work</span>
+      <h2 class="section-title" data-lang-en="Websites that <em>work for your clients</em>" data-lang-pl="Strony, które <em>pracują dla Twoich klientów</em>">Websites that <em>work for your clients</em></h2>
+    </header>
+    <div class="portfolio-grid">
+      <article class="portfolio-card reveal">
+        <!-- Place screenshot at assets/img/portfolio/websites/juam.jpg -->
+        <div class="portfolio-thumb">
+          <img src="assets/img/portfolio/websites/juam-logo.png" alt="JUAM Corporate Services website" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'portfolio-thumb-placeholder\' style=\'background:linear-gradient(135deg,#1A3A6B,#2E5FA3)\'><svg class=\'icon\' style=\'width:36px;height:36px;color:#fff;opacity:.5\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg></div>'">
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-name">JUAM Corporate Services</h3>
+          <p class="portfolio-desc" data-lang-en="Corporate services firm in Poland. Increased credibility and lead conversion." data-lang-pl="Firma usług korporacyjnych w Polsce. Zwiększenie wiarygodności i konwersji zapytań.">Corporate services firm in Poland. Increased credibility and lead conversion.</p>
+          <a href="https://juamcorporateservices.pl/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+            <span data-lang-en="Visit site" data-lang-pl="Zobacz stronę">Visit site</span>
+            <span id="icon-ext-1"></span>
+          </a>
+        </div>
+      </article>
+      <article class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-thumb">
+          <img src="assets/img/portfolio/websites/bporbf-logo.png" alt="Phenomenal Wear website" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'portfolio-thumb-placeholder\' style=\'background:linear-gradient(135deg,#1A0020,#7B0090)\'><svg class=\'icon\' style=\'width:36px;height:36px;color:#fff;opacity:.5\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg></div>'">
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-name">Phenomenal Wear</h3>
+          <p class="portfolio-desc" data-lang-en="Fashion e-commerce in Poland. Modern aesthetics driving increased online sales." data-lang-pl="Sklep e-commerce dla marki modowej w Polsce. Nowoczesna estetyka przekładająca się na wzrost sprzedaży.">Fashion e-commerce in Poland. Modern aesthetics driving increased online sales.</p>
+          <a href="https://phenomenalwear.pl/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+            <span data-lang-en="Visit site" data-lang-pl="Zobacz stronę">Visit site</span>
+            <span id="icon-ext-2"></span>
+          </a>
+        </div>
+      </article>
+      <article class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-thumb">
+          <img src="assets/img/portfolio/websites/buildhive-logo.png" alt="BuildHive website" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'portfolio-thumb-placeholder\' style=\'background:linear-gradient(135deg,#001A08,#006B28)\'><svg class=\'icon\' style=\'width:36px;height:36px;color:#fff;opacity:.5\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg></div>'">
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-name">BuildHive</h3>
+          <p class="portfolio-desc" data-lang-en="Construction industry platform in Zimbabwe. European UX standards for the local market." data-lang-pl="Platforma dla branży budowlanej w Zimbabwe. Europejskie standardy UX dla lokalnego rynku.">Construction industry platform in Zimbabwe. European UX standards for the local market.</p>
+          <a href="https://www.buildhive.co.zw/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+            <span data-lang-en="Visit site" data-lang-pl="Zobacz stronę">Visit site</span>
+            <span id="icon-ext-3"></span>
+          </a>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="pages/portfolio.html" class="btn-primary" style="display:inline-flex;">
+        <span data-lang-en="View All Projects" data-lang-pl="Zobacz wszystkie projekty">View All Projects</span>
+        <span id="icon-arr-r2"></span>
+      </a>
+    </div>
+  </div>
+</section>
 
-<div class="icon">🚧</div>
+<!-- ══════════════ PRICING PREVIEW ══════════════ -->
+<section id="pricing-preview" class="section">
+  <div class="section-inner">
+    <header class="section-header">
+      <span class="section-eyebrow" data-lang-en="Services & Packages" data-lang-pl="Usługi i pakiety">Services & Packages</span>
+      <h2 class="section-title" data-lang-en="Transparent pricing. <em>Zero surprises.</em>" data-lang-pl="Przejrzyste ceny. <em>Zero niespodzianek.</em>">Transparent pricing. <em>Zero surprises.</em></h2>
+    </header>
+    <div class="pricing-grid" style="max-width:900px;margin:0 auto;">
+      <article class="pricing-card reveal">
+        <div class="pricing-tier">Lite</div>
+        <div class="pricing-price" data-pln="250" data-eur="60" data-usd="63"><sup>€</sup>60</div>
+        <div class="pricing-delivery"><span id="icon-clock-1"></span> <span data-lang-en="3–5 working days" data-lang-pl="3–5 dni roboczych">3–5 working days</span></div>
+        <div class="pricing-payment"><span id="icon-cc-1"></span> <span data-lang-en="100% upfront" data-lang-pl="100% z góry">100% upfront</span></div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="feat-check" id="icon-chk-1a"></span><span data-lang-en="One-page website" data-lang-pl="Strona jednostronicowa">One-page website</span></li>
+          <li><span class="feat-check" id="icon-chk-1b"></span><span data-lang-en="Mobile-first responsive" data-lang-pl="Mobile-first responsive">Mobile-first responsive</span></li>
+          <li><span class="feat-check" id="icon-chk-1c"></span><span data-lang-en="Contact form" data-lang-pl="Formularz kontaktowy">Contact form</span></li>
+          <li><span class="feat-check" id="icon-chk-1d"></span><span data-lang-en="Basic SEO" data-lang-pl="Podstawowe SEO">Basic SEO</span></li>
+        </ul>
+        <a href="pages/booking.html" class="pricing-cta outline" data-lang-en="Book Lite" data-lang-pl="Zamów Lite">Book Lite</a>
+      </article>
+      <article class="pricing-card popular reveal reveal-delay-1">
+        <span class="popular-badge" data-lang-en="Most Popular" data-lang-pl="Najpopularniejszy">Most Popular</span>
+        <div class="pricing-tier">Standard</div>
+        <div class="pricing-price" data-pln="800" data-eur="190" data-usd="200"><sup>€</sup>190</div>
+        <div class="pricing-delivery"><span id="icon-clock-2"></span> <span data-lang-en="7–10 working days" data-lang-pl="7–10 dni roboczych">7–10 working days</span></div>
+        <div class="pricing-payment"><span id="icon-cc-2"></span> <span data-lang-en="40% / 30% / 30%" data-lang-pl="40% / 30% / 30%">40% / 30% / 30%</span></div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="feat-check" id="icon-chk-2a"></span><span data-lang-en="Up to 10 pages" data-lang-pl="Do 10 podstron">Up to 10 pages</span></li>
+          <li><span class="feat-check" id="icon-chk-2b"></span><span data-lang-en="CMS / easy editing" data-lang-pl="CMS / łatwa edycja">CMS / easy editing</span></li>
+          <li><span class="feat-check" id="icon-chk-2c"></span><span data-lang-en="Advanced SEO + Analytics" data-lang-pl="Zaawansowane SEO + Analytics">Advanced SEO + Analytics</span></li>
+          <li><span class="feat-check" id="icon-chk-2d"></span><span data-lang-en="3 rounds of revisions" data-lang-pl="3 rundy poprawek">3 rounds of revisions</span></li>
+          <li><span class="feat-check" id="icon-chk-2e"></span><span data-lang-en="60-day support" data-lang-pl="60 dni wsparcia">60-day support</span></li>
+        </ul>
+        <a href="pages/booking.html" class="pricing-cta" data-lang-en="Book Standard" data-lang-pl="Zamów Standard">Book Standard</a>
+      </article>
+      <article class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-tier">Premium</div>
+        <div class="pricing-price" data-pln="2400" data-eur="571" data-usd="600"><sup>€</sup>571+</div>
+        <div class="pricing-delivery"><span id="icon-clock-3"></span> <span data-lang-en="10–14+ working days" data-lang-pl="10–14+ dni roboczych">10–14+ working days</span></div>
+        <div class="pricing-payment"><span id="icon-cc-3"></span> <span data-lang-en="40% / 30% / 30%" data-lang-pl="40% / 30% / 30%">40% / 30% / 30%</span></div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="feat-check" id="icon-chk-3a"></span><span data-lang-en="Unlimited pages" data-lang-pl="Nielimitowane podstrony">Unlimited pages</span></li>
+          <li><span class="feat-check" id="icon-chk-3b"></span><span data-lang-en="E-commerce / online store" data-lang-pl="E-commerce / sklep">E-commerce / online store</span></li>
+          <li><span class="feat-check" id="icon-chk-3c"></span><span data-lang-en="Custom API integrations" data-lang-pl="Integracje API">Custom API integrations</span></li>
+          <li><span class="feat-check" id="icon-chk-3d"></span><span data-lang-en="Unlimited revisions" data-lang-pl="Nielimitowane poprawki">Unlimited revisions</span></li>
+          <li><span class="feat-check" id="icon-chk-3e"></span><span data-lang-en="90-day premium support" data-lang-pl="90 dni wsparcia">90-day premium support</span></li>
+        </ul>
+        <a href="pages/booking.html" class="pricing-cta outline" data-lang-en="Book Premium" data-lang-pl="Zamów Premium">Book Premium</a>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="pages/services.html" style="font-family:var(--font-ui);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);display:inline-flex;align-items:center;gap:6px;" data-lang-en="See all packages & graphic design pricing" data-lang-pl="Zobacz wszystkie pakiety i cennik grafiki">See all packages & graphic design pricing</a>
+    </div>
+  </div>
+</section>
 
-<div class="typing" id="typing"></div>
+</main>
 
-<div class="build-progress">
-<div class="build-bar"></div>
-</div>
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer id="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/img/logos/logo-dark.png" alt="TaffyDevs" class="footer-logo footer-logo-img" loading="lazy"
+             onerror="this.outerHTML='<div style=\'font-family:var(--font-heading);font-size:1rem;font-weight:800;color:#FFF;margin-bottom:13px;\'>TaffyDevs</div>'">
+        <p class="footer-tagline" data-lang-en="Solving Everyday Problems with IT Solutions. Poland · Zimbabwe · UK · Europe." data-lang-pl="Rozwiązujemy codzienne problemy poprzez IT. Polska · Zimbabwe · UK · Europa.">Solving Everyday Problems with IT Solutions. Poland · Zimbabwe · UK · Europe.</p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><span id="icon-yt"></span></a>
+          <a href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub"><span id="icon-gh"></span></a>
+          <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><span id="icon-li"></span></a>
+          <a href= target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="X/Twitter"><span id="icon-tw"></span></a>
+          <a href="mailto:taffydevs@gmail.com" class="footer-social-btn" aria-label="Email"><span id="icon-ml"></span></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-lang-en="Navigation" data-lang-pl="Nawigacja">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
+          <li><a href="pages/about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
+          <li><a href="pages/services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li>
+          <li><a href="pages/portfolio.html">Portfolio</a></li>
+          <li><a href="pages/blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-lang-en="Services" data-lang-pl="Usługi">Services</div>
+        <ul class="footer-links">
+          <li><a href="pages/services.html" data-lang-en="Web Development" data-lang-pl="Strony www">Web Development</a></li>
+          <li><a href="pages/services.html" data-lang-en="Graphic Design" data-lang-pl="Grafika & Logo">Graphic Design</a></li>
+          <li><a href="pages/services.html">Branding</a></li>
+          <li><a href="pages/booking.html" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:+48600762551">+48 600 762 551</a></li>
+          <li><a href="mailto:taffydevs@gmail.com">taffydevs@gmail.com</a></li>
+          <li><a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer">@TaffyDevs</a></li>
+          <li><a href="pages/contact.html" data-lang-en="Contact page" data-lang-pl="Strona kontaktu">Contact page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-lang-en="© 2025 TaffyDevs. All rights reserved. Designed by Daniel Kamanga." data-lang-pl="© 2025 TaffyDevs. Wszelkie prawa zastrzeżone. Zaprojektowane przez Daniela Kamangę.">© 2025 TaffyDevs. All rights reserved. Designed by Daniel Kamanga.</p>
+      <div class="lang-toggle" role="group" aria-label="Language switcher">
+        <span class="lang-lbl lang-lbl-pl" id="footer-lbl-pl">PL</span>
+        <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div>
+        <span class="lang-lbl lang-lbl-en active" id="footer-lbl-en">EN</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<div class="contact">
-
-<p>Our website is currently under construction.</p>
-<p>Need a website or digital solution?</p>
-
-<div class="buttons">
-
-<a class="btn whatsapp"
-href="https://wa.me/48600762551"
-target="_blank">
-WhatsApp Us
-</a>
-
-<a class="btn email"
-href="mailto:taffythedev@gmail.com">
-Email Us
-</a>
-
-</div>
-
-</div>
-
-<div class="socials">
-
-<a href="https://youtube.com" target="_blank">YouTube</a>
-
-<a href="https://github.com" target="_blank">GitHub</a>
-
-<a href="https://linkedin.com" target="_blank">LinkedIn</a>
-
-</div>
-
-<div class="footer">
-© 2026 TaffyDevs — Building Powerful Websites
-</div>
-
-</div>
-
+<script src="js/main.js"></script>
 <script>
+// Inject SVG icons after DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  const inject = (id, name, cls='') => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = ICONS[name]?.replace('<svg ', `<svg class="icon ${cls}" `) || '';
+  };
+  inject('icon-arrow-r','arrowright','icon-sm');
+  inject('icon-arrow-d','arrowright'); // reuse rotated via CSS if needed
+  inject('icon-dl','download','icon-sm');
+  inject('icon-ext-1','externallink','icon-sm');
+  inject('icon-ext-2','externallink','icon-sm');
+  inject('icon-ext-3','externallink','icon-sm');
+  inject('icon-arr-r2','arrowright','icon-sm');
+  inject('icon-clock-1','clock','icon-sm'); inject('icon-clock-2','clock','icon-sm'); inject('icon-clock-3','clock','icon-sm');
+  inject('icon-cc-1','creditcard','icon-sm'); inject('icon-cc-2','creditcard','icon-sm'); inject('icon-cc-3','creditcard','icon-sm');
+  ['1a','1b','1c','1d','2a','2b','2c','2d','2e','3a','3b','3c','3d','3e'].forEach(s => inject('icon-chk-'+s,'check','icon-sm'));
+  inject('icon-yt','youtube'); inject('icon-gh','github'); inject('icon-li','linkedin'); inject('icon-ml','mail');
 
-/* LOADER */
+  // USP icons
+  const uspIcons = { target:'target', zap:'zap', gem:'gem', globe:'globe', handshake:'shield', shield:'shield', barchart:'barchart' };
+  document.querySelectorAll('[class*="usp-icon-"]').forEach(el => {
+    const cls = [...el.classList].find(c => c.startsWith('usp-icon-') && c !== 'usp-icon-wrap');
+    if (!cls) return;
+    const name = cls.replace('usp-icon-', '');
+    el.innerHTML = ICONS[name]?.replace('<svg ', `<svg class="icon icon-lg" `) || '';
+  });
+});
 
-setTimeout(()=>{
-document.getElementById("loader").style.display="none"
-document.getElementById("main").style.display="block"
-},3000)
-
-/* TYPING EFFECT */
-
-const text="We're building something powerful for you..."
-let i=0
-
-function type(){
-
-if(i<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(i)
-i++
-setTimeout(type,60)
-}
-
-}
-
-type()
-
-/* PARTICLES */
-
-const canvas=document.getElementById("particles")
-const ctx=canvas.getContext("2d")
-
-canvas.width=window.innerWidth
-canvas.height=window.innerHeight
-
-let particles=[]
-
-for(let i=0;i<60;i++){
-
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*2,
-d:Math.random()*1
-})
-
-}
-
-function draw(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height)
-
-ctx.fillStyle="#1ea3ff"
-
-particles.forEach(p=>{
-ctx.beginPath()
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true)
-ctx.fill()
-})
-
-update()
-
-}
-
-function update(){
-
-particles.forEach(p=>{
-p.y+=p.d
-if(p.y>canvas.height){
-p.y=0
-p.x=Math.random()*canvas.width
-}
-})
-
-}
-
-setInterval(draw,30)
-
+// Scroll-down arrow (rotated)
+document.getElementById('icon-arrow-d').style.transform = 'rotate(90deg)';
 </script>
-
 </body>
 </html>
