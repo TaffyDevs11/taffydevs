@@ -130,7 +130,7 @@ Cover/hero images for blog articles. Also YouTube video thumbnails.
 **Article covers:**
 | File | Article |
 |------|---------|
-| `website-2025.jpg` | Why Your Business Needs a Website in 2025 |
+| `website-2025.jpg` | Why Your Business Needs a Website in 2026 |
 | `conversion-mistakes.jpg` | 5 Mistakes Killing Your Conversion |
 | `africa-europe-digital.jpg` | Digital Transformation for African Business |
 | `seo-small-business.jpg` | SEO for Small Businesses |

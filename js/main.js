@@ -142,6 +142,11 @@ function initNav() {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLang(); }
     });
   });
+
+  document.querySelectorAll('.nav-social-icon[data-icon]').forEach(el => {
+    const name = el.dataset.icon;
+    if (ICONS[name]) el.innerHTML = icon(name, 'icon-sm');
+  });
 }
 
 /* ── SCROLL REVEAL ──────────────────────────────────────────── */
@@ -189,7 +194,7 @@ function initCurrency() {
 function initBooking() {
   let step = 1;
   const TOTAL = 6;
-  let bookingEmailOpened = false;
+  let bookingEmailSent = false;
 
   function updateProgress() {
     document.querySelectorAll('.progress-step').forEach((s, i) => {
@@ -219,10 +224,13 @@ function initBooking() {
 
   const nextBtn = document.getElementById('booking-next');
   const prevBtn = document.getElementById('booking-prev');
-  if (nextBtn) nextBtn.addEventListener('click', () => {
-    if (step === TOTAL - 1 && !bookingEmailOpened) {
-      if (!sendBookingEmails()) return;
-      bookingEmailOpened = true;
+  if (nextBtn) nextBtn.addEventListener('click', async () => {
+    if (step === TOTAL - 1 && !bookingEmailSent) {
+      nextBtn.disabled = true;
+      const sent = await sendBookingEmails();
+      nextBtn.disabled = false;
+      if (!sent) return;
+      bookingEmailSent = true;
     }
     if (step < TOTAL) {
       step++;
@@ -237,7 +245,7 @@ function initBooking() {
     const item = e.target.closest('.form-check-item');
     if (!item) return;
     const g = item.dataset.group; if (!g) return;
-    const single = ['service-type', 'goal', 'pay-currency', 'payment-method', 'content-ready'];
+    const single = ['service-type', 'goal', 'strategy-call', 'pay-currency', 'payment-method', 'content-ready'];
     if (single.includes(g)) document.querySelectorAll(`.form-check-item[data-group="${g}"]`).forEach(i => i.classList.remove('selected'));
     item.classList.toggle('selected');
   });
@@ -248,12 +256,17 @@ function initBooking() {
     if (!card) return;
     document.querySelectorAll('.pkg-card').forEach(c => c.classList.remove('selected'));
     card.classList.add('selected');
-    const prices = { lite: 250, starter: 320, standard: 800, premium: 2400 };
+    const prices = {
+      lite: '€60 / 250 zł / $63',
+      starter: '€76 / 320 zł / $80',
+      standard: '€190 / 800 zł / $200',
+      premium: '€571+ / 2400+ zł / $600+'
+    };
     const p = card.dataset.pkg;
     const price = prices[p];
     const sp = document.getElementById('summary-pkg');
     const sd = document.getElementById('summary-deposit');
-    if (sp) sp.textContent = p.charAt(0).toUpperCase() + p.slice(1) + ' — ' + price + ' zł';
+    if (sp) sp.textContent = p.charAt(0).toUpperCase() + p.slice(1) + ' — ' + price;
     if (sd) sd.textContent = currentLang === 'pl'
       ? 'Faktura zostanie przygotowana na podstawie szczegółów rezerwacji.'
       : 'Invoice will be prepared from the booking details.';
@@ -285,67 +298,76 @@ function selectedPackageDetails() {
   };
 }
 
-function bookingEmailBody() {
+function bookingPayload() {
   const pkg = selectedPackageDetails();
-  const lines = [
-    'Booking confirmation and invoice',
-    '',
-    'This booking was received by TaffyDevs.',
-    '',
-    'Package: ' + pkg.tier,
-    'Price: ' + pkg.priceText,
-    'Preferred currency: ' + selectedValues('pay-currency'),
-    'Chosen payment method: ' + selectedValues('payment-method'),
-    '',
-    'Client details',
-    'Full name: ' + fieldValue('pay-name'),
-    'Email: ' + fieldValue('pay-email'),
-    'Phone: ' + fieldValue('pay-phone'),
-    'WhatsApp: ' + fieldValue('pay-whatsapp'),
-    '',
-    'Project details',
-    'Service type: ' + selectedValues('service-type'),
-    'Business name: ' + fieldValue('biz-name'),
-    'Industry: ' + fieldValue('biz-industry'),
-    'Business description: ' + fieldValue('biz-desc'),
-    'Target clients: ' + fieldValue('biz-audience'),
-    'Main goal: ' + selectedValues('goal'),
-    'Current website: ' + fieldValue('existing-url'),
-    'Preferred timeline: ' + fieldValue('launch-time'),
-    '',
-    'Design preferences',
-    'Visual style: ' + selectedValues('style'),
-    'Websites they like: ' + fieldValue('inspiration'),
-    'Competitors: ' + fieldValue('competitors'),
-    'Preferred / avoided colours: ' + fieldValue('colors-pref'),
-    'Features needed: ' + selectedValues('features'),
-    '',
-    'Files and content',
-    'Logo file: ' + fieldValue('logo-upload'),
-    'Photos/images: ' + fieldValue('photos-upload'),
-    'Written content ready: ' + selectedValues('content-ready'),
-    'Other files: ' + fieldValue('extra-files'),
-    'Additional notes: ' + fieldValue('extra-notes'),
-    '',
-    'TaffyDevs contact: taffydevs@gmail.com'
-  ];
-  return lines.join('\n');
+  return {
+    package: pkg.tier,
+    price: pkg.priceText,
+    currency: selectedValues('pay-currency'),
+    paymentMethod: selectedValues('payment-method'),
+    fullName: fieldValue('pay-name'),
+    email: fieldValue('pay-email'),
+    phone: fieldValue('pay-phone'),
+    whatsapp: fieldValue('pay-whatsapp'),
+    serviceType: selectedValues('service-type'),
+    businessName: fieldValue('biz-name'),
+    industry: fieldValue('biz-industry'),
+    businessDescription: fieldValue('biz-desc'),
+    targetClients: fieldValue('biz-audience'),
+    mainGoal: selectedValues('goal'),
+    currentWebsite: fieldValue('existing-url'),
+    preferredTimeline: fieldValue('launch-time'),
+    strategyCall: selectedValues('strategy-call'),
+    visualStyle: selectedValues('style'),
+    inspiration: fieldValue('inspiration'),
+    competitors: fieldValue('competitors'),
+    colours: fieldValue('colors-pref'),
+    features: selectedValues('features'),
+    logoFile: fieldValue('logo-upload'),
+    photosFiles: fieldValue('photos-upload'),
+    contentReady: selectedValues('content-ready'),
+    otherFiles: fieldValue('extra-files'),
+    additionalNotes: fieldValue('extra-notes')
+  };
 }
 
-function sendBookingEmails() {
-  const respondentEmail = fieldValue('pay-email');
+async function sendBookingEmails() {
+  const payload = bookingPayload();
+  const respondentEmail = payload.email;
   if (respondentEmail === 'N/A' || !respondentEmail.includes('@')) {
     alert(currentLang === 'pl' ? 'Dodaj poprawny adres email.' : 'Please add a valid email address.');
     return false;
   }
+  if (payload.fullName === 'N/A') {
+    alert(currentLang === 'pl' ? 'Dodaj imię i nazwisko.' : 'Please add your full name.');
+    return false;
+  }
 
-  const ownerEmail = 'taffydevs@gmail.com'; // replace here
-  const to = `${ownerEmail},${respondentEmail}`; // replace here
-  const subject = encodeURIComponent('TaffyDevs booking confirmation and invoice');
-  const body = encodeURIComponent(bookingEmailBody());
+  try {
+    const formData = new FormData();
+    Object.entries(payload).forEach(([key, value]) => formData.append(key, value));
+    ['logo-upload', 'photos-upload', 'extra-files'].forEach(id => {
+      const input = document.getElementById(id);
+      if (!input?.files?.length) return;
+      [...input.files].forEach(file => formData.append('booking_files[]', file));
+    });
 
-  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-  return true;
+    const response = await fetch('../backend/send-booking.php', {
+      method: 'POST',
+      body: formData
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) {
+      throw new Error(result.message || 'Booking email failed.');
+    }
+    return true;
+  } catch (error) {
+    console.error(error);
+    alert(currentLang === 'pl'
+      ? 'Nie udało się wysłać rezerwacji. Spróbuj ponownie lub napisz na taffydevs@gmail.com.'
+      : 'Could not send the booking. Please try again or email taffydevs@gmail.com.');
+    return false;
+  }
 }
 
 /* ── CONTACT FORM ───────────────────────────────────────────── */

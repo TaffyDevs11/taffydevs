@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book a Package – TaffyDevs</title>
+ <link rel="icon" href="assets/img/logos/logo-blue.png"/>
 <meta name="description" content="Book a web design or graphic design package with TaffyDevs. 6-step project order form. Clear pricing, no surprises.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -35,6 +36,12 @@
       <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div>
       <span class="lang-lbl lang-lbl-en active">EN</span>
     </div>
+    <div class="nav-socials" aria-label="Social links">
+      <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="nav-social-btn" aria-label="YouTube"><span class="nav-social-icon" data-icon="youtube"></span></a>
+      <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" target="_blank" rel="noopener noreferrer" class="nav-social-btn" aria-label="LinkedIn"><span class="nav-social-icon" data-icon="linkedin"></span></a>
+      <a href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer" class="nav-social-btn" aria-label="GitHub"><span class="nav-social-icon" data-icon="github"></span></a>
+    </div>
+    <a href="contact.html" class="nav-cta" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -46,6 +53,7 @@
     <a href="portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a>
     <a href="blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a>
     <a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a>
+    <a href="contact.html" class="nav-cta" style="text-align:center;margin-top:8px;" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a>
   </nav>
 </header>
 
@@ -106,22 +114,22 @@
             <div class="pkg-grid">
               <div class="pkg-card" data-pkg="lite">
                 <div class="pkg-name">Lite</div>
-                <div class="pkg-price">€60 <span style="font-size:0.72rem;font-family:var(--font-ui);font-weight:500;color:var(--text-muted);">/ 250 zł</span></div>
+                <div class="pkg-price">€60 <span style="font-size:0.72rem;font-family:var(--font-ui);font-weight:500;color:var(--text-muted);">/ 250 zł / $63</span></div>
                 <div class="pkg-desc" data-lang-en="One-page · 3–5 days · 100% upfront" data-lang-pl="Jednostronicowa · 3–5 dni · 100% z góry">One-page · 3–5 days · 100% upfront</div>
               </div>
               <div class="pkg-card" data-pkg="starter">
                 <div class="pkg-name">Starter</div>
-                <div class="pkg-price">€76 <span style="font-size:0.72rem;font-family:var(--font-ui);font-weight:500;color:var(--text-muted);">/ 320 zł</span></div>
+                <div class="pkg-price">€76 <span style="font-size:0.72rem;font-family:var(--font-ui);font-weight:500;color:var(--text-muted);">/ 320 zł / $80</span></div>
                 <div class="pkg-desc" data-lang-en="Up to 5 pages · 5–7 days · 50/50" data-lang-pl="Do 5 podstron · 5–7 dni · 50/50">Up to 5 pages · 5–7 days · 50/50</div>
               </div>
               <div class="pkg-card selected" data-pkg="standard">
                 <div class="pkg-name">Standard ⭐</div>
-                <div class="pkg-price">€190 <span style="font-size:0.72rem;font-family:var(--font-ui);font-weight:500;color:var(--text-muted);">/ 800 zł</span></div>
+                <div class="pkg-price">€190 <span style="font-size:0.72rem;font-family:var(--font-ui);font-weight:500;color:var(--text-muted);">/ 800 zł / $200</span></div>
                 <div class="pkg-desc" data-lang-en="Up to 10 pages · 7–10 days · 40/30/30" data-lang-pl="Do 10 podstron · 7–10 dni · 40/30/30">Up to 10 pages · 7–10 days · 40/30/30</div>
               </div>
               <div class="pkg-card" data-pkg="premium">
                 <div class="pkg-name">Premium</div>
-                <div class="pkg-price">€571+ <span style="font-size:0.72rem;font-family:var(--font-ui);font-weight:500;color:var(--text-muted);">/ 2400+ zł</span></div>
+                <div class="pkg-price">€571+ <span style="font-size:0.72rem;font-family:var(--font-ui);font-weight:500;color:var(--text-muted);">/ 2400+ zł / $600+</span></div>
                 <div class="pkg-desc" data-lang-en="Full project · 10–14+ days · 40/30/30" data-lang-pl="Pełny projekt · 10–14+ dni · 40/30/30">Full project · 10–14+ days · 40/30/30</div>
               </div>
             </div>
@@ -188,6 +196,16 @@
                 <option value="2-3" data-lang-en="2–3 months" data-lang-pl="2–3 miesiące">2–3 months</option>
                 <option value="flex" data-lang-en="Flexible" data-lang-pl="Elastycznie">Flexible</option>
               </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-lang-en="Would you like a call?" data-lang-pl="Czy chcesz rozmowę?">Would you like a call?</label>
+            <div class="form-check-group">
+              <div class="form-check-item selected" data-group="strategy-call" data-value="Strategy call" data-lang-en="Strategy call" data-lang-pl="Rozmowa strategiczna">Strategy call</div>
+              <div class="form-check-item" data-group="strategy-call" data-value="In-person call" data-lang-en="In-person call" data-lang-pl="Rozmowa osobista">In-person call</div>
+              <div class="form-check-item" data-group="strategy-call" data-value="Video call" data-lang-en="Video call" data-lang-pl="Wideorozmowa">Video call</div>
+              <div class="form-check-item" data-group="strategy-call" data-value="Phone call" data-lang-en="Phone call" data-lang-pl="Rozmowa telefoniczna">Phone call</div>
+              <div class="form-check-item" data-group="strategy-call" data-value="None of the above" data-lang-en="None of the above" data-lang-pl="Żadne z powyższych">None of the above</div>
             </div>
           </div>
         </div>
@@ -267,7 +285,7 @@
           <h4 class="form-step-title" data-lang-en="Order summary & invoice details" data-lang-pl="Podsumowanie zamówienia i dane do faktury">Order summary & invoice details</h4>
           <div style="background:var(--bg-soft);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:20px;margin-bottom:20px;" id="payment-summary">
             <div style="font-family:var(--font-ui);font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;" data-lang-en="Selected package" data-lang-pl="Wybrany pakiet">Selected package</div>
-            <div style="font-family:var(--font-heading);font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:4px;" id="summary-pkg">Standard — €190</div>
+            <div style="font-family:var(--font-heading);font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:4px;" id="summary-pkg">Standard — €190 / 800 zł / $200</div>
             <div style="font-size:0.82rem;color:var(--text-muted);" id="summary-deposit" data-lang-en="Invoice will be prepared from the details below." data-lang-pl="Faktura zostanie przygotowana na podstawie poniższych danych.">Invoice will be prepared from the details below.</div>
           </div>
           <div class="form-group">
@@ -367,7 +385,6 @@
         <div class="footer-social">
           <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
           <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href= target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="X"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         </div>
       </div>
       <div><div class="footer-col-title" data-lang-en="Navigation" data-lang-pl="Nawigacja">Navigation</div><ul class="footer-links"><li><a href="../index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li><li><a href="services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a></li></ul></div>
@@ -375,7 +392,7 @@
       <div><div class="footer-col-title">Contact</div><ul class="footer-links"><li><a href="tel:+48600762551">+48 600 762 551</a></li><li><a href="mailto:taffydevs@gmail.com">taffydevs@gmail.com</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy" data-lang-en="© 2025 TaffyDevs. All rights reserved." data-lang-pl="© 2025 TaffyDevs. Wszelkie prawa zastrzeżone.">© 2025 TaffyDevs. All rights reserved.</p>
+      <p class="footer-copy" data-lang-en="© 2026 TaffyDevs. All rights reserved." data-lang-pl="© 2026 TaffyDevs. Wszelkie prawa zastrzeżone.">© 2026 TaffyDevs. All rights reserved.</p>
       <div class="lang-toggle" role="group"><span class="lang-lbl lang-lbl-pl">PL</span><div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div><span class="lang-lbl lang-lbl-en active">EN</span></div>
     </div>
   </div>
