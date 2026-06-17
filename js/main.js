@@ -6,6 +6,7 @@
 /* ── SVG ICON SPRITES ─────────────────────────────────────── */
 const ICONS = {
   target:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
+  arrowup:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>`,
   zap:         `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
   gem:         `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 3 18 3 22 9 12 22 2 9"/><line x1="6" y1="3" x2="2" y2="9"/><line x1="18" y1="3" x2="22" y2="9"/><line x1="2" y1="9" x2="22" y2="9"/></svg>`,
   globe:       `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
@@ -35,6 +36,7 @@ const ICONS = {
   user:        `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
   image:       `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`,
   video:       `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`,
+  message:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5A8.48 8.48 0 0 1 21 11v.5z"/></svg>`,
 };
 
 /* Helper: render icon */
@@ -155,6 +157,48 @@ function initReveal() {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+}
+
+function initSmoothAnchors() {
+  document.addEventListener('click', e => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
+function initFloatingActions() {
+  if (document.querySelector('.floating-actions')) return;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'floating-actions';
+  wrap.innerHTML = `
+    <div class="whatsapp-chat" id="whatsapp-chat">
+      <button class="floating-btn whatsapp-btn" type="button" aria-label="Open WhatsApp chat">${icon('message')}</button>
+      <div class="whatsapp-panel" role="dialog" aria-label="WhatsApp chatbot">
+        <div class="whatsapp-title">TaffyDevs WhatsApp</div>
+        <p>Hi, I can help with bookings, quotes, and project questions.</p>
+        <a href="https://wa.me/48600762551?text=Hi%20TaffyDevs%2C%20I%20need%20help%20with%20a%20project." target="_blank" rel="noopener noreferrer" class="whatsapp-open">Start chat</a>
+      </div>
+    </div>
+    <button class="floating-btn scroll-top-btn" type="button" aria-label="Scroll to top">${icon('arrowup')}</button>
+  `;
+  document.body.appendChild(wrap);
+
+  const chat = wrap.querySelector('#whatsapp-chat');
+  const chatBtn = wrap.querySelector('.whatsapp-btn');
+  const topBtn = wrap.querySelector('.scroll-top-btn');
+  const updateVisibility = () => wrap.classList.toggle('visible', window.scrollY > 24);
+
+  chatBtn?.addEventListener('click', () => chat?.classList.toggle('open'));
+  topBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+  updateVisibility();
 }
 
 /* ── TABS (generic) ─────────────────────────────────────────── */
@@ -358,14 +402,14 @@ async function sendBookingEmails() {
     });
     const result = await response.json().catch(() => ({}));
     if (!response.ok || !result.ok) {
-      throw new Error(result.message || 'Booking email failed.');
+      throw new Error(result.message || `Booking email failed with status ${response.status}.`);
     }
     return true;
   } catch (error) {
     console.error(error);
     alert(currentLang === 'pl'
-      ? 'Nie udało się wysłać rezerwacji. Spróbuj ponownie lub napisz na taffydevs@gmail.com.'
-      : 'Could not send the booking. Please try again or email taffydevs@gmail.com.');
+      ? `Nie udało się wysłać rezerwacji: ${error.message}. Spróbuj ponownie lub napisz na taffydevs@gmail.com.`
+      : `Could not send the booking: ${error.message}. Please try again or email taffydevs@gmail.com.`);
     return false;
   }
 }
@@ -406,6 +450,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   applyLang(currentLang);
   initReveal();
+  initSmoothAnchors();
+  initFloatingActions();
   initCurrency();
   initBooking();
   initContact();

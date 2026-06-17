@@ -13,6 +13,7 @@ $businessEmail = 'taffydevs@gmail.com'; // replace here
 $fromEmail = 'taffydevs@gmail.com'; // replace here
 $siteName = 'TaffyDevs Web Agency';
 $maxAttachmentBytes = 10 * 1024 * 1024;
+$mailParams = '-f' . $fromEmail;
 
 function clean_text(string $key): string
 {
@@ -106,15 +107,15 @@ function uploaded_attachments(int $maxAttachmentBytes): array
     return $attachments;
 }
 
-function send_text_email(string $to, string $subject, string $body, array $headers): bool
+function send_text_email(string $to, string $subject, string $body, array $headers, string $mailParams): bool
 {
-    return mail($to, header_text($subject), $body, implode("\r\n", $headers));
+    return mail($to, header_text($subject), $body, implode("\r\n", $headers), $mailParams);
 }
 
-function send_email_with_attachments(string $to, string $subject, string $body, array $headers, array $attachments): bool
+function send_email_with_attachments(string $to, string $subject, string $body, array $headers, array $attachments, string $mailParams): bool
 {
     if (count($attachments) === 0) {
-        return send_text_email($to, $subject, $body, array_merge($headers, ['Content-Type: text/plain; charset=UTF-8']));
+        return send_text_email($to, $subject, $body, array_merge($headers, ['Content-Type: text/plain; charset=UTF-8']), $mailParams);
     }
 
     $boundary = 'TD-' . bin2hex(random_bytes(16));
@@ -137,7 +138,7 @@ function send_email_with_attachments(string $to, string $subject, string $body, 
 
     $headers[] = 'Content-Type: multipart/mixed; boundary="' . $boundary . '"';
 
-    return mail($to, header_text($subject), $message, implode("\r\n", $headers));
+    return mail($to, header_text($subject), $message, implode("\r\n", $headers), $mailParams);
 }
 
 $clientEmail = clean_text('email');
@@ -162,6 +163,7 @@ $attachments = uploaded_attachments($maxAttachmentBytes);
 $baseHeaders = [
     'MIME-Version: 1.0',
     'From: ' . header_text($siteName) . ' <' . header_text($fromEmail) . '>',
+    'X-Mailer: PHP/' . phpversion(),
 ];
 
 $businessHeaders = array_merge($baseHeaders, [
@@ -194,8 +196,8 @@ $clientBody = "Hi {$clientName},\n\n"
     . "TaffyDevs\n"
     . $businessEmail;
 
-$businessSent = send_email_with_attachments($businessEmail, $businessSubject, $businessBody, $businessHeaders, $attachments);
-$clientSent = send_text_email($clientEmail, $clientSubject, $clientBody, $clientHeaders);
+$businessSent = send_email_with_attachments($businessEmail, $businessSubject, $businessBody, $businessHeaders, $attachments, $mailParams);
+$clientSent = send_text_email($clientEmail, $clientSubject, $clientBody, $clientHeaders, $mailParams);
 
 if (!$businessSent || !$clientSent) {
     http_response_code(500);

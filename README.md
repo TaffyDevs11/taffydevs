@@ -235,7 +235,6 @@ In `index.html`, find `<!-- CLIENT LOGO STRIP -->` and add items to BOTH the ori
 - **YouTube:** https://www.youtube.com/@Taffydevs
 - **GitHub:** https://github.com/TaffyDevs11
 - **LinkedIn:** https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321
-- **X/Twitter:** https://x.com/TaffyDevs
 
 ---
 
@@ -249,7 +248,6 @@ In `index.html`, find `<!-- CLIENT LOGO STRIP -->` and add items to BOTH the ori
 - [ ] Place testimonial avatars in `assets/img/portfolio/testimonials/`
 - [ ] Place blog article covers in `assets/img/blog/`
 - [ ] Place `cv.pdf` in `assets/`
-- [ ] Update Stripe payment links (search for `#stripe-payment` in booking.html)
 - [ ] Test all pages on mobile and desktop
 - [ ] Test language toggle (EN/PL) on all pages
 - [ ] Submit sitemap to Google Search Console after deployment
