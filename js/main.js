@@ -4,6 +4,10 @@
    ============================================================ */
 
 /* ── SVG ICON SPRITES ─────────────────────────────────────── */
+// Replace here with the Hostinger PHP endpoint if the frontend stays on GitHub Pages.
+// Example: 'https://yourdomain.com/backend/send-booking.php'
+const BOOKING_ENDPOINT_URL = '';
+
 const ICONS = {
   target:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
   arrowup:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>`,
@@ -423,6 +427,19 @@ async function sendBookingEmailsLegacy() {
 }
 
 /* ── CONTACT FORM ───────────────────────────────────────────── */
+function isStaticBookingHost() {
+  const host = window.location.hostname.toLowerCase();
+  return host.endsWith('github.io');
+}
+
+function bookingEndpointUrl() {
+  if (BOOKING_ENDPOINT_URL.trim()) {
+    return BOOKING_ENDPOINT_URL.trim();
+  }
+
+  return new URL('../backend/send-booking.php', window.location.href).href;
+}
+
 async function sendBookingEmails() {
   const payload = bookingPayload();
   const respondentEmail = payload.email;
@@ -435,10 +452,10 @@ async function sendBookingEmails() {
     return false;
   }
 
-  if (window.location.protocol === 'file:') {
+  if (window.location.protocol === 'file:' || (isStaticBookingHost() && !BOOKING_ENDPOINT_URL.trim())) {
     alert(currentLang === 'pl'
-      ? 'Automatyczne emaile wymagaja uruchomienia strony przez serwer PHP, np. http://localhost:8000. Otwieranie pliku HTML bezposrednio nie uruchomi PHP.'
-      : 'Automatic emails require the site to run through a PHP server, for example http://localhost:8000. Opening the HTML file directly cannot run PHP.');
+      ? 'Automatyczne emaile wymagaja serwera PHP. GitHub Pages jest statyczny, wiec wpisz adres endpointu Hostinger w BOOKING_ENDPOINT_URL albo przenies cala strone na Hostinger.'
+      : 'Automatic emails require a PHP server. GitHub Pages is static, so add your Hostinger endpoint to BOOKING_ENDPOINT_URL or move the full site to Hostinger.');
     return false;
   }
 
@@ -451,8 +468,7 @@ async function sendBookingEmails() {
       [...input.files].forEach(file => formData.append('booking_files[]', file));
     });
 
-    const endpointUrl = new URL('../backend/send-booking.php', window.location.href);
-    const response = await fetch(endpointUrl.href, {
+    const response = await fetch(bookingEndpointUrl(), {
       method: 'POST',
       body: formData
     });

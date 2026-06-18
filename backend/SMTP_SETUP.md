@@ -40,10 +40,26 @@ If `SMTP_HOST` is not set, the PHP file falls back to PHP `mail()`, which only w
 
 GitHub Pages cannot run PHP. The booking page will load there, but automatic booking emails cannot be sent because `backend/send-booking.php` is never executed.
 
+If you keep the frontend on GitHub Pages and host only the PHP backend on Hostinger:
+
+1. Upload `backend/send-booking.php` to Hostinger, for example:
+
+```text
+https://yourdomain.com/backend/send-booking.php
+```
+
+2. In `js/main.js`, set:
+
+```js
+const BOOKING_ENDPOINT_URL = 'https://yourdomain.com/backend/send-booking.php';
+```
+
+3. Keep `https://taffydevs11.github.io` in the `$allowedOrigins` list inside `send-booking.php`.
+
 For Hostinger:
 
 1. Upload the contents of the `taffydevs` folder to `public_html`.
 2. Open the booking page from your Hostinger domain, not from GitHub Pages.
 3. Add the SMTP values above in Hostinger's environment/configuration area if available.
-4. If your Hostinger plan does not expose environment variables, put the values into a private PHP config file outside `public_html` and load it from `send-booking.php`.
+4. If your Hostinger plan does not expose environment variables, copy `backend/booking-config.example.php` to `backend/booking-config.php` on Hostinger and put the real app password there.
 5. Never commit or upload your real Gmail app password to GitHub.
