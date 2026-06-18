@@ -15,6 +15,12 @@ $siteName = 'TaffyDevs Web Agency';
 $maxAttachmentBytes = 10 * 1024 * 1024;
 $mailParams = '-f' . $fromEmail;
 
+function env_value(string $key, string $default = ''): string
+{
+    $value = getenv($key);
+    return $value === false ? $default : trim((string) $value);
+}
+
 function clean_text(string $key): string
 {
     $value = isset($_POST[$key]) ? (string) $_POST[$key] : 'N/A';
@@ -26,6 +32,136 @@ function clean_text(string $key): string
 function header_text(string $value): string
 {
     return str_replace(["\r", "\n"], '', $value);
+}
+
+function deliver_mail(string $to, string $subject, string $message, array $headers, string $mailParams): bool
+{
+    $headerText = implode("\r\n", $headers);
+
+    if (env_value('SMTP_HOST') !== '') {
+        return smtp_send_mail($to, $subject, $message, $headers);
+    }
+
+    if (PHP_OS_FAMILY === 'Windows' || $mailParams === '') {
+        return mail($to, header_text($subject), $message, $headerText);
+    }
+
+    return mail($to, header_text($subject), $message, $headerText, $mailParams);
+}
+
+function smtp_read($socket): string
+{
+    $response = '';
+    while (($line = fgets($socket, 515)) !== false) {
+        $response .= $line;
+        if (isset($line[3]) && $line[3] === ' ') {
+            break;
+        }
+    }
+    return $response;
+}
+
+function smtp_command($socket, string $command, array $expectedCodes): bool
+{
+    fwrite($socket, $command . "\r\n");
+    $response = smtp_read($socket);
+    $code = (int) substr($response, 0, 3);
+    return in_array($code, $expectedCodes, true);
+}
+
+function smtp_data_body(array $headers, string $to, string $subject, string $message): string
+{
+    $allHeaders = array_merge($headers, [
+        'To: <' . header_text($to) . '>',
+        'Subject: ' . header_text($subject),
+        'Date: ' . date(DATE_RFC2822),
+    ]);
+
+    $body = implode("\r\n", $allHeaders) . "\r\n\r\n" . $message;
+    return preg_replace('/^\./m', '..', $body) ?? $body;
+}
+
+function smtp_send_mail(string $to, string $subject, string $message, array $headers): bool
+{
+    $host = env_value('SMTP_HOST');
+    $port = (int) env_value('SMTP_PORT', '587');
+    $username = env_value('SMTP_USERNAME');
+    $password = env_value('SMTP_PASSWORD');
+    $secure = strtolower(env_value('SMTP_SECURE', 'tls'));
+    $from = env_value('SMTP_FROM', env_value('SMTP_USERNAME', 'taffydevs@gmail.com'));
+    $timeout = 20;
+    $target = $secure === 'ssl' ? "ssl://{$host}:{$port}" : "{$host}:{$port}";
+
+    $socket = @stream_socket_client($target, $errno, $errstr, $timeout);
+    if (!$socket) {
+        error_log("SMTP connection failed: {$errstr} ({$errno})");
+        return false;
+    }
+
+    stream_set_timeout($socket, $timeout);
+    $greeting = smtp_read($socket);
+    if ((int) substr($greeting, 0, 3) !== 220) {
+        fclose($socket);
+        return false;
+    }
+
+    $serverName = $_SERVER['SERVER_NAME'] ?? 'localhost';
+    if (!smtp_command($socket, "EHLO {$serverName}", [250])) {
+        fclose($socket);
+        return false;
+    }
+
+    if ($secure === 'tls') {
+        if (!smtp_command($socket, 'STARTTLS', [220])) {
+            fclose($socket);
+            return false;
+        }
+
+        if (!stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+            fclose($socket);
+            return false;
+        }
+
+        if (!smtp_command($socket, "EHLO {$serverName}", [250])) {
+            fclose($socket);
+            return false;
+        }
+    }
+
+    if ($username !== '' || $password !== '') {
+        if (!smtp_command($socket, 'AUTH LOGIN', [334])) {
+            fclose($socket);
+            return false;
+        }
+        if (!smtp_command($socket, base64_encode($username), [334])) {
+            fclose($socket);
+            return false;
+        }
+        if (!smtp_command($socket, base64_encode($password), [235])) {
+            fclose($socket);
+            return false;
+        }
+    }
+
+    if (!smtp_command($socket, 'MAIL FROM:<' . header_text($from) . '>', [250])) {
+        fclose($socket);
+        return false;
+    }
+    if (!smtp_command($socket, 'RCPT TO:<' . header_text($to) . '>', [250, 251])) {
+        fclose($socket);
+        return false;
+    }
+    if (!smtp_command($socket, 'DATA', [354])) {
+        fclose($socket);
+        return false;
+    }
+
+    fwrite($socket, smtp_data_body($headers, $to, $subject, $message) . "\r\n.\r\n");
+    $sent = in_array((int) substr(smtp_read($socket), 0, 3), [250], true);
+    smtp_command($socket, 'QUIT', [221]);
+    fclose($socket);
+
+    return $sent;
 }
 
 function money_line(): string
@@ -109,7 +245,7 @@ function uploaded_attachments(int $maxAttachmentBytes): array
 
 function send_text_email(string $to, string $subject, string $body, array $headers, string $mailParams): bool
 {
-    return mail($to, header_text($subject), $body, implode("\r\n", $headers), $mailParams);
+    return deliver_mail($to, $subject, $body, $headers, $mailParams);
 }
 
 function send_email_with_attachments(string $to, string $subject, string $body, array $headers, array $attachments, string $mailParams): bool
@@ -138,7 +274,7 @@ function send_email_with_attachments(string $to, string $subject, string $body, 
 
     $headers[] = 'Content-Type: multipart/mixed; boundary="' . $boundary . '"';
 
-    return mail($to, header_text($subject), $message, implode("\r\n", $headers), $mailParams);
+    return deliver_mail($to, $subject, $message, $headers, $mailParams);
 }
 
 $clientEmail = clean_text('email');
