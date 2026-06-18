@@ -375,7 +375,60 @@ function bookingPayload() {
   };
 }
 
-async function sendBookingEmails() {
+function bookingEmailText(payload, fallbackReason = '') {
+  const lines = [
+    'TaffyDevs booking confirmation and invoice',
+    '',
+    'Your booking has been received by TaffyDevs.',
+    '',
+    'Invoice',
+    `Package: ${payload.package}`,
+    `Price: ${payload.price}`,
+    `Preferred currency: ${payload.currency}`,
+    `Payment method: ${payload.paymentMethod}`,
+    '',
+    'Booking details',
+    `Full name: ${payload.fullName}`,
+    `Email: ${payload.email}`,
+    `Phone: ${payload.phone}`,
+    `WhatsApp: ${payload.whatsapp}`,
+    `Service type: ${payload.serviceType}`,
+    `Business name: ${payload.businessName}`,
+    `Industry: ${payload.industry}`,
+    `Business description: ${payload.businessDescription}`,
+    `Target clients: ${payload.targetClients}`,
+    `Main goal: ${payload.mainGoal}`,
+    `Current website: ${payload.currentWebsite}`,
+    `Preferred timeline: ${payload.preferredTimeline}`,
+    `Strategy call: ${payload.strategyCall}`,
+    `Visual style: ${payload.visualStyle}`,
+    `Inspiration: ${payload.inspiration}`,
+    `Competitors: ${payload.competitors}`,
+    `Colours: ${payload.colours}`,
+    `Features: ${payload.features}`,
+    `Logo file: ${payload.logoFile}`,
+    `Photos/files: ${payload.photosFiles}`,
+    `Content ready: ${payload.contentReady}`,
+    `Other files: ${payload.otherFiles}`,
+    `Additional notes: ${payload.additionalNotes}`
+  ];
+
+  if (fallbackReason) {
+    lines.push('', `Fallback note: ${fallbackReason}`);
+    lines.push('Uploaded files cannot be attached automatically from this fallback email. Please attach them before sending if needed.');
+  }
+
+  return lines.join('\n');
+}
+
+function openBookingEmailFallback(payload, reason) {
+  const businessEmail = 'taffydevs@gmail.com';
+  const subject = encodeURIComponent(`TaffyDevs booking - ${payload.fullName}`);
+  const body = encodeURIComponent(bookingEmailText(payload, reason));
+  window.location.href = `mailto:${businessEmail}?cc=${encodeURIComponent(payload.email)}&subject=${subject}&body=${body}`;
+}
+
+async function sendBookingEmailsLegacy() {
   const payload = bookingPayload();
   const respondentEmail = payload.email;
   if (respondentEmail === 'N/A' || !respondentEmail.includes('@')) {
@@ -387,6 +440,14 @@ async function sendBookingEmails() {
     return false;
   }
 
+  if (window.location.protocol === 'file:') {
+    openBookingEmailFallback(payload, 'The website is open as a local file, so the PHP booking endpoint cannot run.');
+    alert(currentLang === 'pl'
+      ? 'Otworzylismy aplikacje email z uzupelniona wiadomoscia do TaffyDevs i klienta. Kliknij Wyslij, aby zakonczyc.'
+      : 'Your email app has been opened with a completed message to TaffyDevs and the client. Press Send to finish.');
+    return true;
+  }
+
   try {
     const formData = new FormData();
     Object.entries(payload).forEach(([key, value]) => formData.append(key, value));
@@ -396,7 +457,8 @@ async function sendBookingEmails() {
       [...input.files].forEach(file => formData.append('booking_files[]', file));
     });
 
-    const response = await fetch('../backend/send-booking.php', {
+    const endpointUrl = new URL('../backend/send-booking.php', window.location.href);
+    const response = await fetch(endpointUrl.href, {
       method: 'POST',
       body: formData
     });
@@ -409,12 +471,62 @@ async function sendBookingEmails() {
     console.error(error);
     alert(currentLang === 'pl'
       ? `Nie udało się wysłać rezerwacji: ${error.message}. Spróbuj ponownie lub napisz na taffydevs@gmail.com.`
-      : `Could not send the booking: ${error.message}. Please try again or email taffydevs@gmail.com.`);
-    return false;
+      : 'The email server could not be reached, so your email app has been opened with a completed message to TaffyDevs and the client. Press Send to finish.');
+    openBookingEmailFallback(payload, error.message || 'The booking email endpoint could not be reached.');
+    return true;
   }
 }
 
 /* ── CONTACT FORM ───────────────────────────────────────────── */
+async function sendBookingEmails() {
+  const payload = bookingPayload();
+  const respondentEmail = payload.email;
+  if (respondentEmail === 'N/A' || !respondentEmail.includes('@')) {
+    alert(currentLang === 'pl' ? 'Dodaj poprawny adres email.' : 'Please add a valid email address.');
+    return false;
+  }
+  if (payload.fullName === 'N/A') {
+    alert(currentLang === 'pl' ? 'Dodaj imie i nazwisko.' : 'Please add your full name.');
+    return false;
+  }
+
+  if (window.location.protocol === 'file:') {
+    openBookingEmailFallback(payload, 'The website is open as a local file, so the PHP booking endpoint cannot run.');
+    alert(currentLang === 'pl'
+      ? 'Otworzylismy aplikacje email z uzupelniona wiadomoscia do TaffyDevs i klienta. Kliknij Wyslij, aby zakonczyc.'
+      : 'Your email app has been opened with a completed message to TaffyDevs and the client. Press Send to finish.');
+    return true;
+  }
+
+  try {
+    const formData = new FormData();
+    Object.entries(payload).forEach(([key, value]) => formData.append(key, value));
+    ['logo-upload', 'photos-upload', 'extra-files'].forEach(id => {
+      const input = document.getElementById(id);
+      if (!input?.files?.length) return;
+      [...input.files].forEach(file => formData.append('booking_files[]', file));
+    });
+
+    const endpointUrl = new URL('../backend/send-booking.php', window.location.href);
+    const response = await fetch(endpointUrl.href, {
+      method: 'POST',
+      body: formData
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) {
+      throw new Error(result.message || `Booking email failed with status ${response.status}.`);
+    }
+    return true;
+  } catch (error) {
+    console.error(error);
+    openBookingEmailFallback(payload, error.message || 'The booking email endpoint could not be reached.');
+    alert(currentLang === 'pl'
+      ? 'Serwer email nie odpowiedzial, wiec otworzylismy aplikacje email z uzupelniona wiadomoscia do TaffyDevs i klienta. Kliknij Wyslij, aby zakonczyc.'
+      : 'The email server could not be reached, so your email app has been opened with a completed message to TaffyDevs and the client. Press Send to finish.');
+    return true;
+  }
+}
+
 function initContact() {
   const form = document.getElementById('contact-form');
   if (!form) return;
