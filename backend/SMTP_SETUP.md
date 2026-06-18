@@ -28,7 +28,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SECURE=tls
 SMTP_USERNAME=taffydevs@gmail.com
-SMTP_PASSWORD=replace here
+SMTP_PASSWORD=idub ejma jbyy vjma
 SMTP_FROM=taffydevs@gmail.com
 ```
 
