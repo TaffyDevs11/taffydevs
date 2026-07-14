@@ -41,6 +41,7 @@ const ICONS = {
   image:       `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`,
   video:       `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`,
   message:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5A8.48 8.48 0 0 1 21 11v.5z"/></svg>`,
+  whatsapp:    `<svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.85 3 3.03 8.82 3.03 15.99c0 2.29.6 4.52 1.74 6.48L3 29l6.69-1.75a12.9 12.9 0 0 0 6.33 1.61h.01C23.2 28.86 29 23.04 29 15.87 29 8.75 23.18 3 16.02 3zm0 23.68h-.01a10.76 10.76 0 0 1-5.48-1.5l-.39-.23-3.97 1.04 1.06-3.87-.25-.4a10.74 10.74 0 0 1-1.66-5.73c0-5.9 4.8-10.7 10.71-10.7 2.86 0 5.55 1.11 7.57 3.14a10.63 10.63 0 0 1 3.12 7.55c-.01 5.9-4.81 10.7-10.7 10.7zm5.87-8.01c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.51-.16-.72.16-.21.32-.83 1.05-1.02 1.26-.19.21-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.59-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67s1.15 3.09 1.31 3.3c.16.21 2.26 3.45 5.48 4.84.77.33 1.36.53 1.83.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37z"/></svg>`,
 };
 
 /* Helper: render icon */
@@ -183,7 +184,7 @@ function initFloatingActions() {
   wrap.className = 'floating-actions';
   wrap.innerHTML = `
     <div class="whatsapp-chat" id="whatsapp-chat">
-      <button class="floating-btn whatsapp-btn" type="button" aria-label="Open WhatsApp chat">${icon('message')}</button>
+      <button class="floating-btn whatsapp-btn" type="button" aria-label="Open WhatsApp chat">${icon('whatsapp')}</button>
       <div class="whatsapp-panel" role="dialog" aria-label="WhatsApp chatbot">
         <div class="whatsapp-title">TaffyDevs WhatsApp</div>
         <p>Hi, I can help with bookings, quotes, and project questions.</p>
