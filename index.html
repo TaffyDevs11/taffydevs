@@ -1,483 +1,721 @@
 <!DOCTYPE html>
-<html lang="en" id="html-root">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-page-title-en="TaffyDevs – Solving Everyday Problems with IT Solutions" data-page-title-pl="TaffyDevs – Rozwiązania IT dla Twojego Biznesu">TaffyDevs – Solving Everyday Problems with IT Solutions</title>
-<meta name="description" content="TaffyDevs – professional web design and graphic design for SMEs. Web development in Poland, Zimbabwe, UK. Affordable prices, premium quality.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://taffydevs.com/">
- <link rel="icon" href="assets/img/logos/logo-blue.png"/>
-<meta property="og:title" content="TaffyDevs – IT Solutions">
-<meta property="og:description" content="Professional web design & development for SMEs. Poland, Zimbabwe, UK.">
-<meta property="og:image" content="https://taffydevs.com/assets/img/logos/logo-dark.png">
-<meta property="og:url" content="https://taffydevs.com/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tafadzwa Daniel Kamanga — Web Developer, Warsaw</title>
+<meta name="description" content="Web developer in Warsaw with six years building and maintaining websites for small businesses. PHP, MySQL, JavaScript and WordPress. Selected work, case studies and CV.">
+<meta name="author" content="Tafadzwa Daniel Kamanga">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#E3EAF6">
+<link rel="canonical" href="https://taffydevs11.github.io/portfolio/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Tafadzwa Daniel Kamanga — Web Developer, Warsaw">
+<meta property="og:description" content="Six years building and maintaining websites for small businesses. PHP, MySQL, JavaScript and WordPress.">
+<meta property="og:image" content="https://taffydevs11.github.io/portfolio/assets/img/work/juam.jpg">
+<meta property="og:url" content="https://taffydevs11.github.io/portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/logo-mark.png">
+<link rel="apple-touch-icon" href="assets/img/logo-mark.png">
+
+<script>
+  // Set theme + the js flag before first paint so nothing flashes
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js');
+    var stored = null;
+    try { stored = localStorage.getItem('tdk-theme'); } catch (e) {}
+    var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    try { if (localStorage.getItem('tdk-lang') === 'pl') root.setAttribute('lang', 'pl'); } catch (e) {}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"TaffyDevs","description":"Professional web design, development and graphic design for SMEs.","founder":{"@type":"Person","name":"Daniel Kamanga"},"telephone":"+48600762551","email":"taffydevs@gmail.com","url":"https://taffydevs.com","sameAs":["https://www.youtube.com/@Taffydevs","https://github.com/TaffyDevs11","https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" ]}
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tafadzwa Daniel Kamanga",
+  "jobTitle": "Web Developer",
+  "email": "mailto:tkamanga011@gmail.com",
+  "telephone": "+48782778223",
+  "address": { "@type": "PostalAddress", "addressLocality": "Warsaw", "addressCountry": "PL" },
+  "url": "https://taffydevs11.github.io/portfolio/",
+  "sameAs": [
+    "https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321",
+    "https://github.com/TaffyDevs11",
+    "https://www.youtube.com/@Taffydevs",
+    "https://taffydevs.com"
+  ],
+  "knowsLanguage": ["English", "Polish"],
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Vistula University, Warsaw" },
+    { "@type": "CollegeOrUniversity", "name": "Catholic University of Zimbabwe" }
+  ]
+}
 </script>
 </head>
 <body>
 
-<!-- ══════════════ LOADER ══════════════ -->
-<div id="loader" role="status" aria-label="Loading TaffyDevs">
-  <img src="assets/img/logos/logo-dark.png" class="loader-logo-img loader-logo" alt="TaffyDevs" onerror="this.style.display='none'">
-  <div class="loader-text" data-lang-en="Loading..." data-lang-pl="Ładowanie...">Loading...</div>
-  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+<!-- ══════════ LOADER ══════════ -->
+<div class="loader" id="loader" role="status" aria-live="polite">
+  <img class="loader-mark mark-on-light" src="assets/img/logo-mark.png" alt="" width="271" height="288">
+  <img class="loader-mark mark-on-dark" src="assets/img/logo-mark-light.png" alt="" width="329" height="288">
+  <p class="loader-name">Tafadzwa Daniel Kamanga</p>
+  <p class="loader-tag" data-pl="Web Developer · Web Designer · Pasjonat technologii">Web Developer · Web Designer · Tech Enthusiast</p>
+  <div class="loader-bar"><span></span></div>
 </div>
 
-<!-- ══════════════ NAVBAR ══════════════ -->
-<header id="navbar" role="banner">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="TaffyDevs home">
-      <!-- Place your logo at assets/img/logos/logo-dark.png (EN) and logo-red.png (PL) -->
-      <img src="assets/img/logos/logo-dark.png" alt="TaffyDevs" class="nav-logo-img" height="44"
-           onerror="this.outerHTML='<span class=\'nav-logo-placeholder\'>TaffyDevs</span>'">
+<a class="skip-link" href="#work" data-pl="Przejdź do projektów">Skip to selected work</a>
+
+<!-- ══════════ TOP BAR ══════════ -->
+<header class="shell topbar">
+  <a class="brand" href="index.html" aria-label="Tafadzwa Daniel Kamanga — Web Developer, Web Designer, Tech Enthusiast">
+    <img class="brand-mark mark-on-light" src="assets/img/logo-mark.png" alt="" width="271" height="288">
+    <img class="brand-mark mark-on-dark" src="assets/img/logo-mark-light.png" alt="" width="329" height="288">
+    <span class="brand-text">
+      <span class="brand-name">Tafadzwa Daniel Kamanga</span>
+      <span class="brand-tag" data-pl="Web Developer · Web Designer · Pasjonat technologii">Web Developer · Web Designer · Tech Enthusiast</span>
+    </span>
+  </a>
+
+  <div class="topbar-actions">
+    <div class="switches">
+      <div class="switch lang-switch" role="group" aria-label="Language / Język">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="pl" aria-pressed="false">PL</button>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+
+    <div class="social-links">
+      <a class="social-btn" href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      </a>
+      <a class="social-btn" href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a class="social-btn" href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12z"/></svg>
+      </a>
+    </div>
+
+    <a class="btn-outline" href="assets/cv/Tafadzwa-Kamanga-CV.pdf" download>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      CV
     </a>
-    <nav role="navigation" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
-        <li><a href="pages/about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
-        <li><a href="pages/services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li>
-        <li><a href="pages/portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a></li>
-        <li><a href="pages/blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a></li>
-        <li><a href="pages/contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="lang-toggle" role="group" aria-label="Language switcher">
-      <span class="lang-lbl lang-lbl-pl" id="lbl-pl">PL</span>
-      <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0" aria-label="Switch language"></div>
-      <span class="lang-lbl lang-lbl-en active" id="lbl-en">EN</span>
-    </div>
-        <div class="nav-socials" aria-label="Social links">
-      <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="nav-social-btn" aria-label="YouTube"><span class="nav-social-icon" data-icon="youtube"></span></a>
-      <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" target="_blank" rel="noopener noreferrer" class="nav-social-btn" aria-label="LinkedIn"><span class="nav-social-icon" data-icon="linkedin"></span></a>
-      <a href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer" class="nav-social-btn" aria-label="GitHub"><span class="nav-social-icon" data-icon="github"></span></a>
-    </div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd68ahtjF55FLi0mZcHPD2dgnPKopZVfMSM11Ln1i4IcxX1mw/viewform" class="nav-cta" target="_blank" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
-    <!--<a href="pages/booking.html" class="nav-cta" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>--->
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn" href="mailto:tkamanga011@gmail.com" data-pl="Napisz do mnie">Email me</a>
   </div>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-    <a href="index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a>
-    <a href="pages/about.html" data-lang-en="About" data-lang-pl="O nas">About</a>
-    <a href="pages/services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a>
-    <a href="pages/portfolio.html" data-lang-en="Portfolio" data-lang-pl="Portfolio">Portfolio</a>
-    <a href="pages/blog.html" data-lang-en="Blog" data-lang-pl="Blog">Blog</a>
-    <a href="pages/contact.html" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd68ahtjF55FLi0mZcHPD2dgnPKopZVfMSM11Ln1i4IcxX1mw/viewform" class="nav-cta" target="_blank" style="text-align:center;margin-top:8px;" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>
-    <!--<a href="pages/booking.html" class="nav-cta" style="text-align:center;margin-top:8px;" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a>-->
-  </nav>
 </header>
 
-<main>
+<!-- ══════════ FLOATING RAIL ══════════ -->
+<nav class="rail" aria-label="Section navigation">
+  <a href="#work" aria-current="false" data-pl="Projekty">Work</a>
+  <a href="#builds" aria-current="false" data-pl="GitHub">Builds</a>
+  <a href="#skills" aria-current="false" data-pl="Umiejętności">Skills</a>
+  <a href="#experience" aria-current="false" data-pl="Doświadczenie">Experience</a>
+  <a href="#about" aria-current="false" data-pl="O mnie">About</a>
+  <a class="rail-cta" href="#contact" data-pl="Zatrudnij mnie">Hire me</a>
+</nav>
 
-<!-- ══════════════ HERO ══════════════ -->
-<section id="hero" aria-label="Hero">
-  <div class="hero-geo" aria-hidden="true">
-    <div class="geo"></div><div class="geo"></div><div class="geo"></div><div class="geo"></div>
-     
-  </div>
-  <div class="hero-content reveal">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      <span data-lang-en="Poland · Zimbabwe · UK · Europe" data-lang-pl="Polska · Zimbabwe · UK · Europa">Poland · Zimbabwe · UK · Europe</span>
+<main id="main">
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="shell hero">
+    <div class="meta-row meta-center">
+      <span data-pl="Warszawa, Polska">Warsaw, Poland</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span data-pl="Sześć lat pracy z klientami">Six years of client work</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span data-pl="&lt;span class=&quot;dot dot-live&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Otwarty na role junior / mid"><span class="dot dot-live" aria-hidden="true"></span> Open to junior / mid roles</span>
     </div>
-    <p class="hero-eyebrow" data-lang-en="IT Agency · Web Design · Graphics" data-lang-pl="Agencja IT · Web Design · Grafika">IT Agency · Web Design · Graphics</p>
-    <h1 class="hero-title" data-lang-en="Solving Everyday<br>Problems with <em>IT</em>" data-lang-pl="Rozwiązujemy codzienne<br>problemy poprzez <em>IT</em>">Solving Everyday<br>Problems with <em>IT</em></h1>
-    <p class="hero-sub" data-lang-en="We build websites and visual identities that earn trust, attract clients, and grow your business. No bureaucracy — you work directly with the founder." data-lang-pl="Tworzymy strony i identyfikacje wizualne budujące zaufanie, przyciągające klientów i rozwijające Twój biznes. Bez biurokracji — pracujesz bezpośrednio z założycielem.">We build websites and visual identities that earn trust, attract clients, and grow your business. No bureaucracy — you work directly with the founder.</p>
+
+    <h1 class="display">Tafadzwa Daniel&nbsp;Kamanga</h1>
+
+    <p class="byline">
+      <img src="assets/img/tafadzwa-kamanga.jpg" alt="Tafadzwa Daniel Kamanga" width="800" height="960">
+      <span data-pl="Web developer, który tworzy i utrzymuje strony dla małych firm&lt;br&gt;w &lt;strong style=&quot;font-weight:500;&quot;&gt;PHP, MySQL, JavaScript i WordPress&lt;/strong&gt;.">Web developer building and maintaining sites for small businesses<br>with <strong style="font-weight:500;">PHP, MySQL, JavaScript and WordPress</strong>.</span>
+    </p>
+
     <div class="hero-actions">
-      <a href="pages/portfolio.html" class="btn-primary">
-        <span data-lang-en="See Our Work" data-lang-pl="Zobacz nasze projekty">See Our Work</span>
-        <span id="icon-arrow-r"></span>
+      <a class="btn btn-lg" href="#work">
+        <span data-pl="Zobacz projekty">See the work</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd68ahtjF55FLi0mZcHPD2dgnPKopZVfMSM11Ln1i4IcxX1mw/viewform" class="btn-outline" target="_blank">
-        <span data-lang-en="Book a Package" data-lang-pl="Zamów pakiet">Book a Package</span>
-      </a>
-      <!--<a href="pages/booking.html" class="btn-outline">
-        <span data-lang-en="Book a Package" data-lang-pl="Zamów pakiet">Book a Package</span>
-      </a>--->
+      <a class="btn-outline btn-lg" href="assets/cv/Tafadzwa-Kamanga-CV.pdf" download data-pl="Pobierz CV (PDF)">Download CV (PDF)</a>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">5<span>+</span></div><div class="hero-stat-label" data-lang-en="Live projects" data-lang-pl="Projektów online">Live projects</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">3<span>+</span></div><div class="hero-stat-label" data-lang-en="Markets served" data-lang-pl="Rynki">Markets served</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">100<span>%</span></div><div class="hero-stat-label" data-lang-en="Satisfaction" data-lang-pl="Satysfakcja">Satisfaction</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">24<span>h</span></div><div class="hero-stat-label" data-lang-en="Response time" data-lang-pl="Czas odpowiedzi">Response time</div></div>
-    </div>
-  </div>
-  <br><br>
-  <div class="scroll-hint" aria-hidden="true">
-    <span data-lang-en="Scroll" data-lang-pl="Przewiń">Scroll</span>
-    <span id="icon-arrow-d"></span>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════ CLIENT LOGO STRIP ══════════════ -->
-<!-- Add client logos to assets/img/clients/ and update src attributes below -->
-<div class="client-strip" aria-label="Clients and brands">
-  <div class="client-track" id="client-track">
-    <!-- Original set -->
-    <div class="client-logo-item"><img src="assets/img/clients/juam.png" alt="JUAM Corporate Services" onerror="this.outerHTML='<span class=\'logo-text\'>JUAM Corporate</span>'"></div>
-    <div class="client-logo-item"><img src="assets/img/clients/bporbf.png" alt="Phenomenal Wear" onerror="this.outerHTML='<span class=\'logo-text\'>Phenomenal Wear</span>'"></div>
-    <div class="client-logo-item"><img src="assets/img/clients/randr.png" alt="R&R Catering" onerror="this.outerHTML='<span class=\'logo-text\'>R&amp;R Catering</span>'"></div>
-    <div class="client-logo-item"><img src="assets/img/clients/buildhive.png" alt="BuildHive" onerror="this.outerHTML='<span class=\'logo-text\'>BuildHive</span>'"></div>
-    <div class="client-logo-item"><img src="assets/img/clients/wnc.png" alt="Women's Network Conference" onerror="this.outerHTML='<span class=\'logo-text\'>WN Conference</span>'"></div>
-    <!-- Duplicate for seamless loop -->
-    <div class="client-logo-item"><img src="assets/img/clients/juam.png" alt="JUAM Corporate Services" onerror="this.outerHTML='<span class=\'logo-text\'>JUAM Corporate</span>'"></div>
-    <div class="client-logo-item"><img src="assets/img/clients/bporbf.png" alt="Phenomenal Wear" onerror="this.outerHTML='<span class=\'logo-text\'>Phenomenal Wear</span>'"></div>
-    <div class="client-logo-item"><img src="assets/img/clients/randr.png" alt="R&R Catering" onerror="this.outerHTML='<span class=\'logo-text\'>R&amp;R Catering</span>'"></div>
-    <div class="client-logo-item"><img src="assets/img/clients/buildhive.png" alt="BuildHive" onerror="this.outerHTML='<span class=\'logo-text\'>BuildHive</span>'"></div>
-    <div class="client-logo-item"><img src="assets/img/clients/wnc.png" alt="Women's Network Conference" onerror="this.outerHTML='<span class=\'logo-text\'>WN Conference</span>'"></div>
-  </div>
-</div>
-
-<!-- ══════════════ USP ══════════════ -->
-<section id="usp" class="section" aria-labelledby="usp-title">
-  <div class="section-inner">
-    <header class="section-header">
-      <span class="section-eyebrow" data-lang-en="Why TaffyDevs?" data-lang-pl="Dlaczego TaffyDevs?">Why TaffyDevs?</span>
-      <h2 class="section-title" id="usp-title" data-lang-en="We don't sell websites. <em>We solve problems.</em>" data-lang-pl="Nie sprzedajemy stron. <em>Rozwiązujemy problemy.</em>">We don't sell websites. <em>We solve problems.</em></h2>
-      <p class="section-sub" data-lang-en="Every design decision is grounded in your business goals, not the latest trends." data-lang-pl="Każda decyzja projektowa opiera się na Twoich celach biznesowych, nie modnych trendach.">Every design decision is grounded in your business goals, not the latest trends.</p>
-    </header>
-    <div class="usp-grid">
-      <article class="usp-card reveal">
-        <div class="usp-icon-wrap usp-icon-target"></div>
-        <h3 class="usp-title" data-lang-en="Problem-Solving Approach" data-lang-pl="Podejście problem-solving">Problem-Solving Approach</h3>
-        <p class="usp-desc" data-lang-en="We don't just build websites. We solve business problems through technology — every feature has a purpose and business justification." data-lang-pl="Nie budujemy po prostu stron. Rozwiązujemy problemy biznesowe przez technologię — każda funkcja ma swój cel.">We don't just build websites. We solve business problems through technology — every feature has a purpose and business justification.</p>
-      </article>
-      <article class="usp-card reveal reveal-delay-1">
-        <div class="usp-icon-wrap usp-icon-zap"></div>
-        <h3 class="usp-title" data-lang-en="Multi-Skilled Founder" data-lang-pl="Wielozadaniowy Founder">Multi-Skilled Founder</h3>
-        <p class="usp-desc" data-lang-en="Design + Development + Branding + Marketing + Content. One person. Full stack. A cohesive vision with no communication gaps." data-lang-pl="Design + Development + Branding + Marketing + Content. Jedna osoba. Pełen stos. Spójna wizja bez przepaści komunikacyjnych.">Design + Development + Branding + Marketing + Content. One person. Full stack. A cohesive vision with no communication gaps.</p>
-      </article>
-      <article class="usp-card reveal reveal-delay-2">
-        <div class="usp-icon-wrap usp-icon-gem"></div>
-        <h3 class="usp-title" data-lang-en="Affordable Premium Quality" data-lang-pl="Przystępna jakość premium">Affordable Premium Quality</h3>
-        <p class="usp-desc" data-lang-en="Professional output without agency pricing. Built for SMEs that want to look like market leaders without overpaying." data-lang-pl="Profesjonalne efekty bez agencyjnych cen. Stworzone dla MŚP chcących wyglądać jak liderzy rynku.">Professional output without agency pricing. Built for SMEs that want to look like market leaders without overpaying.</p>
-      </article>
-      <article class="usp-card reveal">
-        <div class="usp-icon-wrap usp-icon-globe"></div>
-        <h3 class="usp-title" data-lang-en="Cross-Cultural Understanding" data-lang-pl="Rozumienie rynków">Cross-Cultural Understanding</h3>
-        <p class="usp-desc" data-lang-en="African markets meet European standards. We build solutions that resonate with diverse audiences across continents." data-lang-pl="Rynki afrykańskie spotkały się z europejskimi standardami. Rozwiązania dla zróżnicowanych odbiorców.">African markets meet European standards. We build solutions that resonate with diverse audiences across continents.</p>
-      </article>
-      <article class="usp-card reveal reveal-delay-1">
-        <div class="usp-icon-wrap usp-icon-handshake"></div>
-        <h3 class="usp-title" data-lang-en="Personalized Service" data-lang-pl="Spersonalizowana obsługa">Personalized Service</h3>
-        <p class="usp-desc" data-lang-en="You work directly with the founder. No layers of management, no middlemen, no lost communication. Your project, our full priority." data-lang-pl="Pracujesz bezpośrednio z założycielem. Bez biurokracji. Twój projekt — nasz pełny priorytet.">You work directly with the founder. No layers of management, no middlemen, no lost communication.</p>
-      </article>
-      <article class="usp-card reveal reveal-delay-2">
-        <div class="usp-icon-wrap usp-icon-shield"></div>
-        <h3 class="usp-title" data-lang-en="Lion-Based Brand Trust" data-lang-pl="Marka oparta na zaufaniu">Lion-Based Brand Trust</h3>
-        <p class="usp-desc" data-lang-en="Strong symbolic identity. Memorable. Professional. The shield in our logo stands for protection of client business interests." data-lang-pl="Silna, symboliczna tożsamość. Niezapomniana. Profesjonalna. Tarcza w logo oznacza ochronę interesów biznesowych klientów.">Strong symbolic identity. Memorable. Professional. The shield in our logo stands for protection of client business interests.</p>
-      </article>
-      <article class="usp-card reveal">
-        <div class="usp-icon-wrap usp-icon-barchart"></div>
-        <h3 class="usp-title" data-lang-en="Business + Tech Perspective" data-lang-pl="Biznes + perspektywa IT">Business + Tech Perspective</h3>
-        <p class="usp-desc" data-lang-en="Management + IT background means we understand outcomes, not just code. Your website is a business tool, not a portfolio piece." data-lang-pl="Zarządzanie + IT: rozumiemy wyniki, nie tylko kod. Twoja strona to narzędzie do osiągania celów.">Management + IT background means we understand outcomes, not just code. Your website is a business tool, not a portfolio piece.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════ ABOUT SNIPPET ══════════════ -->
-<section id="about-snippet" class="section section-alt" aria-labelledby="about-snippet-title">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="reveal">
-        <!-- Place founder photo at assets/img/founder/daniel.jpg -->
-        <img src="assets/img/founder/daniel.jpg" alt="Daniel Kamanga – TaffyDevs Founder" class="about-photo-wrap"
-             onerror="this.outerHTML='<div class=\'about-photo-placeholder\'><svg class=\'icon\' style=\'width:64px;height:64px\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\'><path d=\'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\'/><circle cx=\'12\' cy=\'7\' r=\'4\'/></svg></div>'">
-        <h3 class="about-name">Daniel Kamanga</h3>
-        <p class="about-role" data-lang-en="Founder · Web Designer · Developer" data-lang-pl="Założyciel · Web Designer · Developer">Founder · Web Designer · Developer</p>
-        <p class="about-bio" data-lang-en="I combine management knowledge with a passion for technology, building digital solutions that actually work for small and medium businesses. Every project is treated as my own." data-lang-pl="Łączę wiedzę z zarządzania z pasją do technologii, budując cyfrowe rozwiązania, które naprawdę działają dla MŚP. Każdy projekt traktuję jak własny.">I combine management knowledge with a passion for technology, building digital solutions that actually work for small and medium businesses. Every project is treated as my own.</p>
-        <div class="about-markets">
-          <span class="market-tag">🇵🇱 Poland</span>
-          <span class="market-tag">🇿🇼 Zimbabwe</span>
-          <span class="market-tag">🇬🇧 UK</span>
-          <span class="market-tag">🇪🇺 Europe</span>
+  <!-- ══════════ CLIENT LOGOS (in motion) ══════════ -->
+  <div class="shell bleed">
+    <section class="logos-band" aria-label="Clients I have built for">
+      <header class="logos-head">
+        <span class="kicker" data-pl="Zaufali mi">Trusted by</span>
+        <p class="lead" style="margin-top:var(--s2);" data-pl="Firmy, dla których zbudowałem i utrzymuję strony — w Polsce, Wielkiej Brytanii i Zimbabwe.">Businesses I have built and maintained websites for — in Poland, the UK and Zimbabwe.</p>
+      </header>
+      <div class="logos-viewport">
+        <div class="logos-track">
+          <a class="logo-item" href="https://juamcorporateservices.pl/" target="_blank" rel="noopener noreferrer"><img src="assets/img/clients/juam.png" alt="JUAM Corporate Services" loading="lazy"></a>
+          <a class="logo-item" href="https://phenomenalwear.pl/" target="_blank" rel="noopener noreferrer"><img src="assets/img/clients/bporbf.png" alt="Phenomenal Wear" loading="lazy"></a>
+          <a class="logo-item" href="https://randrcatering.co.uk/" target="_blank" rel="noopener noreferrer"><img src="assets/img/clients/randr.png" alt="R&amp;R Event Catering" loading="lazy"></a>
+          <a class="logo-item" href="https://www.buildhive.co.zw/" target="_blank" rel="noopener noreferrer"><img src="assets/img/clients/buildhive.png" alt="BuildHive" loading="lazy"></a>
+          <a class="logo-item" href="https://womensnetworkconference.pl/" target="_blank" rel="noopener noreferrer"><img src="assets/img/clients/wnc.png" alt="Women's Network Conference" loading="lazy"></a>
+          <!-- duplicated for the seamless loop -->
+          <span class="logo-item" aria-hidden="true"><img src="assets/img/clients/juam.png" alt="" loading="lazy"></span>
+          <span class="logo-item" aria-hidden="true"><img src="assets/img/clients/bporbf.png" alt="" loading="lazy"></span>
+          <span class="logo-item" aria-hidden="true"><img src="assets/img/clients/randr.png" alt="" loading="lazy"></span>
+          <span class="logo-item" aria-hidden="true"><img src="assets/img/clients/buildhive.png" alt="" loading="lazy"></span>
+          <span class="logo-item" aria-hidden="true"><img src="assets/img/clients/wnc.png" alt="" loading="lazy"></span>
         </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="assets/cv.pdf" class="cv-btn" download>
-            <span id="icon-dl"></span>
-            <span data-lang-en="Download CV" data-lang-pl="Pobierz CV">Download CV</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ══════════ WORK ══════════ -->
+  <section class="section" id="work" aria-labelledby="work-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="kicker" data-pl="Wybrane projekty">Selected work</span>
+        <h2 class="heading-lg" id="work-title" data-pl="Strony i systemy — działające i używane">Sites and systems, live and in use</h2>
+        <p class="lead" data-pl="Pięć projektów klienckich — platforma rekrutacyjna full-stack, sklep internetowy i strony firmowe w Polsce, UK i Zimbabwe. Każdy jest online, a każdy link prowadzi do działającej strony.">Five client projects — a full-stack recruitment platform, an online shop, and business sites across Poland, the UK and Zimbabwe. Every one is live; every link below goes to the real thing.</p>
+      </header>
+
+      <div class="work-list">
+
+        <!-- 01 — featured -->
+        <article class="work-card feature reveal">
+          <a class="work-media" href="work/juam-corporate-services.html" aria-label="JUAM Corporate Services case study">
+            <img src="assets/img/work/juam.jpg" alt="JUAM Corporate Services home page with recruitment search" width="800" height="506" loading="lazy">
           </a>
-          <a href="pages/about.html" class="btn-outline" style="padding:11px 20px;font-family:var(--font-ui);font-size:0.78rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--primary);border-color:var(--primary);">
-            <span data-lang-en="Full Bio" data-lang-pl="Pełne bio">Full Bio</span>
+          <div class="work-body">
+            <span class="work-index" data-pl="01 — Projekt flagowy">01 — Flagship project</span>
+            <h3 data-pl="JUAM Corporate Services — platforma rekrutacyjna">JUAM Corporate Services — recruitment platform</h3>
+            <p class="role" data-pl="Realizacja full-stack · Warszawa, Polska">Full-stack build · Warsaw, Poland</p>
+            <p class="muted" data-pl="Wieloportalowy system rekrutacyjny dla europejskiej agencji pracy, napisany w czystym PHP z PDO, bez frameworka. Osobne portale dla kandydatów, pracodawców i administratorów, z bezpiecznym logowaniem, kontrolą dostępu opartą na rolach i obsługą danych kandydatów zgodną z RODO.">A multi-portal recruitment system for a European staffing agency, written in plain PHP with PDO and no framework. Separate portals for job seekers, employers and administrators, with secure authentication, role-based access and GDPR/RODO-compliant handling of candidate data.</p>
+            <ul class="badge-list" aria-label="Technologies used">
+              <li class="badge badge-outline">PHP (OOP, MVC)</li>
+              <li class="badge badge-outline">PDO</li>
+              <li class="badge badge-outline">MySQL</li>
+              <li class="badge badge-outline">JavaScript</li>
+              <li class="badge badge-outline" data-pl="Kontrola dostępu">Role-based access</li>
+              <li class="badge badge-outline">GDPR / RODO</li>
+            </ul>
+            <div class="work-links">
+              <a class="btn" href="work/juam-corporate-services.html" data-pl="Studium przypadku">Case study</a>
+              <a class="btn-outline" href="https://juamcorporateservices.pl/" target="_blank" rel="noopener noreferrer">
+                <span data-pl="Zobacz stronę">Visit site</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="work-card reveal">
+          <a class="work-media" href="work/phenomenal-wear.html" aria-label="Phenomenal Wear case study">
+            <img src="assets/img/work/phenomenal-wear.jpg" alt="Phenomenal Wear online shop home page" width="800" height="500" loading="lazy">
           </a>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <header class="section-header" style="text-align:left;margin-bottom:28px;">
-          <span class="section-eyebrow" data-lang-en="Founder & Developer" data-lang-pl="Founder & Developer">Founder & Developer</span>
-          <h2 class="section-title" id="about-snippet-title" data-lang-en="Behind every project is <em>a person on a mission</em>" data-lang-pl="Za każdym projektem stoi <em>człowiek z misją</em>">Behind every project is <em>a person on a mission</em></h2>
-        </header>
-        <div class="skills-grid">
-          <div class="skill-item"><div class="skill-label">Web Development</div><div class="skill-impact" data-lang-en="Sites that load fast and convert visitors into clients." data-lang-pl="Strony ładujące się szybko, konwertujące odwiedzających w klientów.">Sites that load fast and convert visitors into clients.</div></div>
-          <div class="skill-item"><div class="skill-label">UI/UX Design</div><div class="skill-impact" data-lang-en="Interfaces that guide users to desired actions naturally." data-lang-pl="Interfejsy prowadzące użytkowników do pożądanych działań w naturalny sposób.">Interfaces that guide users to desired actions naturally.</div></div>
-          <div class="skill-item"><div class="skill-label">Branding</div><div class="skill-impact" data-lang-en="Brands that build trust and stick in memory across markets." data-lang-pl="Marki budujące zaufanie i pozostające w pamięci na wielu rynkach.">Brands that build trust and stick in memory across markets.</div></div>
-          <div class="skill-item"><div class="skill-label">Graphic Design</div><div class="skill-impact" data-lang-en="Visuals that make your business look like the leader." data-lang-pl="Materiały wizualne sprawiające, że Twoja firma wygląda jak lider.">Visuals that make your business look like the leader.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="work-body">
+            <span class="work-index">02</span>
+            <h3 data-pl="Phenomenal Wear — sklep internetowy z modą">Phenomenal Wear — online fashion store</h3>
+            <p class="role" data-pl="Realizacja WooCommerce · Polska">WooCommerce build · Poland</p>
+            <p class="muted" data-pl="Sklep internetowy polskiej marki streetwear, zbudowany na WordPressie i WooCommerce, z dostosowanym motywem, katalogiem produktów i dwujęzyczną wersją (EN/PL).">An online shop for a Polish streetwear brand, built on WordPress and WooCommerce with a customised theme, product catalogue and a bilingual (EN/PL) storefront.</p>
+            <ul class="badge-list" aria-label="Technologies used">
+              <li class="badge badge-outline">WordPress</li>
+              <li class="badge badge-outline">WooCommerce</li>
+              <li class="badge badge-outline">PHP</li>
+              <li class="badge badge-outline" data-pl="Własny motyw">Custom theme</li>
+            </ul>
+            <div class="work-links">
+              <a class="btn" href="work/phenomenal-wear.html" data-pl="Studium przypadku">Case study</a>
+              <a class="btn-outline" href="https://phenomenalwear.pl/" target="_blank" rel="noopener noreferrer">
+                <span data-pl="Zobacz stronę">Visit site</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-<!-- ══════════════ PROCESS SNIPPET ══════════════ -->
-<section id="process" class="section" aria-labelledby="process-title">
-  <div class="section-inner">
-    <header class="section-header">
-      <span class="section-eyebrow" data-lang-en="How we work" data-lang-pl="Jak pracujemy">How we work</span>
-      <h2 class="section-title" id="process-title" data-lang-en="Clear process. <em>Predictable results.</em>" data-lang-pl="Przejrzysty proces. <em>Przewidywalny wynik.</em>">Clear process. <em>Predictable results.</em></h2>
-    </header>
-    <div class="process-timeline reveal" role="list">
-      <div class="process-step" role="listitem">
-        <div class="process-num">01</div>
-        <div><div class="process-title" data-lang-en="Kickoff" data-lang-pl="Kickoff">Kickoff</div><p class="process-desc" data-lang-en="Book a package, confirm scope, sign agreement." data-lang-pl="Zamów pakiet, potwierdź zakres, podpisz umowę.">Book a package, confirm scope, sign agreement.</p><span class="process-payment-note" data-lang-en="Payment #1" data-lang-pl="Płatność #1">Payment #1</span></div>
-      </div>
-      <div class="process-step" role="listitem">
-        <div class="process-num">02</div>
-        <div><div class="process-title">Design</div><p class="process-desc" data-lang-en="Wireframes & visual concepts for your approval." data-lang-pl="Wireframy i koncepcje wizualne do Twojej akceptacji.">Wireframes & visual concepts for your approval.</p></div>
-      </div>
-      <div class="process-step" role="listitem">
-        <div class="process-num">03</div>
-        <div><div class="process-title">Development</div><p class="process-desc" data-lang-en="Clean code built to spec with regular updates." data-lang-pl="Czysty kod zgodnie ze specyfikacją z regularnymi aktualizacjami.">Clean code built to spec with regular updates.</p><span class="process-payment-note" data-lang-en="Payment #2" data-lang-pl="Płatność #2">Payment #2</span></div>
-      </div>
-      <div class="process-step" role="listitem">
-        <div class="process-num">04</div>
-        <div><div class="process-title">Review</div><p class="process-desc" data-lang-en="You test everything. Agreed revisions applied." data-lang-pl="Testujesz wszystko. Uzgodnione poprawki wprowadzane.">You test everything. Agreed revisions applied.</p></div>
-      </div>
-      <div class="process-step" role="listitem">
-        <div class="process-num">05</div>
-        <div><div class="process-title">Delivery</div><p class="process-desc" data-lang-en="Site goes live. Files, credentials, docs delivered." data-lang-pl="Strona wychodzi na żywo. Pliki i dokumentacja dostarczone.">Site goes live. Files, credentials, docs delivered.</p><span class="process-payment-note" data-lang-en="Payment #3" data-lang-pl="Płatność #3">Payment #3</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════ PORTFOLIO PREVIEW ══════════════ -->
-<section id="portfolio-preview" class="section section-alt">
-  <div class="section-inner">
-    <header class="section-header">
-      <span class="section-eyebrow" data-lang-en="Recent Work" data-lang-pl="Ostatnie projekty">Recent Work</span>
-      <h2 class="section-title" data-lang-en="Websites that <em>work for your clients</em>" data-lang-pl="Strony, które <em>pracują dla Twoich klientów</em>">Websites that <em>work for your clients</em></h2>
-    </header>
-    <div class="portfolio-grid">
-      <article class="portfolio-card reveal">
-        <!-- Place screenshot at assets/img/portfolio/websites/juam.jpg -->
-        <div class="portfolio-thumb">
-          <img src="assets/img/portfolio/websites/juam-logo.png" alt="JUAM Corporate Services website" loading="lazy"
-               onerror="this.parentElement.innerHTML='<div class=\'portfolio-thumb-placeholder\' style=\'background:linear-gradient(135deg,#1A3A6B,#2E5FA3)\'><svg class=\'icon\' style=\'width:36px;height:36px;color:#fff;opacity:.5\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg></div>'">
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">JUAM Corporate Services</h3>
-          <p class="portfolio-desc" data-lang-en="Corporate services firm in Poland. Increased credibility and lead conversion." data-lang-pl="Firma usług korporacyjnych w Polsce. Zwiększenie wiarygodności i konwersji zapytań.">Corporate services firm in Poland. Increased credibility and lead conversion.</p>
-          <a href="https://juamcorporateservices.pl/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
-            <span data-lang-en="Visit site" data-lang-pl="Zobacz stronę">Visit site</span>
-            <span id="icon-ext-1"></span>
+        <!-- 03 -->
+        <article class="work-card reverse reveal">
+          <a class="work-media" href="work/randr-catering.html" aria-label="R and R Event Catering case study">
+            <img src="assets/img/work/randr-catering.jpg" alt="R&amp;R Event Catering home page" width="800" height="506" loading="lazy">
           </a>
-        </div>
-      </article>
-      <article class="portfolio-card reveal reveal-delay-1">
-        <div class="portfolio-thumb">
-          <img src="assets/img/portfolio/websites/bporbf-logo.png" alt="Phenomenal Wear website" loading="lazy"
-               onerror="this.parentElement.innerHTML='<div class=\'portfolio-thumb-placeholder\' style=\'background:linear-gradient(135deg,#1A0020,#7B0090)\'><svg class=\'icon\' style=\'width:36px;height:36px;color:#fff;opacity:.5\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg></div>'">
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">Phenomenal Wear</h3>
-          <p class="portfolio-desc" data-lang-en="Fashion e-commerce in Poland. Modern aesthetics driving increased online sales." data-lang-pl="Sklep e-commerce dla marki modowej w Polsce. Nowoczesna estetyka przekładająca się na wzrost sprzedaży.">Fashion e-commerce in Poland. Modern aesthetics driving increased online sales.</p>
-          <a href="https://phenomenalwear.pl/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
-            <span data-lang-en="Visit site" data-lang-pl="Zobacz stronę">Visit site</span>
-            <span id="icon-ext-2"></span>
-          </a>
-        </div>
-      </article>
-      <article class="portfolio-card reveal reveal-delay-2">
-        <div class="portfolio-thumb">
-          <img src="assets/img/portfolio/websites/buildhive-logo.png" alt="BuildHive website" loading="lazy"
-               onerror="this.parentElement.innerHTML='<div class=\'portfolio-thumb-placeholder\' style=\'background:linear-gradient(135deg,#001A08,#006B28)\'><svg class=\'icon\' style=\'width:36px;height:36px;color:#fff;opacity:.5\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg></div>'">
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-name">BuildHive</h3>
-          <p class="portfolio-desc" data-lang-en="Construction industry platform in Zimbabwe. European UX standards for the local market." data-lang-pl="Platforma dla branży budowlanej w Zimbabwe. Europejskie standardy UX dla lokalnego rynku.">Construction industry platform in Zimbabwe. European UX standards for the local market.</p>
-          <a href="https://www.buildhive.co.zw/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
-            <span data-lang-en="Visit site" data-lang-pl="Zobacz stronę">Visit site</span>
-            <span id="icon-ext-3"></span>
-          </a>
-        </div>
-      </article>
-    </div>
-    <div style="text-align:center;margin-top:36px;">
-      <a href="pages/portfolio.html" class="btn-primary" style="display:inline-flex;">
-        <span data-lang-en="View All Projects" data-lang-pl="Zobacz wszystkie projekty">View All Projects</span>
-        <span id="icon-arr-r2"></span>
-      </a>
-    </div>
-  </div>
-</section>
+          <div class="work-body">
+            <span class="work-index">03</span>
+            <h3 data-pl="R&amp;R Event Catering — strona firmowa">R&amp;R Event Catering — business website</h3>
+            <p class="role" data-pl="Projekt i realizacja · Northampton, UK">Design &amp; build · Northampton, UK</p>
+            <p class="muted" data-pl="Strona brytyjskiej firmy cateringowej prezentująca usługi, menu i galerię, z formularzem zapytań. Układ mobile-first, zoptymalizowane zdjęcia i szybkie ładowanie na wszystkich przeglądarkach i urządzeniach.">A website for a UK catering company presenting services, menus and gallery, with enquiry functionality. Mobile-first layout, optimised images and fast page loads across browsers and devices.</p>
+            <ul class="badge-list" aria-label="Technologies used">
+              <li class="badge badge-outline">HTML5</li>
+              <li class="badge badge-outline">CSS3</li>
+              <li class="badge badge-outline">JavaScript</li>
+              <li class="badge badge-outline">Mobile-first</li>
+            </ul>
+            <div class="work-links">
+              <a class="btn" href="work/randr-catering.html" data-pl="Studium przypadku">Case study</a>
+              <a class="btn-outline" href="https://randrcatering.co.uk/" target="_blank" rel="noopener noreferrer">
+                <span data-pl="Zobacz stronę">Visit site</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-<!-- ══════════════ PRICING PREVIEW ══════════════ -->
-<section id="pricing-preview" class="section">
-  <div class="section-inner">
-    <header class="section-header">
-      <span class="section-eyebrow" data-lang-en="Services & Packages" data-lang-pl="Usługi i pakiety">Services & Packages</span>
-      <h2 class="section-title" data-lang-en="Transparent pricing. <em>Zero surprises.</em>" data-lang-pl="Przejrzyste ceny. <em>Zero niespodzianek.</em>">Transparent pricing. <em>Zero surprises.</em></h2>
-      <br>
-      <div class="currency-toggle" role="group" aria-label="Currency selector">
-      <button class="currency-btn" data-currency="pln">PLN (zł)</button>
-      <button class="currency-btn active" data-currency="eur">EUR (€)</button>
-      <button class="currency-btn" data-currency="usd">USD ($)</button>
-    </div>
-    </header>
+        <!-- 04 -->
+        <article class="work-card reveal">
+          <div class="work-media">
+            <img src="assets/img/work/buildhive.jpg" alt="BuildHive Construction Company home page" width="800" height="506" loading="lazy">
+          </div>
+          <div class="work-body">
+            <span class="work-index">04</span>
+            <h3 data-pl="BuildHive — strona firmy budowlanej">BuildHive — construction company site</h3>
+            <p class="role" data-pl="Projekt i realizacja · Zimbabwe">Design &amp; build · Zimbabwe</p>
+            <p class="muted" data-pl="Strona firmy budowlanej z Zimbabwe: usługi, przebieg projektu i ścieżki kontaktu, zbudowana responsywnie z myślą o odbiorcach korzystających głównie z telefonów.">A business site for a Zimbabwean construction company: services, project process and contact routes, built responsively for a mobile-heavy local audience.</p>
+            <ul class="badge-list" aria-label="Technologies used">
+              <li class="badge badge-outline" data-pl="Responsywna realizacja">Responsive build</li>
+              <li class="badge badge-outline">On-page SEO</li>
+            </ul>
+            <div class="work-links">
+              <a class="btn-outline" href="https://www.buildhive.co.zw/" target="_blank" rel="noopener noreferrer">
+                <span data-pl="Zobacz stronę">Visit site</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
+        <!-- 05 -->
+        <article class="work-card reverse reveal">
+          <div class="work-media">
+            <img src="assets/img/work/womens-network-conference.jpg" alt="Women's Network Conference 2026 home page" width="800" height="506" loading="lazy">
+          </div>
+          <div class="work-body">
+            <span class="work-index">05</span>
+            <h3 data-pl="Women's Network Conference — strona wydarzenia">Women's Network Conference — event site</h3>
+            <p class="role" data-pl="Projekt i realizacja · Warszawa, Polska">Design &amp; build · Warsaw, Poland</p>
+            <p class="muted" data-pl="Strona konferencji w Warszawie: program, sylwetki prelegentek i rejestracja — na tyle prosta, by organizatorzy mogli aktualizować ją między edycjami.">An event website for a Warsaw conference: programme, speaker profiles and registration, kept simple enough for the organisers to update between editions.</p>
+            <ul class="badge-list" aria-label="Technologies used">
+              <li class="badge badge-outline" data-pl="Responsywna realizacja">Responsive build</li>
+              <li class="badge badge-outline" data-pl="Rejestracja na wydarzenie">Event registration</li>
+            </ul>
+            <div class="work-links">
+              <a class="btn-outline" href="https://womensnetworkconference.pl/" target="_blank" rel="noopener noreferrer">
+                <span data-pl="Zobacz stronę">Visit site</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-    <div class="pricing-grid" style="max-width:900px;margin:0 auto;">
-      <article class="pricing-card reveal">
-        <div class="pricing-tier">Lite</div>
-        <div class="pricing-price" data-pln="250" data-eur="60" data-usd="63"><sup>€</sup>60</div>
-        <div class="pricing-delivery"><span id="icon-clock-1"></span> <span data-lang-en="3–5 working days" data-lang-pl="3–5 dni roboczych">3–5 working days</span></div>
-        <div class="pricing-payment"><span id="icon-cc-1"></span> <span data-lang-en="100% upfront" data-lang-pl="100% z góry">100% upfront</span></div>
-        <hr class="pricing-divider">
-        <ul class="pricing-features">
-          <li><span class="feat-check" id="icon-chk-1a"></span><span data-lang-en="One-page website" data-lang-pl="Strona jednostronicowa">One-page website</span></li>
-          <li><span class="feat-check" id="icon-chk-1b"></span><span data-lang-en="Mobile-first responsive" data-lang-pl="Mobile-first responsive">Mobile-first responsive</span></li>
-          <li><span class="feat-check" id="icon-chk-1c"></span><span data-lang-en="Contact form" data-lang-pl="Formularz kontaktowy">Contact form</span></li>
-          <li><span class="feat-check" id="icon-chk-1d"></span><span data-lang-en="Basic SEO" data-lang-pl="Podstawowe SEO">Basic SEO</span></li>
-        </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd68ahtjF55FLi0mZcHPD2dgnPKopZVfMSM11Ln1i4IcxX1mw/viewform" class="pricing-cta outline" target="_blank" data-lang-en="Book Lite" data-lang-pl="Zamów Lite">Book Lite</a>
-        <!---<a href="pages/booking.html" class="pricing-cta outline" data-lang-en="Book Lite" data-lang-pl="Zamów Lite">Book Lite</a>-->
-      </article>
-      <article class="pricing-card popular reveal reveal-delay-1">
-        <span class="popular-badge" data-lang-en="Most Popular" data-lang-pl="Najpopularniejszy">Most Popular</span>
-        <div class="pricing-tier">Standard</div>
-        <div class="pricing-price" data-pln="800" data-eur="190" data-usd="200"><sup>€</sup>190</div>
-        <div class="pricing-delivery"><span id="icon-clock-2"></span> <span data-lang-en="7–10 working days" data-lang-pl="7–10 dni roboczych">7–10 working days</span></div>
-        <div class="pricing-payment"><span id="icon-cc-2"></span> <span data-lang-en="40% / 30% / 30%" data-lang-pl="40% / 30% / 30%">40% / 30% / 30%</span></div>
-        <hr class="pricing-divider">
-        <ul class="pricing-features">
-          <li><span class="feat-check" id="icon-chk-2a"></span><span data-lang-en="Up to 10 pages" data-lang-pl="Do 10 podstron">Up to 10 pages</span></li>
-          <li><span class="feat-check" id="icon-chk-2b"></span><span data-lang-en="CMS / easy editing" data-lang-pl="CMS / łatwa edycja">CMS / easy editing</span></li>
-          <li><span class="feat-check" id="icon-chk-2c"></span><span data-lang-en="Advanced SEO + Analytics" data-lang-pl="Zaawansowane SEO + Analytics">Advanced SEO + Analytics</span></li>
-          <li><span class="feat-check" id="icon-chk-2d"></span><span data-lang-en="3 rounds of revisions" data-lang-pl="3 rundy poprawek">3 rounds of revisions</span></li>
-          <li><span class="feat-check" id="icon-chk-2e"></span><span data-lang-en="60-day support" data-lang-pl="60 dni wsparcia">60-day support</span></li>
-        </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd68ahtjF55FLi0mZcHPD2dgnPKopZVfMSM11Ln1i4IcxX1mw/viewform" class="pricing-cta" target="_blank" data-lang-en="Book Standard" data-lang-pl="Zamów Standard">Book Standard</a>
-        <!--<a href="pages/booking.html" class="pricing-cta" data-lang-en="Book Standard" data-lang-pl="Zamów Standard">Book Standard</a>--->
-      </article>
-      <article class="pricing-card reveal reveal-delay-2">
-        <div class="pricing-tier">Premium</div>
-        <div class="pricing-price" data-pln="2400" data-eur="571" data-usd="600"><sup>€</sup>571+</div>
-        <div class="pricing-delivery"><span id="icon-clock-3"></span> <span data-lang-en="10–14+ working days" data-lang-pl="10–14+ dni roboczych">10–14+ working days</span></div>
-        <div class="pricing-payment"><span id="icon-cc-3"></span> <span data-lang-en="40% / 30% / 30%" data-lang-pl="40% / 30% / 30%">40% / 30% / 30%</span></div>
-        <hr class="pricing-divider">
-        <ul class="pricing-features">
-          <li><span class="feat-check" id="icon-chk-3a"></span><span data-lang-en="Unlimited pages" data-lang-pl="Nielimitowane podstrony">Unlimited pages</span></li>
-          <li><span class="feat-check" id="icon-chk-3b"></span><span data-lang-en="E-commerce / online store" data-lang-pl="E-commerce / sklep">E-commerce / online store</span></li>
-          <li><span class="feat-check" id="icon-chk-3c"></span><span data-lang-en="Custom API integrations" data-lang-pl="Integracje API">Custom API integrations</span></li>
-          <li><span class="feat-check" id="icon-chk-3d"></span><span data-lang-en="Unlimited revisions" data-lang-pl="Nielimitowane poprawki">Unlimited revisions</span></li>
-          <li><span class="feat-check" id="icon-chk-3e"></span><span data-lang-en="90-day premium support" data-lang-pl="90 dni wsparcia">90-day premium support</span></li>
-        </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd68ahtjF55FLi0mZcHPD2dgnPKopZVfMSM11Ln1i4IcxX1mw/viewform" class="pricing-cta outline" target="_blank" data-lang-en="Book Premium" data-lang-pl="Zamów Premium">Book Premium</a>
-        <!--<a href="pages/booking.html" class="pricing-cta outline" data-lang-en="Book Premium" data-lang-pl="Zamów Premium">Book Premium</a>--->
-      </article>
+      </div>
+
+      <p class="lead" style="text-align:center;margin-top:var(--s9);" data-pl="Siedem kolejnych działających stron poniżej, a 30+ repozytoriów projektów klienckich i własnych na &lt;a class=&quot;link&quot; href=&quot;https://github.com/TaffyDevs11&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;GitHubie&lt;/a&gt;.">
+        Seven more live builds below, and 30+ repositories of client and practice work on
+        <a class="link" href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer">GitHub</a>.
+      </p>
     </div>
-    <div style="text-align:center;margin-top:32px;">
-      <a href="pages/services.html" style="font-family:var(--font-ui);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);display:inline-flex;align-items:center;gap:6px;" data-lang-en="See all packages & graphic design pricing" data-lang-pl="Zobacz wszystkie pakiety i cennik grafiki">See all packages & graphic design pricing</a>
+  </section>
+
+  <!-- ══════════ GITHUB BUILDS ══════════ -->
+  <section class="section" id="builds" aria-labelledby="builds-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="kicker" data-pl="Projekty na GitHubie">GitHub builds</span>
+        <h2 class="heading-lg" id="builds-title" data-pl="Siedem kolejnych stron na GitHub Pages">Seven more sites, live on GitHub Pages</h2>
+        <p class="lead" data-pl="Strony marek i firm, które zbudowałem i hostuję na GitHub Pages. Każda karta prowadzi do działającej strony.">Brand and business sites I built and host on GitHub Pages. Every card links to the running site.</p>
+      </header>
+
+      <div class="builds-grid">
+        <a class="build-card reveal" href="https://taffydevs11.github.io/AFM-WARSAW-SYSTEM/" target="_blank" rel="noopener noreferrer">
+          <div class="build-media">
+            <img src="assets/img/github/afm-warsaw.jpg" alt="AFM Warsaw Christian Centre website" width="760" height="475" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3>AFM Warsaw Christian Centre</h3>
+            <p data-pl="Strona zboru w Warszawie — służby, kazania, galeria i transmisje online. Należę też do ich zespołu medialno-technicznego.">Church website for the Warsaw assembly — ministries, sermons, gallery and online service details. I also serve on their media and technical team.</p>
+            <span class="build-link" data-pl="Zobacz stronę &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&quot;/&gt;&lt;polyline points=&quot;15 3 21 3 21 9&quot;/&gt;&lt;line x1=&quot;10&quot; y1=&quot;14&quot; x2=&quot;21&quot; y2=&quot;3&quot;/&gt;&lt;/svg&gt;">View live site <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+
+        <a class="build-card reveal" href="https://taffydevs11.github.io/Bheka-Vheneka/" target="_blank" rel="noopener noreferrer">
+          <div class="build-media">
+            <img src="assets/img/github/bheka-vheneka.jpg" alt="Bheka-Vheneka Inspections website" width="760" height="475" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3>Bheka-Vheneka Inspections</h3>
+            <p data-pl="Strona firmy wykonującej przeglądy pojazdów: usługi, FAQ, opinie i bezpośrednie ścieżki kontaktu.">Vehicle inspection company site: services, FAQs, testimonials and direct call-to-action contact routes.</p>
+            <span class="build-link" data-pl="Zobacz stronę &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&quot;/&gt;&lt;polyline points=&quot;15 3 21 3 21 9&quot;/&gt;&lt;line x1=&quot;10&quot; y1=&quot;14&quot; x2=&quot;21&quot; y2=&quot;3&quot;/&gt;&lt;/svg&gt;">View live site <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+
+        <a class="build-card reveal" href="https://taffydevs11.github.io/neema-creative-agency/" target="_blank" rel="noopener noreferrer">
+          <div class="build-media">
+            <img src="assets/img/github/neema-creative.jpg" alt="Neema Creative Agency website" width="760" height="475" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3>Neema Creative Agency</h3>
+            <p data-pl="Strona agencji kreatywnej zbudowana wokół usług i portfolio, z czytelną ścieżką zapytania dla nowych klientów.">Creative agency site built around services and portfolio, with a clear enquiry path for new clients.</p>
+            <span class="build-link" data-pl="Zobacz stronę &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&quot;/&gt;&lt;polyline points=&quot;15 3 21 3 21 9&quot;/&gt;&lt;line x1=&quot;10&quot; y1=&quot;14&quot; x2=&quot;21&quot; y2=&quot;3&quot;/&gt;&lt;/svg&gt;">View live site <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+
+        <a class="build-card reveal" href="https://taffydevs11.github.io/ink-and-ubuntu/" target="_blank" rel="noopener noreferrer">
+          <div class="build-media">
+            <img src="assets/img/github/ink-and-ubuntu.jpg" alt="Ink &amp; Ubuntu website" width="760" height="475" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3>Ink &amp; Ubuntu</h3>
+            <p data-pl="Strona studia kreatywnego tworzącego autorskie kartki okolicznościowe i materiały brandingowe, z sekcją realizacji i rezerwacją.">Creative studio site for custom greeting cards and brand visuals, with a past-projects section and booking.</p>
+            <span class="build-link" data-pl="Zobacz stronę &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&quot;/&gt;&lt;polyline points=&quot;15 3 21 3 21 9&quot;/&gt;&lt;line x1=&quot;10&quot; y1=&quot;14&quot; x2=&quot;21&quot; y2=&quot;3&quot;/&gt;&lt;/svg&gt;">View live site <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+
+        <a class="build-card reveal" href="https://taffydevs11.github.io/braided-esddence/" target="_blank" rel="noopener noreferrer">
+          <div class="build-media">
+            <img src="assets/img/github/braided-essence.jpg" alt="Braided Essence by Yemu website" width="760" height="475" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3>Braided Essence by Yemu</h3>
+            <p data-pl="Mobilne usługi zaplatania włosów w Rzeszowie i Krakowie — usługi, korzyści, galeria, opinie i rezerwacja.">Mobile braiding service in Rzeszów and Kraków — services, benefits, gallery, testimonials and booking.</p>
+            <span class="build-link" data-pl="Zobacz stronę &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&quot;/&gt;&lt;polyline points=&quot;15 3 21 3 21 9&quot;/&gt;&lt;line x1=&quot;10&quot; y1=&quot;14&quot; x2=&quot;21&quot; y2=&quot;3&quot;/&gt;&lt;/svg&gt;">View live site <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+
+        <a class="build-card reveal" href="https://taffydevs11.github.io/nutrinectar/" target="_blank" rel="noopener noreferrer">
+          <div class="build-media">
+            <img src="assets/img/github/nutrinectar.jpg" alt="NutriNectar website" width="760" height="475" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3>NutriNectar</h3>
+            <p data-pl="Strona marki żywności organicznej prezentująca produkty i usługi, z rotującym hero i danymi kontaktowymi.">Organic nutrition brand site presenting products and services with a rotating hero and contact details.</p>
+            <span class="build-link" data-pl="Zobacz stronę &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&quot;/&gt;&lt;polyline points=&quot;15 3 21 3 21 9&quot;/&gt;&lt;line x1=&quot;10&quot; y1=&quot;14&quot; x2=&quot;21&quot; y2=&quot;3&quot;/&gt;&lt;/svg&gt;">View live site <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+
+        <a class="build-card reveal" href="https://taffydevs11.github.io/Emzandglam/" target="_blank" rel="noopener noreferrer">
+          <div class="build-media">
+            <img src="assets/img/github/emz-and-glam.jpg" alt="Emz &amp; Glam website" width="760" height="475" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3>Emz &amp; Glam</h3>
+            <p data-pl="Strona marki beauty, w której mocna, ilustrowana identyfikacja przeniesiona jest na cały układ strony.">Beauty and style brand site carrying a bold illustrated identity through to the page design.</p>
+            <span class="build-link" data-pl="Zobacz stronę &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&quot;/&gt;&lt;polyline points=&quot;15 3 21 3 21 9&quot;/&gt;&lt;line x1=&quot;10&quot; y1=&quot;14&quot; x2=&quot;21&quot; y2=&quot;3&quot;/&gt;&lt;/svg&gt;">View live site <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ══════════ SKILLS ══════════ -->
+  <section class="section" id="skills" aria-labelledby="skills-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="kicker" data-pl="Warsztat">Toolkit</span>
+        <h2 class="heading-lg" id="skills-title" data-pl="Czym buduję">What I build with</h2>
+      </header>
+
+      <div class="grid grid-3">
+        <div class="panel skill-group reveal">
+          <h3 data-pl="Podstawy">Core</h3>
+          <ul class="badge-list">
+            <li class="badge badge-outline">HTML5</li>
+            <li class="badge badge-outline">CSS3</li>
+            <li class="badge badge-outline">JavaScript (ES6+)</li>
+            <li class="badge badge-outline">PHP</li>
+            <li class="badge badge-outline">MySQL</li>
+          </ul>
+        </div>
+        <div class="panel skill-group reveal">
+          <h3>Frontend</h3>
+          <ul class="badge-list">
+            <li class="badge badge-outline" data-pl="Responsywny design">Responsive design</li>
+            <li class="badge badge-outline">Bootstrap 4/5</li>
+            <li class="badge badge-outline">Flexbox &amp; Grid</li>
+            <li class="badge badge-outline">Mobile-first</li>
+          </ul>
+        </div>
+        <div class="panel skill-group reveal">
+          <h3 data-pl="CMS i platformy">CMS &amp; platforms</h3>
+          <ul class="badge-list">
+            <li class="badge badge-outline">WordPress</li>
+            <li class="badge badge-outline" data-pl="Własne motywy">Custom themes</li>
+            <li class="badge badge-outline" data-pl="Wtyczki">Plugins</li>
+            <li class="badge badge-outline">WooCommerce</li>
+            <li class="badge badge-outline">Mobirise</li>
+          </ul>
+        </div>
+        <div class="panel skill-group reveal">
+          <h3>Backend</h3>
+          <ul class="badge-list">
+            <li class="badge badge-outline">PHP (OOP, MVC)</li>
+            <li class="badge badge-outline">PDO</li>
+            <li class="badge badge-outline" data-pl="Projektowanie baz danych">Database design</li>
+            <li class="badge badge-outline" data-pl="Optymalizacja zapytań">Query optimisation</li>
+          </ul>
+        </div>
+        <div class="panel skill-group reveal">
+          <h3 data-pl="Narzędzia">Tools</h3>
+          <ul class="badge-list">
+            <li class="badge badge-outline">Git</li>
+            <li class="badge badge-outline">GitHub</li>
+            <li class="badge badge-outline">VS Code</li>
+            <li class="badge badge-outline">DevTools</li>
+            <li class="badge badge-outline" data-pl="Bash (podstawy)">Bash (basic)</li>
+          </ul>
+        </div>
+        <div class="panel skill-group reveal">
+          <h3 data-pl="Jakość i wdrożenia">Quality &amp; delivery</h3>
+          <ul class="badge-list">
+            <li class="badge badge-outline" data-pl="Zgodność z przeglądarkami">Cross-browser</li>
+            <li class="badge badge-outline">On-page SEO</li>
+            <li class="badge badge-outline" data-pl="Wydajność">Performance</li>
+            <li class="badge badge-outline" data-pl="Debugowanie i testy">Debugging &amp; testing</li>
+            <li class="badge badge-outline">Code review</li>
+            <li class="badge badge-outline">Google Analytics</li>
+            <li class="badge badge-outline">RODO / GDPR</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:var(--s4);">
+        <div class="panel skill-group reveal">
+          <h3 data-pl="Obecnie się uczę">Currently learning</h3>
+          <ul class="badge-list">
+            <li class="badge">Angular</li>
+            <li class="badge">React</li>
+            <li class="badge">Node.js</li>
+            <li class="badge">.NET</li>
+            <li class="badge" data-pl="Polski">Polish</li>
+          </ul>
+        </div>
+        <div class="panel skill-group reveal">
+          <h3 data-pl="Języki">Languages</h3>
+          <ul class="badge-list">
+            <li class="badge badge-outline" data-pl="Angielski — biegle">English — fluent</li>
+            <li class="badge badge-outline" data-pl="Polski — podstawowy">Polish — beginner</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ EXPERIENCE ══════════ -->
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="kicker" data-pl="Doświadczenie">Experience</span>
+        <h2 class="heading-lg" id="experience-title" data-pl="Sześć lat dostarczania projektów">Six years of shipping client work</h2>
+      </header>
+
+      <div class="exp">
+        <article class="exp-item reveal">
+          <p class="exp-when" data-pl="luty 2026 — wrzesień 2026">Feb 2026 — Sep 2026</p>
+          <div>
+            <h3 class="exp-role">WordPress Developer</h3>
+            <p class="exp-org" data-pl="ASTA Business Agency · Warszawa (zdalnie)">ASTA Business Agency · Warsaw (remote)</p>
+            <ul class="exp-points">
+              <li data-pl="Tworzyłem i aktualizowałem strony oraz landing page'e na WordPressie dla klientów agencji.">Built and updated WordPress websites and landing pages for the agency's business clients.</li>
+              <li data-pl="Dostosowywałem motywy i układy podstron do marki i treści każdego klienta.">Customised themes and page layouts to match each client's brand and content.</li>
+              <li data-pl="Naprawiałem błędy responsywności oraz poprawiałem szybkość ładowania i SEO on-page.">Fixed responsive layout issues and improved page speed and on-page SEO.</li>
+              <li data-pl="Pracowałem zdalnie z zespołem obsługi klienta, prowadząc zgłoszenia zmian aż do wdrożenia.">Worked remotely with the account team, taking client change requests through to release.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <p class="exp-when" data-pl="listopad 2024 — obecnie">Nov 2024 — Present</p>
+          <div>
+            <h3 class="exp-role" data-pl="Web Developer (freelance)">Freelance Web Developer</h3>
+            <p class="exp-org" data-pl="TaffyDevs · Warszawa">TaffyDevs · Warsaw</p>
+            <ul class="exp-points">
+              <li data-pl="Planuję, buduję i wdrażam strony dla małych firm w Polsce, UK i Zimbabwe — od briefu po działającą stronę.">Plan, build and launch websites for small businesses in Poland, the UK and Zimbabwe — from brief to live site.</li>
+              <li data-pl="Zbudowałem autorską platformę rekrutacyjną w PHP/MySQL oraz sklep odzieżowy na WooCommerce.">Built a custom PHP/MySQL recruitment platform and a WooCommerce fashion store.</li>
+              <li data-pl="Zajmuję się hostingiem, domenami, DNS, SSL i bieżącymi aktualizacjami dla klientów.">Handle hosting, domains, DNS, SSL and ongoing updates for clients.</li>
+              <li data-pl="Kod trzymam w Git i na GitHubie; 30+ repozytoriów projektów klienckich i własnych.">Keep code in Git and GitHub; 30+ repositories of client and practice builds.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <p class="exp-when" data-pl="kwiecień 2025 — wrzesień 2025">Apr 2025 — Sep 2025</p>
+          <div>
+            <h3 class="exp-role" data-pl="Stażysta ds. sprzedaży technologii">Tech Sales Intern</h3>
+            <p class="exp-org" data-pl="Rhenai · Warszawa">Rhenai · Warsaw</p>
+            <ul class="exp-points">
+              <li data-pl="Prezentowałem firmom rozwiązania AI i RPA (automatyzacja procesów) i tłumaczyłem ich korzyści prostym językiem.">Presented AI and RPA (robotic process automation) solutions to businesses and explained their benefits in plain terms.</li>
+              <li data-pl="Wyszukiwałem potencjalnych klientów i prowadziłem follow-up zapytań.">Identified potential client businesses and followed up on leads.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <p class="exp-when" data-pl="grudzień 2024 — luty 2025">Dec 2024 — Feb 2025</p>
+          <div>
+            <h3 class="exp-role" data-pl="Stażysta web developer">Web Development Intern</h3>
+            <p class="exp-org" data-pl="GLP Software House · Warszawa">GLP Software House · Warsaw</p>
+            <ul class="exp-points">
+              <li data-pl="Pracowałem w zespole stażystów nad stronami dla szkół w Ugandzie w HTML, CSS i JavaScript.">Worked in a team of interns building websites for schools in Uganda with HTML, CSS and JavaScript.</li>
+              <li data-pl="Testowałem i debugowałem strony przed wdrożeniem oraz recenzowałem kod innych stażystów.">Tested and debugged pages before release and reviewed other interns' code.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <p class="exp-when" data-pl="maj 2020 — październik 2024">May 2020 — Oct 2024</p>
+          <div>
+            <h3 class="exp-role" data-pl="Założyciel, web developer i technik IT">Founder, Web Developer &amp; IT Technician</h3>
+            <p class="exp-org" data-pl="CYPD IT Solutions · Bulawayo, Zimbabwe">CYPD IT Solutions · Bulawayo, Zimbabwe</p>
+            <ul class="exp-points">
+              <li data-pl="Założyłem i prowadziłem małą firmę IT świadczącą usługi web developmentu i wsparcia komputerowego dla lokalnych firm.">Founded and ran a small IT company offering web development and computer support to local businesses.</li>
+              <li data-pl="Budowałem i utrzymywałem strony w HTML, CSS, JavaScript, PHP i MySQL m.in. dla Bin-Law Freight Solutions, Express Printing, Scorpion Advisory i Amalindi Travel &amp; Tours.">Built and maintained sites with HTML, CSS, JavaScript, PHP and MySQL for clients including Bin-Law Freight Solutions, Express Printing, Scorpion Advisory and Amalindi Travel &amp; Tours.</li>
+              <li data-pl="Prowadziłem pełny cykl współpracy: wycena, wymagania, projekt, realizacja, hosting i wsparcie.">Handled the full client cycle: quoting, requirements, design, build, hosting and support.</li>
+              <li data-pl="Naprawiałem i konfigurowałem komputery i laptopy, instalowałem systemy i oprogramowanie, zapewniałem wsparcie zdalne.">Repaired and set up PCs and laptops, installed operating systems and software, and provided remote support.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <p class="exp-when" data-pl="marzec 2019 — czerwiec 2022">Mar 2019 — Jun 2022</p>
+          <div>
+            <h3 class="exp-role" data-pl="Wcześniejsze doświadczenie IT">Earlier IT experience</h3>
+            <p class="exp-org">Bulawayo, Zimbabwe</p>
+            <ul class="exp-points">
+              <li data-pl="&lt;strong style=&quot;font-weight:500;&quot;&gt;Technik komputerowy, FA Computers&lt;/strong&gt; (grudzień 2019 — czerwiec 2022): naprawy sprzętu i oprogramowania, instalacje systemów, wsparcie zdalne."><strong style="font-weight:500;">Computer Technician, FA Computers</strong> (Dec 2019 — Jun 2022): hardware and software repair, OS installs, remote support.</li>
+              <li data-pl="&lt;strong style=&quot;font-weight:500;&quot;&gt;Stażysta wsparcia IT, Lupane State University&lt;/strong&gt; (marzec 2019 — grudzień 2019)."><strong style="font-weight:500;">IT Support Intern, Lupane State University</strong> (Mar 2019 — Dec 2019).</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ ABOUT ══════════ -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="kicker" data-pl="O mnie">About</span>
+        <h2 class="heading-lg" id="about-title" data-pl="Kogo zatrudniasz">Who you would be hiring</h2>
+      </header>
+
+      <div class="about">
+        <div class="portrait reveal">
+          <img src="assets/img/tafadzwa-kamanga.jpg" alt="Portrait of Tafadzwa Daniel Kamanga" width="800" height="960" loading="lazy">
+        </div>
+
+        <div class="reveal">
+          <p class="lead" style="color:var(--ink);" data-pl="Sześć lat praktycznej pracy przy tworzeniu i utrzymaniu stron dla małych firm — najpierw przez własną firmę IT w Zimbabwe, teraz w Polsce.">Six years of hands-on work building and maintaining websites for small businesses — first through my own IT company in Zimbabwe, now in Poland.</p>
+          <p class="muted" style="margin-top:var(--s4);" data-pl="Buduję w PHP, MySQL, JavaScript i WordPressie. Moim najmocniejszym projektem jest autorska platforma rekrutacyjna w PHP/PDO dla warszawskiej agencji pracy, z osobnymi portalami dla kandydatów, pracodawców i administratorów. Ostatnio pracowałem zdalnie jako WordPress developer dla amerykańskiej agencji marketingu cyfrowego.">I build with PHP, MySQL, JavaScript and WordPress. My strongest project is a custom PHP/PDO recruitment platform for a Warsaw staffing agency, with separate portals for candidates, employers and admins. Most recently I worked remotely as a WordPress developer for an American digital marketing agency.</p>
+          <p class="muted" style="margin-top:var(--s4);" data-pl="Szukam roli junior lub mid web developera w Warszawie lub zdalnie, gdzie będę dalej dostarczał realne projekty i rozwijał się w nowoczesnym stacku JavaScript.">I am looking for a junior or mid-level web developer role in Warsaw or remote, where I can keep shipping real work and grow into a modern JavaScript stack.</p>
+
+          <dl class="fact-list" style="margin-top:var(--s7);">
+            <div class="fact">
+              <dt data-pl="Wykształcenie">Education</dt>
+              <dd data-pl="Magister zarządzania (IT w biznesie) — Akademia Finansów i Biznesu Vistula, Warszawa · 2024–2026&lt;br&gt;&lt;span class=&quot;muted&quot;&gt;Licencjat z zarządzania biznesem i IT — Catholic University of Zimbabwe · 2017–2022&lt;/span&gt;">
+                Master's Degree in Management (IT in Business) — Vistula University, Warsaw · 2024–2026<br>
+                <span class="muted">Bachelor's Degree in Business Management and IT — Catholic University of Zimbabwe · 2017–2022</span>
+              </dd>
+            </div>
+            <div class="fact">
+              <dt data-pl="Lokalizacja">Based in</dt>
+              <dd data-pl="Warszawa, Polska — stacjonarnie, hybrydowo lub zdalnie">Warsaw, Poland — open to on-site, hybrid or remote</dd>
+            </div>
+            <div class="fact">
+              <dt data-pl="Języki">Languages</dt>
+              <dd data-pl="Angielski (biegle) · Polski (podstawowy, w trakcie nauki)">English (fluent) · Polish (beginner, learning)</dd>
+            </div>
+            <div class="fact">
+              <dt data-pl="Poza pracą">Outside work</dt>
+              <dd data-pl="Członek zespołu medialno-technicznego w AFM Warsaw Church i Family Covenant Church — transmisje na żywo, projekcje i nagłośnienie, fotografia i wideo, a także gra na perkusji jako kierownik muzyczny. Praca zespołowa pod presją, co tydzień.">Media and technical team member at AFM Warsaw Church &amp; Family Covenant Church — live streaming, projection and audio setups, photography and videography, and drumming as Musical Director. Team work under live pressure, every week.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="kicker" data-pl="Kontakt">Contact</span>
+        <h2 class="heading-lg" id="contact-title" data-pl="Dostępny na stanowisko junior lub mid developera">Available for a junior or mid developer role</h2>
+        <p class="lead" data-pl="Warszawa lub zdalnie. Najszybciej złapiesz mnie mailem — odpowiadam w ciągu doby.">Warsaw or remote. The quickest way to reach me is email — I reply within a day.</p>
+      </header>
+
+      <div class="contact-grid">
+        <a class="contact-card reveal" href="mailto:tkamanga011@gmail.com">
+          <span class="label">Email</span>
+          <span class="value">tkamanga011@gmail.com</span>
+          <button class="copy-btn" type="button" data-copy="tkamanga011@gmail.com" onclick="event.preventDefault();event.stopPropagation();">
+            <svg class="icon" style="width:13px;height:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-label" data-pl="Kopiuj adres">Copy address</span>
+          </button>
+        </a>
+
+        <a class="contact-card reveal" href="tel:+48782778223">
+          <span class="label" data-pl="Telefon">Phone</span>
+          <span class="value">+48 782 778 223</span>
+          <span class="muted" style="font-size:var(--text-meta);" data-pl="Telefon lub WhatsApp">Call or WhatsApp</span>
+        </a>
+
+        <a class="contact-card reveal" href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321/" target="_blank" rel="noopener noreferrer">
+          <span class="label">LinkedIn</span>
+          <span class="value">tafadzwa-kamanga</span>
+          <span class="muted" style="font-size:var(--text-meta);" data-pl="Połącz się lub napisz">Connect or message me</span>
+        </a>
+
+        <a class="contact-card reveal" href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer">
+          <span class="label">GitHub</span>
+          <span class="value">TaffyDevs11</span>
+          <span class="muted" style="font-size:var(--text-meta);" data-pl="30+ repozytoriów">30+ repositories</span>
+        </a>
+
+        <a class="contact-card reveal" href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer">
+          <span class="label">YouTube</span>
+          <span class="value">@Taffydevs</span>
+          <span class="muted" style="font-size:var(--text-meta);" data-pl="Mój kanał">My channel</span>
+        </a>
+
+        <a class="contact-card reveal" href="assets/cv/Tafadzwa-Kamanga-CV.pdf" download>
+          <span class="label">CV</span>
+          <span class="value" data-pl="Pobierz PDF">Download PDF</span>
+          <span class="muted" style="font-size:var(--text-meta);" data-pl="Jedna strona, aktualne">One page, up to date</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<!-- ══════════════ FOOTER ══════════════ -->
-<footer id="footer" role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <img src="assets/img/logos/logo-dark.png" alt="TaffyDevs" class="footer-logo footer-logo-img" loading="lazy"
-             onerror="this.outerHTML='<div style=\'font-family:var(--font-heading);font-size:1rem;font-weight:800;color:#FFF;margin-bottom:13px;\'>TaffyDevs</div>'">
-        <p class="footer-tagline" data-lang-en="Solving Everyday Problems with IT Solutions. Poland · Zimbabwe · UK · Europe." data-lang-pl="Rozwiązujemy codzienne problemy poprzez IT. Polska · Zimbabwe · UK · Europa.">Solving Everyday Problems with IT Solutions. Poland · Zimbabwe · UK · Europe.</p>
-        <div class="footer-social">
-          <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><span id="icon-yt"></span></a>
-          <a href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub"><span id="icon-gh"></span></a>
-          <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><span id="icon-li"></span></a>
-          <a href="mailto:taffydevs@gmail.com" class="footer-social-btn" aria-label="Email"><span id="icon-ml"></span></a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title" data-lang-en="Navigation" data-lang-pl="Nawigacja">Navigation</div>
-        <ul class="footer-links">
-          <li><a href="index.html" data-lang-en="Home" data-lang-pl="Strona główna">Home</a></li>
-          <li><a href="pages/about.html" data-lang-en="About" data-lang-pl="O nas">About</a></li>
-          <li><a href="pages/services.html" data-lang-en="Services" data-lang-pl="Usługi">Services</a></li>
-          <li><a href="pages/portfolio.html">Portfolio</a></li>
-          <li><a href="pages/blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title" data-lang-en="Services" data-lang-pl="Usługi">Services</div>
-        <ul class="footer-links">
-          <li><a href="pages/services.html" data-lang-en="Web Development" data-lang-pl="Strony www">Web Development</a></li>
-          <li><a href="pages/services.html" data-lang-en="Graphic Design" data-lang-pl="Grafika & Logo">Graphic Design</a></li>
-          <li><a href="pages/services.html">Branding</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd68ahtjF55FLi0mZcHPD2dgnPKopZVfMSM11Ln1i4IcxX1mw/viewform" data-lang-en="Get a Quote" target="_blank" data-lang-pl="Zamów wycenę">Get a Quote</a></li>
-          <!--<li><a href="pages/booking.html" data-lang-en="Get a Quote" data-lang-pl="Zamów wycenę">Get a Quote</a></li>--->
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title" data-lang-en="Contact" data-lang-pl="Kontakt">Contact</div>
-        <ul class="footer-links">
-          <li><a href="tel:+48600762551">+48 600 762 551</a></li>
-          <li><a href="mailto:taffydevs@gmail.com">taffydevs@gmail.com</a></li>
-          <li><a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer">@TaffyDevs</a></li>
-          <li><a href="pages/contact.html" data-lang-en="Contact page" data-lang-pl="Strona kontaktu">Contact page</a></li>
-        </ul>
-      </div>
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-row">
+      <p class="muted" style="font-size:var(--text-meta);">© <span id="year">2026</span> Tafadzwa Daniel Kamanga — <span data-pl="Warszawa, Polska">Warsaw, Poland</span></p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#work" data-pl="Projekty">Work</a>
+        <a href="#experience" data-pl="Doświadczenie">Experience</a>
+        <a href="mailto:tkamanga011@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/TaffyDevs11" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.youtube.com/@Taffydevs" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy" data-lang-en="© 2026 TaffyDevs. All rights reserved. Designed by Daniel Kamanga." data-lang-pl="© 2026 TaffyDevs. Wszelkie prawa zastrzeżone. Zaprojektowane przez Daniela Kamangę.">© 2026 TaffyDevs. All rights reserved. Designed by Daniel Kamanga.</p>
-      <div class="lang-toggle" role="group" aria-label="Language switcher">
-        <span class="lang-lbl lang-lbl-pl" id="footer-lbl-pl">PL</span>
-        <div class="toggle-sw lang-toggle-btn" role="switch" aria-checked="true" tabindex="0"></div>
-        <span class="lang-lbl lang-lbl-en active" id="footer-lbl-en">EN</span>
-      </div>
-    </div>
+    <p class="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO).</p>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-// Inject SVG icons after DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-  const inject = (id, name, cls='') => {
-    const el = document.getElementById(id);
-    if (el) el.innerHTML = ICONS[name]?.replace('<svg ', `<svg class="icon ${cls}" `) || '';
-  };
-  inject('icon-arrow-r','arrowright','icon-sm');
-  inject('icon-arrow-d','arrowright'); // reuse rotated via CSS if needed
-  inject('icon-dl','download','icon-sm');
-  inject('icon-ext-1','externallink','icon-sm');
-  inject('icon-ext-2','externallink','icon-sm');
-  inject('icon-ext-3','externallink','icon-sm');
-  inject('icon-arr-r2','arrowright','icon-sm');
-  inject('icon-clock-1','clock','icon-sm'); inject('icon-clock-2','clock','icon-sm'); inject('icon-clock-3','clock','icon-sm');
-  inject('icon-cc-1','creditcard','icon-sm'); inject('icon-cc-2','creditcard','icon-sm'); inject('icon-cc-3','creditcard','icon-sm');
-  ['1a','1b','1c','1d','2a','2b','2c','2d','2e','3a','3b','3c','3d','3e'].forEach(s => inject('icon-chk-'+s,'check','icon-sm'));
-  inject('icon-yt','youtube'); inject('icon-gh','github'); inject('icon-li','linkedin'); inject('icon-ml','mail');
-
-  // USP icons
-  const uspIcons = { target:'target', zap:'zap', gem:'gem', globe:'globe', handshake:'shield', shield:'shield', barchart:'barchart' };
-  document.querySelectorAll('[class*="usp-icon-"]').forEach(el => {
-    const cls = [...el.classList].find(c => c.startsWith('usp-icon-') && c !== 'usp-icon-wrap');
-    if (!cls) return;
-    const name = cls.replace('usp-icon-', '');
-    el.innerHTML = ICONS[name]?.replace('<svg ', `<svg class="icon icon-lg" `) || '';
-  });
-});
-
-// Scroll-down arrow (rotated)
-document.getElementById('icon-arrow-d').style.transform = 'rotate(90deg)';
-</script>
 </body>
 </html>

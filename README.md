@@ -1,257 +1,89 @@
-# TaffyDevs Website — Setup Guide
+# Tafadzwa Daniel Kamanga — Developer Portfolio
 
-## 📁 Folder Structure
+A standalone, static portfolio site aimed at employers. No build step, no dependencies,
+no connection to the TaffyDevs agency site — this folder can be published on its own.
 
 ```
-taffydevs/
-├── index.html                   ← Homepage
-├── css/
-│   └── style.css                ← All styles (single file)
-├── js/
-│   └── main.js                  ← All JavaScript (single file)
-├── pages/
-│   ├── about.html               ← About / Founder page
-│   ├── services.html            ← Services & Pricing
-│   ├── portfolio.html           ← Portfolio (websites, design, testimonials)
-│   ├── blog.html                ← Blog articles & YouTube videos
-│   ├── article.html             ← Full blog article (dynamic, URL-param driven)
-│   ├── contact.html             ← Contact form & details
-│   └── booking.html             ← 6-step project booking form
-└── assets/
-    ├── cv.pdf                   ← Your CV (place here)
-    └── img/
-        ├── logos/               ← Site logos (see below)
-        ├── founder/             ← Founder photo
-        ├── clients/             ← Client/brand logos (logo strip)
-        ├── portfolio/
-        │   ├── websites/        ← Website project screenshots
-        │   ├── design/          ← Design & logo project images
-        │   └── testimonials/    ← Client testimonial avatars
-        └── blog/                ← Blog article cover images & YouTube thumbnails
+portfolio/
+├── index.html                 ← the whole pitch: work, skills, experience, about, contact
+├── work/
+│   ├── juam-corporate-services.html
+│   ├── phenomenal-wear.html
+│   └── randr-catering.html
+├── css/style.css              ← design system (tokens at the top)
+├── js/main.js                 ← ~100 lines: section nav, reveals, copy-to-clipboard
+├── assets/
+│   ├── img/work/*.jpg         ← screenshots of the live client sites
+│   ├── img/github/*.jpg       ← screenshots of the GitHub Pages builds
+│   ├── img/logo.svg           ← TDK lockup (monogram + name + tagline)
+│   ├── img/tafadzwa-kamanga.jpg
+│   └── cv/Tafadzwa-Kamanga-CV.pdf
+├── 404.html · robots.txt · sitemap.xml · .nojekyll
 ```
 
----
+## Publishing on GitHub Pages
 
-## 🖼️ Image Placement Guide
+**Option A — its own repository (recommended, gives the cleanest URL)**
 
-### 1. Logos (assets/img/logos/)
+1. Create a repository, e.g. `portfolio`.
+2. Copy the **contents of this folder** into the repository root (so `index.html` is at the top level).
+3. Push, then: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**.
+4. Live at `https://<username>.github.io/portfolio/`.
 
-| File | Used for | Notes |
-|------|----------|-------|
-| `logo-blue.png` | Navbar (English), loader (EN) | Transparent bg, min 300×300px |
-| `logo-red.png` | Navbar (Polish), loader (PL) | Transparent bg, min 300×300px |
-| `logo-dark.png` | Footer (both languages) | Light/white version for dark bg |
+**Option B — publish this folder from an existing repository**
 
-> **Tip:** All three logos are already in your uploads. Rename them:
-> - Image 1 (blue) → `logo-blue.png`
-> - Image 2 (red) → `logo-red.png`
-> - Image 3 (dark/transparent) → `logo-dark.png`
+Settings → Pages → Source: `main` branch, folder `/portfolio`.
 
----
+Either way `.nojekyll` is already included, so GitHub serves every file as-is.
 
-### 2. Founder Photo (assets/img/founder/)
+### After publishing — update three things
 
-| File | Used on | Recommended size |
-|------|---------|-----------------|
-| `daniel.jpg` | About page, blog article author box | 500×600px portrait, JPG/PNG |
+The canonical URL is currently `https://taffydevs11.github.io/portfolio/`. If yours differs,
+change it in:
 
----
+- `index.html` and each `work/*.html` — `<link rel="canonical">` and the `og:` tags
+- `sitemap.xml` and `robots.txt` — the URLs
+- `404.html` — the `/portfolio/` paths (GitHub Pages serves 404s from the site root)
 
-### 3. Client Logo Strip (assets/img/clients/)
+A custom domain (e.g. `tafadzwakamanga.com`) works too: add it under Settings → Pages,
+then update those same URLs.
 
-Place client/brand logos here. The strip auto-scrolls with fallback text if images are missing.
+## Keeping it current
 
-| File | Brand |
-|------|-------|
-| `juam.png` | JUAM Corporate Services |
-| `phenomenal-wear.png` | Phenomenal Wear |
-| `rr-catering.png` | R&R Catering |
-| `buildhive.png` | BuildHive |
-| `wnc.png` | Women's Network Conference |
-| `client6.png` | Your next client |
-| `client7.png` | Your next client |
+- **CV** — replace `assets/cv/Tafadzwa-Kamanga-CV.pdf`, keeping the filename.
+- **New project** — copy a `work/*.html` page as a template, add a `.work-card` block in
+  `index.html`, drop a screenshot in `assets/img/work/`, and add the page to `sitemap.xml`.
+- **New GitHub build** — add a `.build-card` block in the `#builds` section and a screenshot
+  in `assets/img/github/`.
+- **Logo** — the lockup lives inline in each page header (`.brand`) and standalone in
+  `assets/img/logo.svg`; the favicon is the TDK monogram as an inline data URI.
+- **Screenshots** — 1280×800 captures of the live site, saved around 800px wide as JPEG.
 
-> **Format:** PNG with transparent background, max height 48px display. Original files can be larger.
-> **To add more clients:** Copy a client strip item block in `index.html` and duplicate it (both the original and the duplicate sets for seamless looping).
+## Design system
 
----
+Swiss editorial: oversized light type, a blue-tinted palette, a single accent colour, and
+a floating navy rail for navigation. The rules are encoded as custom properties at the
+top of `css/style.css`:
 
-### 4. Portfolio — Websites (assets/img/portfolio/websites/)
+| Token | Value | Use |
+|---|---|---|
+| `--ink` | `#10203F` | text, filled buttons, the rail |
+| `--paper` | `#ffffff` | cards, button labels |
+| `--canvas` | `#E3EAF6` | page background |
+| `--fog` `#D2DCED` / `--ash` `#A7B6D0` / `--smoke` `#4E6389` / `--graphite` `#2C3E63` | blue-greys | borders, secondary text |
+| `--ember` | `#1F6FEB` | the accent — used once or twice per page |
+| `--text-display` | 44 → 127px, weight **300** | the name, project titles |
+| `--radius-badge` / `--radius` / `--radius-feature` | 4 / 8 / 14px | badges / cards & buttons / featured cards |
 
-Screenshots of your live websites. Shown as card thumbnails.
+Three rules keep it coherent: **no box-shadows** (contrast does the work), **no gradients**,
+and **nothing heavier than weight 500** — light type at large sizes is the voice of the design.
 
-| File | Project |
-|------|---------|
-| `juam.jpg` | JUAM Corporate Services |
-| `phenomenal-wear.jpg` | Phenomenal Wear |
-| `rr-catering.jpg` | R&R Catering |
-| `buildhive.jpg` | BuildHive |
-| `wnc.jpg` | Women's Network Conference |
+Typeface: [Inter Tight](https://fonts.google.com/specimen/Inter+Tight) (300/400/500/600).
 
-> **How to take screenshots:** Use [GoFullPage](https://gofullpage.com/) Chrome extension for full-page screenshots. Recommended: 1200×800px, JPG quality 85%.
+## Accessibility & performance
 
----
-
-### 5. Portfolio — Design & Logo (assets/img/portfolio/design/)
-
-Images showing your graphic design and branding work.
-
-| File | Project |
-|------|---------|
-| `taffydevs-brand.jpg` | TaffyDevs Brand Identity |
-| `juam-identity.jpg` | JUAM Corporate Identity |
-| `rr-catering-brand.jpg` | R&R Catering Branding |
-| `phenomenal-wear-brand.jpg` | Phenomenal Wear Branding |
-| `buildhive-identity.jpg` | BuildHive Visual Identity |
-| `wnc-branding.jpg` | WNC Event Branding |
-
-> **Recommended size:** 800×600px or similar 4:3 / 16:9 ratio, JPG quality 85%.
-
----
-
-### 6. Portfolio — Testimonials (assets/img/portfolio/testimonials/)
-
-Client headshot/avatar photos for testimonial cards.
-
-| File | Person |
-|------|--------|
-| `anna-k.jpg` | Anna Kowalska (JUAM) |
-| `james-r.jpg` | James Richardson (R&R Catering) |
-| `tendai-m.jpg` | Tendai Moyo (BuildHive) |
-
-> **Format:** 200×200px square, JPG. Falls back to a user icon SVG if missing.
-
----
-
-### 7. Blog Article Images (assets/img/blog/)
-
-Cover/hero images for blog articles. Also YouTube video thumbnails.
-
-**Article covers:**
-| File | Article |
-|------|---------|
-| `website-2025.jpg` | Why Your Business Needs a Website in 2026 |
-| `conversion-mistakes.jpg` | 5 Mistakes Killing Your Conversion |
-| `africa-europe-digital.jpg` | Digital Transformation for African Business |
-| `seo-small-business.jpg` | SEO for Small Businesses |
-| `brand-colours-fonts.jpg` | How to Choose Colours and Fonts |
-| `ecommerce-guide.jpg` | How to Build an Online Shop |
-| `zimbabwe-poland-markets.jpg` | Zimbabwe and Poland: Two Markets |
-
-**YouTube thumbnails:**
-| File | Video |
-|------|-------|
-| `video-thumb-1.jpg` | How to Build a Website for a Small Business |
-| `video-thumb-2.jpg` | Web Design for Businesses in Poland |
-| `video-thumb-3.jpg` | BuildHive Case Study |
-| `video-thumb-4.jpg` | 5 Things You Should NEVER Do |
-| `video-thumb-5.jpg` | TaffyDevs Agency Story |
-| `video-thumb-6.jpg` | How to Choose a Web Designer |
-
-> **Recommended size:** 800×450px (16:9), JPG. All images have graceful fallback placeholders if missing.
-
----
-
-## 🚀 Deployment
-
-### Netlify (Recommended)
-1. Drag and drop the entire `taffydevs/` folder onto [netlify.com/drop](https://app.netlify.com/drop)
-2. Your site is live instantly with a `.netlify.app` URL
-3. Connect your custom domain in Netlify settings
-
-### GitHub Pages
-1. Create a new GitHub repository
-2. Upload all files maintaining the folder structure
-3. Go to Settings → Pages → Source: main branch → / (root)
-4. Your site is live at `https://yourusername.github.io/repository-name/`
-
-### Custom Hosting (cPanel, etc.)
-Upload all files to `public_html/` maintaining the exact folder structure.
-
----
-
-## 🌐 Language System
-
-- **Default language:** English (blue theme)
-- **Toggle:** PL/EN switch in the navbar and footer
-- **Persistence:** Language choice is saved to `localStorage` and remembered across pages
-- **Theme:** English = Blue | Polish = Red — colours change automatically on toggle
-
----
-
-## 📝 Adding New Blog Articles
-
-1. Open `pages/article.html`
-2. Find the `ARTICLES` JavaScript object
-3. Add a new entry following this pattern:
-```javascript
-'your-article-id': {
-  en: {
-    title: 'Your Article Title',
-    cat: 'Category',
-    date: '01 Jan 2026',
-    img: '../assets/img/blog/your-image.jpg',
-    imgAlt: 'Image description',
-    content: `<p>Your HTML content here...</p>`
-  },
-  pl: {
-    title: 'Tytuł po polsku',
-    cat: 'Kategoria',
-    date: '01 Jan 2026',
-    img: '../assets/img/blog/your-image.jpg',
-    imgAlt: 'Opis obrazu',
-    content: `<p>Treść po polsku...</p>`
-  }
-}
-```
-
-4. Open `pages/blog.html` and add a new `<a href="article.html?id=your-article-id">` card in the articles grid
-5. Add the cover image to `assets/img/blog/your-image.jpg`
-
----
-
-## 🎨 Customisation
-
-### Changing colours
-Edit the CSS variables at the top of `css/style.css`:
-- Blue theme (EN): under `:root { }`
-- Red theme (PL): under `html.lang-pl { }`
-
-### Updating pricing
-Find the pricing cards in `pages/services.html` and update the `data-pln`, `data-eur`, `data-usd` attributes on `.pricing-price` elements.
-
-### Adding portfolio items
-In `pages/portfolio.html`, copy an existing `<article class="portfolio-card">` block and update the image src, name, description and link.
-
-### Adding client logos to the strip
-In `index.html`, find `<!-- CLIENT LOGO STRIP -->` and add items to BOTH the original and duplicate sets (required for seamless scrolling).
-
----
-
-## 📞 Contact Details (update these in all pages)
-
-- **Phone:** +48 600 762 551
-- **Email:** taffydevs@gmail.com
-- **YouTube:** https://www.youtube.com/@Taffydevs
-- **GitHub:** https://github.com/TaffyDevs11
-- **LinkedIn:** https://www.linkedin.com/in/tafadzwa-kamanga-3255a5321
-
----
-
-## ✅ Pre-launch Checklist
-
-- [ ] Place `logo-blue.png`, `logo-red.png`, `logo-dark.png` in `assets/img/logos/`
-- [ ] Place `daniel.jpg` in `assets/img/founder/`
-- [ ] Place client logos in `assets/img/clients/`
-- [ ] Place portfolio screenshots in `assets/img/portfolio/websites/`
-- [ ] Place design portfolio images in `assets/img/portfolio/design/`
-- [ ] Place testimonial avatars in `assets/img/portfolio/testimonials/`
-- [ ] Place blog article covers in `assets/img/blog/`
-- [ ] Place `cv.pdf` in `assets/`
-- [ ] Test all pages on mobile and desktop
-- [ ] Test language toggle (EN/PL) on all pages
-- [ ] Submit sitemap to Google Search Console after deployment
-
----
-
-*Built by TaffyDevs — Solving Everyday Problems with IT Solutions*
+- Semantic landmarks, a skip link, visible focus rings, `aria-current` on the section nav.
+- Honours `prefers-reduced-motion`: animations and smooth scrolling switch off.
+- No frameworks; one CSS file, one small JS file. Images carry `width`/`height` to avoid
+  layout shift, and everything below the fold is lazy-loaded.
+- Works fully with JavaScript disabled.

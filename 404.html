@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Tafadzwa Daniel Kamanga</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/portfolio/assets/img/logo-mark.png">
+<script>
+  // Set theme + the js flag before first paint so nothing flashes
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js');
+    var stored = null;
+    try { stored = localStorage.getItem('tdk-theme'); } catch (e) {}
+    var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    try { if (localStorage.getItem('tdk-lang') === 'pl') root.setAttribute('lang', 'pl'); } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/portfolio/css/style.css">
+</head>
+<body>
+
+<header class="shell topbar">
+  <a class="brand" href="/portfolio/" aria-label="Tafadzwa Daniel Kamanga — Web Developer, Web Designer, Tech Enthusiast">
+    <img class="brand-mark mark-on-light" src="/portfolio/assets/img/logo-mark.png" alt="" width="271" height="288">
+    <img class="brand-mark mark-on-dark" src="/portfolio/assets/img/logo-mark-light.png" alt="" width="329" height="288">
+    <span class="brand-text">
+      <span class="brand-name">Tafadzwa Daniel Kamanga</span>
+      <span class="brand-tag" data-pl="Web Developer · Web Designer · Pasjonat technologii">Web Developer · Web Designer · Tech Enthusiast</span>
+    </span>
+  </a>
+</header>
+
+<main class="shell center-screen">
+  <span class="kicker" data-pl="Błąd 404">Error 404</span>
+  <h1 class="display" data-pl="Nie znaleziono">Not found</h1>
+  <p class="lead" data-pl="Ta strona nie istnieje — ale projekty owszem.">That page doesn't exist — but the work does.</p>
+  <p>
+    <a class="btn btn-lg" href="/portfolio/#work" data-pl="Zobacz wybrane projekty">See selected work</a>
+  </p>
+</main>
+
+<script src="/portfolio/js/main.js"></script>
+
+</body>
+</html>
